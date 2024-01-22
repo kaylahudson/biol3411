@@ -1,0 +1,60 @@
+     +--------------------------------------------------------------------+
+     ¦                • MobaXterm Personal Edition v23.6 •                ¦
+     ¦              (X server, SSH client and network tools)              ¦
+     ¦                                                                    ¦
+     ¦ ? Your computer drives are accessible through the /drives path     ¦
+     ¦ ? Your DISPLAY is set to 10.110.193.77:0.0                         ¦
+     ¦ ? When using SSH, your remote DISPLAY is automatically forwarded   ¦
+     ¦ ? Your HOME folder is not persistent: it will be erased on restart ¦
+     ¦ ? Each command status is specified by a special symbol (? or ?)    ¦
+     ¦                                                                    ¦
+     ¦ • Important:                                                       ¦
+     ¦ This is MobaXterm Personal Edition. The Professional edition       ¦
+     ¦ allows you to customize MobaXterm for your company: you can add    ¦
+     ¦ your own logo, your parameters, your welcome message and generate  ¦
+     ¦ either an MSI installation package or a portable executable.       ¦
+     ¦ We can also modify MobaXterm or develop the plugins you need.      ¦
+     ¦ For more information: https://mobaxterm.mobatek.net/download.html  ¦
+     +--------------------------------------------------------------------+
+
+ ? 18/01/2024 ? ? 12:01.04 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.edu
+Warning: Permanently added 'login.discovery.neu.edu' (ED25519) to the list of known hosts.
+hudson.ka@login.discovery.neu.edu's password:
+hudson.ka@login.discovery.neu.edu's password:
+Last failed login: Thu Jan 18 12:01:30 EST 2024 from 10.110.193.77 on ssh:notty
+There were 3 failed login attempts since the last successful login.
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+[hudson.ka@login-01 ~]$ cd /courses/BIOL3411.202430/
+[hudson.ka@login-01 BIOL3411.202430]$ ls
+data  NCBIdata  shared  staff  students
+[hudson.ka@login-01 BIOL3411.202430]$ cd students
+[hudson.ka@login-01 students]$ ls
+ali.may    breen.d    jhenzy        kutzer.h  root.ni      tian.ruj  volkova.a
+anand.de   hudson.ka  kini.sn       macwan.m  ruggles.a    trehan.g  vyas.aas
+bolduc.je  iyer.ka    kopczynski.a  mccann.c  sickinger.m  tunda.m
+[hudson.ka@login-01 students]$ ls hudson.ka/
+assignments
+[hudson.ka@login-01 students]$ ls hudson.ka/assignments/
+[hudson.ka@login-01 students]$ ls hudson.ka/assignments/
+learning_unix_1-14_biol3411.txt
+[hudson.ka@login-01 students]$ ls hudson.ka/assignments/
+learning_unix_1-14_biol3411.txt  learning_unix_15-18_biol3411.txt  learning_unix_19-28_biol3411.txt
+[hudson.ka@login-01 students]$ cd hudson.ka/assignments/
+[hudson.ka@login-01 assignments]$ ls
+learning_unix_1-14_biol3411.txt  learning_unix_15-18_biol3411.txt  learning_unix_19-28_biol3411.txt
+[hudson.ka@login-01 assignments]$ ls -l learning_unix_1-14_biol3411.txt
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 733697 Jan 18 12:02 learning_unix_1-14_biol3411.txt
+[hudson.ka@login-01 assignments]$ ls -l learning_unix_15-18_biol3411.txt
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 5099 Jan 18 12:04 learning_unix_15-18_biol3411.txt
+[hudson.ka@login-01 assignments]$ ls -l learning_unix_19-28_biol3411.txt
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 16522 Jan 18 12:05 learning_unix_19-28_biol3411.txt
+[hudson.ka@login-01 assignments]$

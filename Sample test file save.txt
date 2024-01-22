@@ -1,0 +1,34 @@
+     +--------------------------------------------------------------------+
+     ¦                • MobaXterm Personal Edition v23.6 •                ¦
+     ¦              (X server, SSH client and network tools)              ¦
+     ¦                                                                    ¦
+     ¦ ? Your computer drives are accessible through the /drives path     ¦
+     ¦ ? Your DISPLAY is set to 10.110.242.236:0.0                        ¦
+     ¦ ? When using SSH, your remote DISPLAY is automatically forwarded   ¦
+     ¦ ? Your HOME folder is not persistent: it will be erased on restart ¦
+     ¦ ? Each command status is specified by a special symbol (? or ?)    ¦
+     ¦                                                                    ¦
+     ¦ • Important:                                                       ¦
+     ¦ This is MobaXterm Personal Edition. The Professional edition       ¦
+     ¦ allows you to customize MobaXterm for your company: you can add    ¦
+     ¦ your own logo, your parameters, your welcome message and generate  ¦
+     ¦ either an MSI installation package or a portable executable.       ¦
+     ¦ We can also modify MobaXterm or develop the plugins you need.      ¦
+     ¦ For more information: https://mobaxterm.mobatek.net/download.html  ¦
+     +--------------------------------------------------------------------+
+
+ ? 10/01/2024 ? ? 10:38.53 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.edu
+Warning: Permanently added 'login.discovery.neu.edu' (ED25519) to the list of known hosts.
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Mon Jan  8 16:36:21 2024 from c-71-235-255-87.hsd1.ma.comcast.net
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+[hudson.ka@login-00 ~]$

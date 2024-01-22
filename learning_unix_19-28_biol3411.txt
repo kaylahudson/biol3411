@@ -1,0 +1,324 @@
+     +--------------------------------------------------------------------+
+     ¦                • MobaXterm Personal Edition v23.6 •                ¦
+     ¦              (X server, SSH client and network tools)              ¦
+     ¦                                                                    ¦
+     ¦ ? Your computer drives are accessible through the /drives path     ¦
+     ¦ ? Your DISPLAY is set to 10.110.193.77:0.0                         ¦
+     ¦ ? When using SSH, your remote DISPLAY is automatically forwarded   ¦
+     ¦ ? Your HOME folder is not persistent: it will be erased on restart ¦
+     ¦ ? Each command status is specified by a special symbol (? or ?)    ¦
+     ¦                                                                    ¦
+     ¦ • Important:                                                       ¦
+     ¦ This is MobaXterm Personal Edition. The Professional edition       ¦
+     ¦ allows you to customize MobaXterm for your company: you can add    ¦
+     ¦ your own logo, your parameters, your welcome message and generate  ¦
+     ¦ either an MSI installation package or a portable executable.       ¦
+     ¦ We can also modify MobaXterm or develop the plugins you need.      ¦
+     ¦ For more information: https://mobaxterm.mobatek.net/download.html  ¦
+     +--------------------------------------------------------------------+
+
+ ? 18/01/2024 ? ? 10:41.04 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.eduWarning: Permanently added 'login.discovery.neu.edu' (ED25519) to the list of known hosts.
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Wed Jan 17 16:00:03 2024 from 10.110.210.54
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+[hudson.ka@login-00 ~]$ cd Biol3411_Assignments/Learning_unix/net/fish/counts/
+[hudson.ka@login-00 counts]$ ls
+one_fish.txt  rags  two_fish.txt
+[hudson.ka@login-00 counts]$ rm -i one_fish.txt rags two_fish.txt
+rm: remove regular empty file ‘one_fish.txt’? y
+rm: remove regular empty file ‘rags’? y
+rm: remove regular empty file ‘two_fish.txt’? y
+[hudson.ka@login-00 counts]$ ls
+[hudson.ka@login-00 counts]$ cd ../..
+[hudson.ka@login-00 net]$ cd ..
+[hudson.ka@login-00 Learning_unix]$ ls
+colors  net
+[hudson.ka@login-00 Learning_unix]$ rmdir -p net/fish/counts/
+[hudson.ka@login-00 Learning_unix]$ rm -ir colors/
+rm: descend into directory ‘colors/’? y
+rm: remove regular empty file ‘colors/blue_fish.txt’? y
+rm: remove regular empty file ‘colors/red_fish.txt’? y
+rm: remove directory ‘colors/’? y
+[hudson.ka@login-00 Learning_unix]$ touch file1
+[hudson.ka@login-00 Learning_unix]$ cp file1 file2
+[hudson.ka@login-00 Learning_unix]$ ls
+file1  file2
+[hudson.ka@login-00 Learning_unix]$ touch ~/file3
+[hudson.ka@login-00 Learning_unix]$ ls ~
+Biol3411_Assignments  DNA_names  DNA_translation  DNA_updated_names  file3  ondemand
+[hudson.ka@login-00 Learning_unix]$ cp ~/file3 .
+[hudson.ka@login-00 Learning_unix]$ ls
+file1  file2  file3
+[hudson.ka@login-00 Learning_unix]$ ls
+file1  file2  file3
+[hudson.ka@login-00 Learning_unix]$ ls .
+file1  file2  file3
+[hudson.ka@login-00 Learning_unix]$ ls ./
+file1  file2  file3
+[hudson.ka@login-00 Learning_unix]$ rm -i file1 file2 file3
+rm: remove regular empty file ‘file1’? y
+rm: remove regular empty file ‘file2’? y
+rm: remove regular empty file ‘file3’? y
+[hudson.ka@login-00 Learning_unix]$ ls
+[hudson.ka@login-00 Learning_unix]$ cp --help
+Usage: cp [OPTION]... [-T] SOURCE DEST
+  or:  cp [OPTION]... SOURCE... DIRECTORY
+  or:  cp [OPTION]... -t DIRECTORY SOURCE...
+Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --archive                same as -dR --preserve=all
+      --attributes-only        don't copy the file data, just the attributes
+      --backup[=CONTROL]       make a backup of each existing destination file
+  -b                           like --backup but does not accept an argument
+      --copy-contents          copy contents of special files when recursive
+  -d                           same as --no-dereference --preserve=links
+  -f, --force                  if an existing destination file cannot be
+                                 opened, remove it and try again (this option
+                                 is ignored when the -n option is also used)
+  -i, --interactive            prompt before overwrite (overrides a previous -n
+                                  option)
+  -H                           follow command-line symbolic links in SOURCE
+  -l, --link                   hard link files instead of copying
+  -L, --dereference            always follow symbolic links in SOURCE
+  -n, --no-clobber             do not overwrite an existing file (overrides
+                                 a previous -i option)
+  -P, --no-dereference         never follow symbolic links in SOURCE
+  -p                           same as --preserve=mode,ownership,timestamps
+      --preserve[=ATTR_LIST]   preserve the specified attributes (default:
+                                 mode,ownership,timestamps), if possible
+                                 additional attributes: context, links, xattr,
+                                 all
+  -c                           deprecated, same as --preserve=context
+      --no-preserve=ATTR_LIST  don't preserve the specified attributes
+      --parents                use full source file name under DIRECTORY
+  -R, -r, --recursive          copy directories recursively
+      --reflink[=WHEN]         control clone/CoW copies. See below
+      --remove-destination     remove each existing destination file before
+                                 attempting to open it (contrast with --force)
+      --sparse=WHEN            control creation of sparse files. See below
+      --strip-trailing-slashes  remove any trailing slashes from each SOURCE
+                                 argument
+  -s, --symbolic-link          make symbolic links instead of copying
+  -S, --suffix=SUFFIX          override the usual backup suffix
+  -t, --target-directory=DIRECTORY  copy all SOURCE arguments into DIRECTORY
+  -T, --no-target-directory    treat DEST as a normal file
+  -u, --update                 copy only when the SOURCE file is newer
+                                 than the destination file or when the
+                                 destination file is missing
+  -v, --verbose                explain what is being done
+  -x, --one-file-system        stay on this file system
+  -Z                           set SELinux security context of destination
+                                 file to default type
+      --context[=CTX]          like -Z, or if CTX is specified then set the
+                                 SELinux or SMACK security context to CTX
+      --help     display this help and exit
+      --version  output version information and exit
+
+By default, sparse SOURCE files are detected by a crude heuristic and the
+corresponding DEST file is made sparse as well.  That is the behavior
+selected by --sparse=auto.  Specify --sparse=always to create a sparse DEST
+file whenever the SOURCE file contains a long enough sequence of zero bytes.
+Use --sparse=never to inhibit creation of sparse files.
+
+When --reflink[=always] is specified, perform a lightweight copy, where the
+data blocks are copied only when modified.  If this is not possible the copy
+fails, or if --reflink=auto is specified, fall back to a standard copy.
+
+The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.
+The version control method may be selected via the --backup option or through
+the VERSION_CONTROL environment variable.  Here are the values:
+
+  none, off       never make backups (even if --backup is given)
+  numbered, t     make numbered backups
+  existing, nil   numbered if numbered backups exist, simple otherwise
+  simple, never   always make simple backups
+
+As a special case, cp makes a backup of SOURCE when the force and backup
+options are given and SOURCE and DEST are the same name for an existing,
+regular file.
+
+GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+For complete documentation, run: info coreutils 'cp invocation'
+[hudson.ka@login-00 Learning_unix]$ man cp
+[hudson.ka@login-00 Learning_unix]$ touch file1 file2 file3
+[hudson.ka@login-00 Learning_unix]$ ls
+file1  file2  file3
+[hudson.ka@login-00 Learning_unix]$ mkdir filing_cabinet
+[hudson.ka@login-00 Learning_unix]$ ls
+file1  file2  file3  filing_cabinet
+[hudson.ka@login-00 Learning_unix]$ mv file? filing_cabinet/
+[hudson.ka@login-00 Learning_unix]$ ls
+filing_cabinet
+[hudson.ka@login-00 Learning_unix]$ ls filing_cabinet/
+file1  file2  file3
+[hudson.ka@login-00 Learning_unix]$ cp -r filing_cabinet/ trash_can/
+[hudson.ka@login-00 Learning_unix]$ ls
+filing_cabinet  trash_can
+[hudson.ka@login-00 Learning_unix]$ ls trash_can/
+file1  file2  file3
+[hudson.ka@login-00 Learning_unix]$ ls filing_cabinet/
+file1  file2  file3
+[hudson.ka@login-00 Learning_unix]$ rm -i filing_cabinet/ trash_can/
+rm: cannot remove ‘filing_cabinet/’: Is a directory
+rm: cannot remove ‘trash_can/’: Is a directory
+[hudson.ka@login-00 Learning_unix]$ rm -ir filing_cabinet/ trash_can/
+rm: descend into directory ‘filing_cabinet/’? y
+rm: remove regular empty file ‘filing_cabinet/file1’? y
+rm: remove regular empty file ‘filing_cabinet/file2’? y
+rm: remove regular empty file ‘filing_cabinet/file3’? y
+rm: remove directory ‘filing_cabinet/’? y
+rm: descend into directory ‘trash_can/’? y
+rm: remove regular empty file ‘trash_can/file1’? y
+rm: remove regular empty file ‘trash_can/file2’? y
+rm: remove regular empty file ‘trash_can/file3’? y
+rm: remove directory ‘trash_can/’? y
+[hudson.ka@login-00 Learning_unix]$ ls
+[hudson.ka@login-00 Learning_unix]$ echo "Call me Kayla."
+Call me Kayla.
+[hudson.ka@login-00 Learning_unix]$ echo "Call me Kayla." > opening_lines.txt
+[hudson.ka@login-00 Learning_unix]$ ls
+opening_lines.txt
+[hudson.ka@login-00 Learning_unix]$ less opening_lines.txt
+[hudson.ka@login-00 Learning_unix]$ less opening_lines.txt
+[hudson.ka@login-00 Learning_unix]$ less opening_lines.txt
+[hudson.ka@login-00 Learning_unix]$ echo "The primroses were over." >> opening_lines.txt
+[hudson.ka@login-00 Learning_unix]$ cat opening_lines.txt
+Call me Kayla.
+The primroses were over.
+[hudson.ka@login-00 Learning_unix]$ cat --help
+Usage: cat [OPTION]... [FILE]...
+Concatenate FILE(s), or standard input, to standard output.
+
+  -A, --show-all           equivalent to -vET
+  -b, --number-nonblank    number nonempty output lines, overrides -n
+  -e                       equivalent to -vE
+  -E, --show-ends          display $ at end of each line
+  -n, --number             number all output lines
+  -s, --squeeze-blank      suppress repeated empty output lines
+  -t                       equivalent to -vT
+  -T, --show-tabs          display TAB characters as ^I
+  -u                       (ignored)
+  -v, --show-nonprinting   use ^ and M- notation, except for LFD and TAB
+      --help     display this help and exit
+      --version  output version information and exit
+
+With no FILE, or when FILE is -, read standard input.
+
+Examples:
+  cat f - g  Output f's contents, then standard input, then g's contents.
+  cat        Copy standard input to standard output.
+
+GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+For complete documentation, run: info coreutils 'cat invocation'
+[hudson.ka@login-00 Learning_unix]$ cat opening_lines.txt ? file_copy.txt
+Call me Kayla.
+The primroses were over.
+cat: ?: No such file or directory
+cat: file_copy.txt: No such file or directory
+[hudson.ka@login-00 Learning_unix]$ cat opening_lines.txt > file_copy.txt
+[hudson.ka@login-00 Learning_unix]$ ls
+file_copy.txt  opening_lines.txt
+[hudson.ka@login-00 Learning_unix]$ cat file_copy.txt
+Call me Kayla.
+The primroses were over.
+[hudson.ka@login-00 Learning_unix]$ cat opening_lines.txt
+Call me Kayla.
+The primroses were over.
+[hudson.ka@login-00 Learning_unix]$ ls
+file_copy.txt  opening_lines.txt
+[hudson.ka@login-00 Learning_unix]$ ls -l
+total 1
+-rw-r--r-- 1 hudson.ka users 40 Jan 18 11:13 file_copy.txt
+-rw-r--r-- 1 hudson.ka users 40 Jan 18 11:09 opening_lines.txt
+[hudson.ka@login-00 Learning_unix]$ wc opening_lines.txt
+ 2  7 40 opening_lines.txt
+[hudson.ka@login-00 Learning_unix]$ wc -l opening_lines.txt
+2 opening_lines.txt
+[hudson.ka@login-00 Learning_unix]$ nano opening_lines.txt
+[hudson.ka@login-00 Learning_unix]$ cat opening_lines.txt
+Call me Kayla.
+The primroses were over.
+[hudson.ka@login-00 Learning_unix]$ nano opening_lines.txt
+[hudson.ka@login-00 Learning_unix]$ cat opening_lines.txt
+Call me Kayla.
+The primroses were over.
+Here is a third line!
+[hudson.ka@login-00 Learning_unix]$ echo $USER
+hudson.ka
+[hudson.ka@login-00 Learning_unix]$ echo $HOME
+/home/hudson.ka
+[hudson.ka@login-00 Learning_unix]$ echo $PATH
+/shared/centos7/discovery/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/hudson.ka/.local/bin:/home/hudson.ka/bin
+[hudson.ka@login-00 Learning_unix]$ nano opening_lines.txt
+[hudson.ka@login-00 Learning_unix]$ cat opening_lines.txt
+Call me Kayla.
+The primroses were over.
+Here is a third line!
+Now is the winter of our discontent.
+All children, except one, grow up.
+The Galactic Empire was dying.
+In a hole in the ground there lived a hobbit.
+It was a pleasure to burn.
+It was a bright, cold day in April, and the clocks were striking thirteen.
+It was love at first sight.
+I am an invisible man.
+It was the day my grandmother exploded.
+When he was nearly thirteen, my brother Jem got his arm badly broken at the elbow.
+Marley was dead, to begin with.
+[hudson.ka@login-00 Learning_unix]$ grep was opening_lines.txt
+The Galactic Empire was dying.
+It was a pleasure to burn.
+It was a bright, cold day in April, and the clocks were striking thirteen.
+It was love at first sight.
+It was the day my grandmother exploded.
+When he was nearly thirteen, my brother Jem got his arm badly broken at the elbow.
+Marley was dead, to begin with.
+[hudson.ka@login-00 Learning_unix]$ grep -v was opening_lines.txt
+Call me Kayla.
+The primroses were over.
+Here is a third line!
+Now is the winter of our discontent.
+All children, except one, grow up.
+In a hole in the ground there lived a hobbit.
+I am an invisible man.
+[hudson.ka@login-00 Learning_unix]$ grep all opening_lines.txt
+Call me Kayla.
+[hudson.ka@login-00 Learning_unix]$ grep -i all opening_lines.txt
+Call me Kayla.
+All children, except one, grow up.
+[hudson.ka@login-00 Learning_unix]$ grep in opening_lines.txt
+Here is a third line!
+Now is the winter of our discontent.
+The Galactic Empire was dying.
+In a hole in the ground there lived a hobbit.
+It was a bright, cold day in April, and the clocks were striking thirteen.
+I am an invisible man.
+Marley was dead, to begin with.
+[hudson.ka@login-00 Learning_unix]$ grep -w in opening_lines.txt
+In a hole in the ground there lived a hobbit.
+It was a bright, cold day in April, and the clocks were striking thirteen.
+[hudson.ka@login-00 Learning_unix]$ grep -w o.. in opening_lines.txt
+grep: in: No such file or directory
+opening_lines.txt:Now is the winter of our discontent.
+opening_lines.txt:All children, except one, grow up.
+[hudson.ka@login-00 Learning_unix]$ grep -w -i [aeiou]t opening_lines.txt
+It was a pleasure to burn.
+It was a bright, cold day in April, and the clocks were striking thirteen.
+It was love at first sight.
+It was the day my grandmother exploded.
+When he was nearly thirteen, my brother Jem got his arm badly broken at the elbow.
+[hudson.ka@login-00 Learning_unix]$ grep was opening_lines.txt | wc -c
+316
+[hudson.ka@login-00 Learning_unix]$ grep was opening_lines.txt | sort | head -n 3 | wc -c
+130
+[hudson.ka@login-00 Learning_unix]$
