@@ -4,3 +4,5 @@ KH
 Text file for learning how to use git and GitHub
 
 Here is a new edit!
+
+Another edit for the "Git Branch" tutorial page.
