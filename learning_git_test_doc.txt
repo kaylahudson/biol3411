@@ -8,3 +8,7 @@ Here is a new edit!
 Another edit for the "Git Branch" tutorial page.
 
 Here is an edit for the "Emergency Fix" tutorial portion.
+
+An edit on the hello-world-branch after doing the emergency fix tutorial.
+
+Post-merge conflict message: the above are the desired file contents.
