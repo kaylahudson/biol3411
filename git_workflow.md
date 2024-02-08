@@ -28,3 +28,7 @@ Optional First Step: change the name and email associated with your Git commits.
     Pushes the changes you've made to the remote repository (aka GitHub). May fail if your local main branch is not up to date. If this occurs, reset your local main branch to the version prior to merging your new commits, then go back to step 6.
 12. `git branch -d <branch>`<br>
     Deletes the branch that you created to make changes.
+
+Based on:
+- [W3Schools Git GitHub Flow](https://www.w3schools.com/git/git_github_flow.asp?remote=github)
+- [Sreevatsa03/FISH-Image-Analysis/Workflow.md](https://github.com/Sreevatsa03/FISH-Image-Analysis/blob/main/Workflow.md)
