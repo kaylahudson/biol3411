@@ -1,0 +1,303 @@
+     +--------------------------------------------------------------------+
+     ¦                • MobaXterm Personal Edition v23.6 •                ¦
+     ¦              (X server, SSH client and network tools)              ¦
+     ¦                                                                    ¦
+     ¦ ? Your computer drives are accessible through the /drives path     ¦
+     ¦ ? Your DISPLAY is set to 10.0.0.93:0.0                             ¦
+     ¦ ? When using SSH, your remote DISPLAY is automatically forwarded   ¦
+     ¦ ? Your HOME folder is not persistent: it will be erased on restart ¦
+     ¦ ? Each command status is specified by a special symbol (? or ?)    ¦
+     ¦                                                                    ¦
+     ¦ • Important:                                                       ¦
+     ¦ This is MobaXterm Personal Edition. The Professional edition       ¦
+     ¦ allows you to customize MobaXterm for your company: you can add    ¦
+     ¦ your own logo, your parameters, your welcome message and generate  ¦
+     ¦ either an MSI installation package or a portable executable.       ¦
+     ¦ We can also modify MobaXterm or develop the plugins you need.      ¦
+     ¦ For more information: https://mobaxterm.mobatek.net/download.html  ¦
+     +--------------------------------------------------------------------+
+
+ ? 21/02/2024 ? ? 15:28.27 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.edu
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Wed Feb 21 14:50:21 2024 from 10.110.210.130
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+[hudson.ka@login-01 ~]$ cd /courses/BIOL3411.202430/students/hudson.ka/class_examples/
+[hudson.ka@login-01 class_examples]$ ls
+computing_node_intro_wk4  dna_name_intro_wk1       fastq_work_wk6_20240221
+Day_data                  fastq_work_wk6_20240214  unit2_intro_exercise
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@login-01 class_examples]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06
+[hudson.ka@login-01 class_examples]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06
+[hudson.ka@login-01 class_examples]$ modul avail
+-bash: modul: command not found
+[hudson.ka@login-01 class_examples]$ module avail
+
+-------------------------------------- /shared/centos7/modulefiles ---------------------------------------
+abaqus/2021                          matlab/R2014a
+abyss/1.0                            matlab/R2018a
+abyss/2.1.5                          matlab/R2019a
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+lotterhos/2020-08-24                 VTK/9.2.6
+lumerical/v221                       weka/weka-3-8-4
+lunzip/1.9                           weka/weka-3-8-6
+M2/2-1.11                            wps/4.1
+make/4.2.1                           wrf/4.1.4
+mathematica/12.0                     xbeach/5920
+[hudson.ka@login-01 class_examples]$ ls
+computing_node_intro_wk4  dna_name_intro_wk1       fastq_work_wk6_20240221  unit2_intro_exercise
+Day_data                  fastq_work_wk6_20240214  MarineGenomics           week4_semester.tar.gz
+[hudson.ka@login-01 class_examples]$ wget https://raw.githubusercontent.com/BenLangmead/bowtie2/master/example/reads/reads_1.fq
+--2024-02-21 15:41:28--  https://raw.githubusercontent.com/BenLangmead/bowtie2/master/example/reads/reads_1.fq
+Connecting to 10.99.0.130:3128... connected.
+Proxy request sent, awaiting response... 200 OK
+Length: 2285692 (2.2M) [text/plain]
+Saving to: ‘reads_1.fq’
+
+100%[================================================================>] 2,285,692   --.-K/s   in 0.02s
+
+2024-02-21 15:41:28 (139 MB/s) - ‘reads_1.fq’ saved [2285692/2285692]
+
+[hudson.ka@login-01 class_examples]$ ls
+computing_node_intro_wk4  fastq_work_wk6_20240214  reads_1.fq
+Day_data                  fastq_work_wk6_20240221  unit2_intro_exercise
+dna_name_intro_wk1        MarineGenomics           week4_semester.tar.gz
+[hudson.ka@login-01 class_examples]$ wget https://github.com/BenLangmead/bowtie2/raw/master/example/reads/reads_2.fq
+--2024-02-21 15:42:06--  https://github.com/BenLangmead/bowtie2/raw/master/example/reads/reads_2.fq
+Connecting to 10.99.0.130:3128... connected.
+Proxy request sent, awaiting response... 302 Found
+Location: https://raw.githubusercontent.com/BenLangmead/bowtie2/master/example/reads/reads_2.fq [following]
+--2024-02-21 15:42:14--  https://raw.githubusercontent.com/BenLangmead/bowtie2/master/example/reads/reads_2.fq
+Connecting to 10.99.0.130:3128... connected.
+Proxy request sent, awaiting response... 200 OK
+Length: 2288866 (2.2M) [text/plain]
+Saving to: ‘reads_2.fq’
+
+100%[================================================================>] 2,288,866   --.-K/s   in 0.02s
+
+2024-02-21 15:42:14 (131 MB/s) - ‘reads_2.fq’ saved [2288866/2288866]
+
+[hudson.ka@login-01 class_examples]$ nano reads_2.fq
+[hudson.ka@login-01 class_examples]$ wget https://github.com/BenLangmead/bowtie2/raw/master/example/reads/longreads.fq
+--2024-02-21 15:42:55--  https://github.com/BenLangmead/bowtie2/raw/master/example/reads/longreads.fq
+Connecting to 10.99.0.130:3128... connected.
+Proxy request sent, awaiting response... 302 Found
+Location: https://raw.githubusercontent.com/BenLangmead/bowtie2/master/example/reads/longreads.fq [following]
+--2024-02-21 15:42:55--  https://raw.githubusercontent.com/BenLangmead/bowtie2/master/example/reads/longreads.fq
+Connecting to 10.99.0.130:3128... connected.
+Proxy request sent, awaiting response... 200 OK
+Length: 4177995 (4.0M) [text/plain]
+Saving to: ‘longreads.fq’
+
+100%[================================================================>] 4,177,995   --.-K/s   in 0.02s
+
+2024-02-21 15:43:01 (181 MB/s) - ‘longreads.fq’ saved [4177995/4177995]
+
+[hudson.ka@login-01 class_examples]$ ls
+computing_node_intro_wk4  fastq_work_wk6_20240214  MarineGenomics  unit2_intro_exercise
+Day_data                  fastq_work_wk6_20240221  reads_1.fq      week4_semester.tar.gz
+dna_name_intro_wk1        longreads.fq             reads_2.fq
+[hudson.ka@login-01 class_examples]$ mkdir bowtie_MG_tutorials_20240221
+[hudson.ka@login-01 class_examples]$ ls
+bowtie_MG_tutorials_20240221  dna_name_intro_wk1       longreads.fq    reads_2.fq
+computing_node_intro_wk4      fastq_work_wk6_20240214  MarineGenomics  unit2_intro_exercise
+Day_data                      fastq_work_wk6_20240221  reads_1.fq      week4_semester.tar.gz
+[hudson.ka@login-01 class_examples]$ mv *.fq bowtie_MG_tutorials_20240221/
+[hudson.ka@login-01 class_examples]$ ls
+bowtie_MG_tutorials_20240221  dna_name_intro_wk1       MarineGenomics
+computing_node_intro_wk4      fastq_work_wk6_20240214  unit2_intro_exercise
+Day_data                      fastq_work_wk6_20240221  week4_semester.tar.gz
+[hudson.ka@login-01 class_examples]$ mv week4_semester.tar.gz bowtie_MG_tutorials_20240221/
+[hudson.ka@login-01 class_examples]$ ls
+bowtie_MG_tutorials_20240221  Day_data            fastq_work_wk6_20240214  MarineGenomics
+computing_node_intro_wk4      dna_name_intro_wk1  fastq_work_wk6_20240221  unit2_intro_exercise
+[hudson.ka@login-01 class_examples]$ cd bowtie_MG_tutorials_20240221/
+[hudson.ka@login-01 bowtie_MG_tutorials_20240221]$ ls
+longreads.fq  reads_1.fq  reads_2.fq  week4_semester.tar.gz
+[hudson.ka@login-01 bowtie_MG_tutorials_20240221]$ nano longreads.fq
+[hudson.ka@login-01 bowtie_MG_tutorials_20240221]$ nano reads_1.fq
+[hudson.ka@login-01 bowtie_MG_tutorials_20240221]$ nano reads_2.fq
+[hudson.ka@login-01 bowtie_MG_tutorials_20240221]$ ls
+longreads.fq  reads_1.fq  reads_2.fq  week4_semester.tar.gz
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@login-01 bowtie_MG_tutorials_20240221]$ ls
+longreads.fq  MarineGenomics  reads_1.fq  reads_2.fq  week4_semester.tar.gz
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@login-01 week4]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06
+[hudson.ka@login-01 week4]$ module load OpenJDK/19.0.1
+[hudson.ka@login-01 week4]$ module load fastqc/0.11.9
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@login-01 week4]$ srun --pty /bin/bash
+srun: job 41058219 queued and waiting for resources
+srun: job 41058219 has been allocated resources
+[hudson.ka@c0234 week4]$ cd ..
+[hudson.ka@c0234 MarineGenomics]$ cd ..
+[hudson.ka@c0234 bowtie_MG_tutorials_20240221]$ ls
+longreads.fq  MarineGenomics  reads_1.fq  reads_2.fq  week4_semester.tar.gz
+[hudson.ka@c0234 bowtie_MG_tutorials_20240221]$ fastqc reads_2.fq
+Started analysis of reads_2.fq
+Approx 10% complete for reads_2.fq
+Approx 20% complete for reads_2.fq
+Approx 30% complete for reads_2.fq
+Approx 40% complete for reads_2.fq
+Approx 50% complete for reads_2.fq
+Approx 60% complete for reads_2.fq
+Approx 70% complete for reads_2.fq
+Approx 80% complete for reads_2.fq
+Approx 90% complete for reads_2.fq
+Approx 100% complete for reads_2.fq
+Analysis complete for reads_2.fq
+[hudson.ka@c0234 bowtie_MG_tutorials_20240221]$ ls
+longreads.fq    reads_1.fq           reads_2_fastqc.zip  week4_semester.tar.gz
+MarineGenomics  reads_2_fastqc.html  reads_2.fq
+[hudson.ka@c0234 bowtie_MG_tutorials_20240221]$ fastqc reads_1.fq
+Started analysis of reads_1.fq
+Approx 10% complete for reads_1.fq
+Approx 20% complete for reads_1.fq
+Approx 25% complete for reads_1.fq
+Approx 35% complete for reads_1.fq
+Approx 50% complete for reads_1.fq
+Approx 55% complete for reads_1.fq
+Approx 70% complete for reads_1.fq
+Approx 75% complete for reads_1.fq
+Approx 85% complete for reads_1.fq
+Approx 100% complete for reads_1.fq
+Analysis complete for reads_1.fq
+[hudson.ka@c0234 bowtie_MG_tutorials_20240221]$ fastqc longreads.fq
+Started analysis of longreads.fq
+Approx 15% complete for longreads.fq
+Approx 30% complete for longreads.fq
+Approx 45% complete for longreads.fq
+Approx 65% complete for longreads.fq
+Approx 80% complete for longreads.fq
+Approx 100% complete for longreads.fq
+Analysis complete for longreads.fq
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c0234 bowtie_MG_tutorials_20240221]$ ls
+longreads_fastqc.html  MarineGenomics       reads_1.fq           reads_2.fq
+longreads_fastqc.zip   reads_1_fastqc.html  reads_2_fastqc.html  week4_semester.tar.gz
+longreads.fq           reads_1_fastqc.zip   reads_2_fastqc.zip
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c0234 week4]$ module load anaconda3/2022.05
+[hudson.ka@c0234 week4]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06   2) OpenJDK/19.0.1         3) fastqc/0.11.9          4) anaconda3/2022.05
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0234 bowtie_MG_tutorials_20240221]$ pwd
+/courses/BIOL3411.202430/students/hudson.ka/class_examples/bowtie_MG_tutorials_20240221
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0234 bowtie_MG_tutorials_20240221]$ ls
+longreads_fastqc.html  NC_001416.1_phage_lambda_sequence.fasta  reads_2_fastqc.html
+longreads_fastqc.zip   reads_1_fastqc.html                      reads_2_fastqc.zip
+longreads.fq           reads_1_fastqc.zip                       reads_2.fq
+MarineGenomics         reads_1.fq                               week4_semester.tar.gz
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0234 bowtie_MG_tutorials_20240221]$ nano NC_001416.1_phage_lambda_sequence.fasta
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0234 bowtie_MG_tutorials_20240221]$ module load bowtie/2.3.5.1
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0234 bowtie_MG_tutorials_20240221]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06   3) fastqc/0.11.9          5) bowtie/2.3.5.1
+  2) OpenJDK/19.0.1         4) anaconda3/2022.05
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0234 bowtie_MG_tutorials_20240221]$ mkdir bt2_home
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0234 bowtie_MG_tutorials_20240221]$ ls
+bt2_home               NC_001416.1_phage_lambda_sequence.fasta  reads_2_fastqc.zip
+longreads_fastqc.html  reads_1_fastqc.html                      reads_2.fq
+longreads_fastqc.zip   reads_1_fastqc.zip                       week4_semester.tar.gz
+longreads.fq           reads_1.fq
+MarineGenomics         reads_2_fastqc.html
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0234 bowtie_MG_tutorials_20240221]$ bowtie2-build NC_001416.1_phage_lambda_sequence.fasta NC_001416.1_phage_lambda_sequence
+Settings:
+  Output files: "NC_001416.1_phage_lambda_sequence.*.bt2"
+  Line rate: 6 (line is 64 bytes)
+  Lines per side: 1 (side is 64 bytes)
+  Offset rate: 4 (one in 16)
+  FTable chars: 10
+  Strings: unpacked
+  Max bucket size: default
+  Max bucket size, sqrt multiplier: default
+  Max bucket size, len divisor: 4
+  Difference-cover sample period: 1024
+  Endianness: little
+  Actual local endianness: little
+  Sanity checking: disabled
+  Assertions: disabled
+  Random seed: 0
+  Sizeofs: void*:8, int:4, long:8, size_t:8
+Input files DNA, FASTA:
+  NC_001416.1_phage_lambda_sequence.fasta
+Building a SMALL index
+Reading reference sizes
+  Time reading reference sizes: 00:00:00
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+[The removed section is some of the output screen output from indexing the lambda phage reference genome]
+...
+Headers:
+    len: 48502
+    bwtLen: 48503
+    sz: 12126
+    bwtSz: 12126
+    lineRate: 6
+    offRate: 4
+    offMask: 0xfffffff0
+    ftabChars: 10
+    eftabLen: 20
+    eftabSz: 80
+    ftabLen: 1048577
+    ftabSz: 4194308
+    offsLen: 3032
+    offsSz: 12128
+    lineSz: 64
+    sideSz: 64
+    sideBwtSz: 48
+    sideBwtLen: 192
+    numSides: 253
+    numLines: 253
+    ebwtTotLen: 16192
+    ebwtTotSz: 16192
+    color: 0
+    reverse: 1
+Total time for backward call to driver() for mirror index: 00:00:01
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0234 bowtie_MG_tutorials_20240221]$ ls
+bt2_home                                 NC_001416.1_phage_lambda_sequence.rev.1.bt2
+longreads_fastqc.html                    NC_001416.1_phage_lambda_sequence.rev.2.bt2
+longreads_fastqc.zip                     reads_1_fastqc.html
+longreads.fq                             reads_1_fastqc.zip
+MarineGenomics                           reads_1.fq
+NC_001416.1_phage_lambda_sequence.1.bt2  reads_2_fastqc.html
+NC_001416.1_phage_lambda_sequence.2.bt2  reads_2_fastqc.zip
+NC_001416.1_phage_lambda_sequence.3.bt2  reads_2.fq
+NC_001416.1_phage_lambda_sequence.4.bt2  week4_semester.tar.gz
+NC_001416.1_phage_lambda_sequence.fasta
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0234 bowtie_MG_tutorials_20240221]$
