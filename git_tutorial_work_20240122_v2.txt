@@ -1,0 +1,531 @@
+     +--------------------------------------------------------------------+
+     ¦                • MobaXterm Personal Edition v23.6 •                ¦
+     ¦              (X server, SSH client and network tools)              ¦
+     ¦                                                                    ¦
+     ¦ ? Your computer drives are accessible through the /drives path     ¦
+     ¦ ? Your DISPLAY is set to 10.110.214.114:0.0                        ¦
+     ¦ ? When using SSH, your remote DISPLAY is automatically forwarded   ¦
+     ¦ ? Your HOME folder is not persistent: it will be erased on restart ¦
+     ¦ ? Each command status is specified by a special symbol (? or ?)    ¦
+     ¦                                                                    ¦
+     ¦ • Important:                                                       ¦
+     ¦ This is MobaXterm Personal Edition. The Professional edition       ¦
+     ¦ allows you to customize MobaXterm for your company: you can add    ¦
+     ¦ your own logo, your parameters, your welcome message and generate  ¦
+     ¦ either an MSI installation package or a portable executable.       ¦
+     ¦ We can also modify MobaXterm or develop the plugins you need.      ¦
+     ¦ For more information: https://mobaxterm.mobatek.net/download.html  ¦
+     +--------------------------------------------------------------------+
+
+ ? 22/01/2024 ? ? 10:57.32 ? ? /home/mobaxterm ? git --version
+git version 2.37.1
+                                                                               ?
+
+ ? 22/01/2024 ? ? 10:57.45 ? ? /home/mobaxterm ? git config --global user.nam              e
+                                                                               ?
+
+ ? 22/01/2024 ? ? 11:01.06 ? ? /home/mobaxterm ? git config --global user.nam              e "kaylahudson"
+                                                                               ?
+
+ ? 22/01/2024 ? ? 11:01.32 ? ? /home/mobaxterm ? git config --global user.ema              il "hudson.ka@northeastern.edu"
+                                                                               ?
+
+ ? 22/01/2024 ? ? 11:02.27 ? ? /home/mobaxterm ? pwd
+/home/mobaxterm
+                                                                               ?
+
+ ? 22/01/2024 ? ? 11:03.21 ? ? /home/mobaxterm ? cd ..
+                                                                               ?
+
+ ? 22/01/2024 ? ? 11:03.27 ? ? /home ? ls
+Owner      mobaxterm
+                                                                               ?
+
+ ? 22/01/2024 ? ? 11:03.30 ? ? /home ? ls Owner/
+Desktop         LauncherFolder  MyDocuments     README.txt
+                                                                               ?
+
+ ? 22/01/2024 ? ? 11:03.40 ? ? /home ? ls Owner/Desktop
+Bad Save Location                     USyd - Chrome.lnk
+Foldit                                Zoom.lnk
+Kayla (NEU Google Acct) - Chrome.lnk  desktop.ini
+Northeastern - Chrome.lnk             other - Chrome.lnk
+RStudio.lnk
+                                                                               ?
+
+ ? 22/01/2024 ? ? 11:03.49 ? ? /home ? cd "\Users\Owner\BIOL3411_MobaXTerm"                                                                                               ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ?
+ ? 22/01/2024 ? ? 11:04.34 ? la
+total 386
+drwx------    1 Owner    UsersGrp         0 Jan 18 12:08 .
+drwxrwx---    1 SYSTEM   42949672         0 Jan 18 11:49 ..
+-rwx------    1 Owner    UsersGrp      2288 Jan 10 10:45 Sample test file save.t              xt
+-rwx------    1 Owner    UsersGrp      3947 Jan 18 12:08 first_file_xfer_to_cour              se_permissions_results.txt
+-rwx------    1 Owner    UsersGrp    733697 Jan 10 11:55 learning_unix_1-14_biol              3411.txt
+-rwx------    1 Owner    UsersGrp      5099 Jan 17 16:25 learning_unix_15-18_bio              l3411.txt
+-rwx------    1 Owner    UsersGrp     16522 Jan 18 11:35 learning_unix_19-28_bio              l3411.txt
+                                                                               ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ?
+ ? 22/01/2024 ? ? 11:04.44 ? ls
+Sample test file save.txt
+first_file_xfer_to_course_permissions_results.txt
+learning_unix_1-14_biol3411.txt
+learning_unix_15-18_biol3411.txt
+learning_unix_19-28_biol3411.txt
+                                                                               ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ?
+ ? 22/01/2024 ? ? 11:04.51 ? git init
+hint: Using 'master' as the name for the initial branch. This default branch nam              e
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+Initialized empty Git repository in /drives/c/Users/Owner/BIOL3411_MobaXTerm/.gi              t/
+                                                                               ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? master ?
+ ? 22/01/2024 ? ? 11:05.14 ? git branch -m "main"
+
+
+ ? 22/01/2024 ? ? 11:06.28 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ? git confobal init.defaultBranch "main"
+
+
+ ? 22/01/2024 ? ? 11:07.02 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ? ls
+Sample test file save.txt                          learning_unix_15-18_biol3411.txt
+first_file_xfer_to_course_permissions_results.txt  learning_unix_19-28_biol3411.txt
+learning_unix_1-14_biol3411.txt
+
+
+ ? 22/01/2024 ? ? 11:08.11 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ? git stat
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Sample test file save.txt
+        first_file_xfer_to_course_permissions_results.txt
+        learning_unix_1-14_biol3411.txt
+        learning_unix_15-18_biol3411.txt
+        learning_unix_19-28_biol3411.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+ ? 22/01/2024 ? ? 11:08.28 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ? git add g_unix_1-14_biol3411.txt
+
+
+ ? 22/01/2024 ? ? 11:10.57 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ? git stat
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   learning_unix_1-14_biol3411.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Sample test file save.txt
+        first_file_xfer_to_course_permissions_results.txt
+        learning_unix_15-18_biol3411.txt
+        learning_unix_19-28_biol3411.txt
+
+
+
+ ? 22/01/2024 ? ? 11:11.03 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ? git add
+
+
+ ? 22/01/2024 ? ? 11:12.10 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ? git stat
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Sample test file save.txt
+        new file:   first_file_xfer_to_course_permissions_results.txt
+        new file:   learning_unix_1-14_biol3411.txt
+        new file:   learning_unix_15-18_biol3411.txt
+        new file:   learning_unix_19-28_biol3411.txt
+
+
+
+ ? 22/01/2024 ? ? 11:12.13 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ? git commAdd learning_unix tutorial work"
+[main (root-commit) 777035d] Add learning_unix tutorial work
+ 5 files changed, 9994 insertions(+)
+ create mode 100755 Sample test file save.txt
+ create mode 100755 first_file_xfer_to_course_permissions_results.txt
+ create mode 100755 learning_unix_1-14_biol3411.txt
+ create mode 100755 learning_unix_15-18_biol3411.txt
+ create mode 100755 learning_unix_19-28_biol3411.txt
+
+
+commit 500535fb26437af575ce83ab1eacec97a7927629 (HEAD -> main)
+
+Author: kaylahudson <hudson.ka@northeastern.edu>
+Date:   Mon Jan 22 11:24:37 2024 -0500
+
+    Updated learning_git_test_doc.txt with a new line.
+
+commit e63835c8db5aea9b8345f99906d27bf0f3561ccf
+Author: kaylahudson <hudson.ka@northeastern.edu>
+Date:   Mon Jan 22 11:21:49 2024 -0500
+
+    Add file for learning git and GitHub
+
+commit 777035d8211b5307ab57f603b2703699f89cf6c8
+Author: kaylahudson <hudson.ka@northeastern.edu>
+Date:   Mon Jan 22 11:16:49 2024 -0500
+
+    Add learning_unix tutorial work
+
+~
+~
+~
+standard input
+
+
+ ? 22/01/2024 ? ? 11:26.31 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ? git help
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+
+
+ ? 22/01/2024 ? ? 11:26.35 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ? git comm
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup [(amend|reword):]commit
+                          use autosquash formatted message to fixup or amend/reword specified
+See 'git help <command>' to read about a specific subcommand
+
+Main Porcelain Commands
+   add                  Add file contents to the index
+   am                   Apply a series of patches from a mailbox
+   archive              Create an archive of files from a named tree
+  hello-world-images
+* main
+
+~
+~
+
+
+ ? 22/01/2024 ? ? 11:34.11 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ? git chec
+Switched to branch 'hello-world-images'
+
+
+ ? 22/01/2024 ? ? 11:36.11 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? hello-world-ima
+On branch hello-world-images
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   learning_git_test_doc.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+ ? 22/01/2024 ? ? 11:39.10 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? hello-world-ima
+
+
+ ? 22/01/2024 ? ? 11:40.03 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? hello-world-ima
+On branch hello-world-images
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   learning_git_test_doc.txt
+
+
+
+ ? 22/01/2024 ? ? 11:40.06 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? hello-world-imaw line to learning_git_test_doc"
+[hello-world-images b9a8dad] Added new line to learning_git_test_doc
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+
+ ? 22/01/2024 ? ? 11:41.06 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? hello-world-ima
+Sample test file save.txt                          learning_unix_1-14_biol3411.txt
+first_file_xfer_to_course_permissions_results.txt  learning_unix_15-18_biol3411.txt
+learning_git_test_doc.txt                          learning_unix_19-28_biol3411.txt
+
+
+ ? 22/01/2024 ? ? 11:41.45 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? hello-world-ima
+Switched to branch 'main'
+
+
+ ? 22/01/2024 ? ? 11:42.11 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ? ls
+Sample test file save.txt                          learning_unix_1-14_biol3411.txt
+first_file_xfer_to_course_permissions_results.txt  learning_unix_15-18_biol3411.txt
+learning_git_test_doc.txt                          learning_unix_19-28_biol3411.txt
+
+
+ ? 22/01/2024 ? ? 11:42.18 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ? cat lear
+20240122
+KH
+
+Text file for learning how to use git and GitHub
+
+Here is a new edit!
+
+ ? 22/01/2024 ? ? 11:42.34 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ? git chec
+Switched to branch 'hello-world-images'
+
+
+ ? 22/01/2024 ? ? 11:42.46 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? hello-world-imaoc.txt
+20240122
+KH
+
+Text file for learning how to use git and GitHub
+
+Here is a new edit!
+
+Another edit for the "Git Branch" tutorial page.
+
+ ? 22/01/2024 ? ? 11:42.55 ? ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? hello-world-images ? git checkout -b emergency-fix
+Switched to a new branch 'emergency-fix'
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? emergency-fix ?
+ ? 22/01/2024 ? ? 11:44.12 ? git status
+On branch emergency-fix
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   learning_git_test_doc.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? emergency-fix ?
+ ? 22/01/2024 ? ? 11:45.38 ? git add learning_git_test_doc.txt
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? emergency-fix ?
+ ? 22/01/2024 ? ? 11:45.57 ? ls
+Sample test file save.txt
+first_file_xfer_to_course_permissions_results.txt
+learning_git_test_doc.txt
+learning_unix_1-14_biol3411.txt
+learning_unix_15-18_biol3411.txt
+learning_unix_19-28_biol3411.txt
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? emergency-fix ?
+ ? 22/01/2024 ? ? 11:46.01 ? git commit -m "updated learning_git_test_doc.txt with emergency fix"
+[emergency-fix 405cd82] updated learning_git_test_doc.txt with emergency fix
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? emergency-fix ?
+ ? 22/01/2024 ? ? 11:46.44 ? git checkout main
+Switched to branch 'main'
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ?
+ ? 22/01/2024 ? ? 11:47.52 ? git merge emergency-fix
+Updating 500535f..405cd82
+Fast-forward
+ learning_git_test_doc.txt | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ?
+ ? 22/01/2024 ? ? 11:48.21 ? git branch -d emergency-fix
+Deleted branch emergency-fix (was 405cd82).
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ?
+ ? 22/01/2024 ? ? 11:48.46 ? git checkout hello-world-images
+Switched to branch 'hello-world-images'
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? hello-world-images ?
+ ? 22/01/2024 ? ? 11:50.38 ? git status
+On branch hello-world-images
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   learning_git_test_doc.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? hello-world-images ?
+ ? 22/01/2024 ? ? 11:51.28 ? cat learning_git_test_doc.txt
+20240122
+KH
+
+Text file for learning how to use git and GitHub
+
+Here is a new edit!
+
+Another edit for the "Git Branch" tutorial page.
+
+An edit on the hello-world-branch after doing the emergency fix tutorial.                    ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? hello-world-images ?
+ ? 22/01/2024 ? ? 11:52.03 ? git add --all
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? hello-world-images ?
+ ? 22/01/2024 ? ? 11:52.31 ? git commit -m "Added new line"
+[hello-world-images fb8e3ca] Added new line
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? hello-world-images ?
+ ? 22/01/2024 ? ? 11:52.49 ? git checkout main
+Switched to branch 'main'
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ?
+ ? 22/01/2024 ? ? 11:53.04 ? git merge hello-world-images
+Auto-merging learning_git_test_doc.txt
+CONFLICT (content): Merge conflict in learning_git_test_doc.txt
+Automatic merge failed; fix conflicts and then commit the result.
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ?
+ ? 22/01/2024 ? ? 11:53.15 ? git status
+On branch main
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   learning_git_test_doc.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ?
+ ? 22/01/2024 ? ? 11:53.36 ? git add learning_git_test_doc =.txt
+fatal: pathspec 'learning_git_test_doc' did not match any files
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ?
+ ? 22/01/2024 ? ? 11:55.56 ? git add learning_git_test_doc.txt
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ?
+ ? 22/01/2024 ? ? 11:56.03 ? git status
+On branch main
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        modified:   learning_git_test_doc.txt
+
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ?
+ ? 22/01/2024 ? ? 11:56.06 ? git commit -m "Merged with hello-world-images after fixing conflicts"
+[main 50c8031] Merged with hello-world-images after fixing conflicts
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ?
+ ? 22/01/2024 ? ? 11:56.47 ? git branch -d hello-world-images
+Deleted branch hello-world-images (was fb8e3ca).
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ?
+ ? 22/01/2024 ? ? 11:57.13 ? git remote add origin https://github.com/kaylahudson/biol3411.git
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ?
+ ? 22/01/2024 ? ? 12:01.57 ? git push --set-upstream origin main
+Username for 'https://github.com':
+Password for 'httpkaylahudson@github.com':
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/kaylahudson/biol3411.git/'
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ?
+ ? 22/01/2024 ? ? 12:03.47 ? git push --set-upstream origin main
+Username for 'https://github.com':
+Password for 'https://kaylahudson@github.com':
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/kaylahudson/biol3411.git/'
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ?
+ ? 22/01/2024 ? ? 12:04.53 ? git push --set-upstream origin main
+Username for 'https://github.com':
+Password for 'https://kaylahudson@github.com':
+Enumerating objects: 25, done.
+Counting objects: 100% (25/25), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (25/25), done.
+Writing objects: 100% (25/25), 122.05 KiB | 4.52 MiB/s, done.
+Total 25 (delta 14), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (14/14), done.
+To https://github.com/kaylahudson/biol3411.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+                                                                                             ?
+
+ ? /drives/c/Users/Owner/BIOL3411_MobaXTerm ? ? main ?
+ ? 22/01/2024 ? ? 12:17.54 ?
