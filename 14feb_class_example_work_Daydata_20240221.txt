@@ -1,0 +1,841 @@
+     +--------------------------------------------------------------------+
+     ¦                • MobaXterm Personal Edition v23.6 •                ¦
+     ¦              (X server, SSH client and network tools)              ¦
+     ¦                                                                    ¦
+     ¦ ? Your computer drives are accessible through the /drives path     ¦
+     ¦ ? Your DISPLAY is set to 10.0.0.93:0.0                             ¦
+     ¦ ? When using SSH, your remote DISPLAY is automatically forwarded   ¦
+     ¦ ? Your HOME folder is not persistent: it will be erased on restart ¦
+     ¦ ? Each command status is specified by a special symbol (? or ?)    ¦
+     ¦                                                                    ¦
+     ¦ • Important:                                                       ¦
+     ¦ This is MobaXterm Personal Edition. The Professional edition       ¦
+     ¦ allows you to customize MobaXterm for your company: you can add    ¦
+     ¦ your own logo, your parameters, your welcome message and generate  ¦
+     ¦ either an MSI installation package or a portable executable.       ¦
+     ¦ We can also modify MobaXterm or develop the plugins you need.      ¦
+     ¦ For more information: https://mobaxterm.mobatek.net/download.html  ¦
+     +--------------------------------------------------------------------+
+
+ ? 21/02/2024 ? ? 05:50.45 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.edu
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Wed Feb 21 05:50:40 2024 from c-71-235-255-87.hsd1.ma.comcast.net
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+[hudson.ka@login-00 ~]$ srun --pty /bin/bas
+base64      basename    bash        bashbug     bashbug-64
+[hudson.ka@login-00 ~]$ srun --pty /bin/bash
+srun: job 41047103 queued and waiting for resources
+srun: job 41047103 has been allocated resources
+[hudson.ka@c2000 ~]$ ls
+Biol3411_Assignments         DNA_names        DNA_updated_names           file3       ondemand
+borrelia_burgdorferi_genome  DNA_translation  DNA_updated_names_addition  index.html
+[hudson.ka@c2000 ~]$ cd /courses/BIOL3411.202430/students/hudson.ka/
+[hudson.ka@c2000 hudson.ka]$ ls
+assignments  class_examples  trash  unit1_deliverable_paths.txt
+[hudson.ka@c2000 hudson.ka]$ cd class_examples/
+[hudson.ka@c2000 class_examples]$ ls
+computing_node_intro_wk4  dna_name_intro_wk1  fastq_work_wk6_20240214  unit2_intro_exercise
+[hudson.ka@c2000 class_examples]$ tree
+bash: tree: command not found
+[hudson.ka@c2000 class_examples]$ cd ..
+[hudson.ka@c2000 hudson.ka]$ tree class_examples/
+bash: tree: command not found
+[hudson.ka@c2000 hudson.ka]$ ls
+assignments  class_examples  trash  unit1_deliverable_paths.txt
+[hudson.ka@c2000 hudson.ka]$ cd class_examples/
+[hudson.ka@c2000 class_examples]$ cd fastq_work_wk6_20240214/
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+40874762.error   40876370.output                 SRR6805883.tiny.fastq.gz
+40874762.output  new_unzip.bash                  SRR6805883.tiny.fastq.gz.fastq
+40875349.error   SRR6805880.tiny.fastq           SRR6805884.tiny.fastq.gz
+40875349.output  SRR6805880.tiny.fastq.gz        SRR6805884.tiny.fastq.gz.fastq
+40875403.error   SRR6805880.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz
+40875403.output  SRR6805881.tiny.fastq.gz        SRR6805885.tiny.fastq.gz.fastq
+40875465.error   SRR6805881.tiny.fastq.gz.fastq  test_unzipped
+40875465.output  SRR6805882.tiny.fastq.gz        unzip_3.bash
+40876370.error   SRR6805882.tiny.fastq.gz.fastq  unzip.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano test_unzipped/
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls -F
+40874762.error   40876370.output                 SRR6805883.tiny.fastq.gz*
+40874762.output  new_unzip.bash                  SRR6805883.tiny.fastq.gz.fastq
+40875349.error   SRR6805880.tiny.fastq           SRR6805884.tiny.fastq.gz*
+40875349.output  SRR6805880.tiny.fastq.gz*       SRR6805884.tiny.fastq.gz.fastq
+40875403.error   SRR6805880.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz*
+40875403.output  SRR6805881.tiny.fastq.gz*       SRR6805885.tiny.fastq.gz.fastq
+40875465.error   SRR6805881.tiny.fastq.gz.fastq  test_unzipped/
+40875465.output  SRR6805882.tiny.fastq.gz*       unzip_3.bash
+40876370.error   SRR6805882.tiny.fastq.gz.fastq  unzip.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ cd test_unzipped/
+[hudson.ka@c2000 test_unzipped]$ ls
+SRR6805880.tiny.fastq.gz.fastq  SRR6805882.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq
+SRR6805881.tiny.fastq.gz.fastq  SRR6805883.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+[hudson.ka@c2000 test_unzipped]$ cd ..
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+40874762.error   40876370.output                 SRR6805883.tiny.fastq.gz
+40874762.output  new_unzip.bash                  SRR6805883.tiny.fastq.gz.fastq
+40875349.error   SRR6805880.tiny.fastq           SRR6805884.tiny.fastq.gz
+40875349.output  SRR6805880.tiny.fastq.gz        SRR6805884.tiny.fastq.gz.fastq
+40875403.error   SRR6805880.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz
+40875403.output  SRR6805881.tiny.fastq.gz        SRR6805885.tiny.fastq.gz.fastq
+40875465.error   SRR6805881.tiny.fastq.gz.fastq  test_unzipped
+40875465.output  SRR6805882.tiny.fastq.gz        unzip_3.bash
+40876370.error   SRR6805882.tiny.fastq.gz.fastq  unzip.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_3.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls test_unzipped/
+SRR6805880.tiny.fastq.gz.fastq  SRR6805882.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq
+SRR6805881.tiny.fastq.gz.fastq  SRR6805883.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mv *.fastq.gz.fastq test_unzipped/
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+40874762.error   40875403.output  new_unzip.bash            SRR6805883.tiny.fastq.gz  unzip.bash
+40874762.output  40875465.error   SRR6805880.tiny.fastq     SRR6805884.tiny.fastq.gz
+40875349.error   40875465.output  SRR6805880.tiny.fastq.gz  SRR6805885.tiny.fastq.gz
+40875349.output  40876370.error   SRR6805881.tiny.fastq.gz  test_unzipped
+40875403.error   40876370.output  SRR6805882.tiny.fastq.gz  unzip_3.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mv SRR6805880.tiny.fastq test_unzipped/
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+40874762.error   40875403.output  new_unzip.bash            SRR6805884.tiny.fastq.gz
+40874762.output  40875465.error   SRR6805880.tiny.fastq.gz  SRR6805885.tiny.fastq.gz
+40875349.error   40875465.output  SRR6805881.tiny.fastq.gz  test_unzipped
+40875349.output  40876370.error   SRR6805882.tiny.fastq.gz  unzip_3.bash
+40875403.error   40876370.output  SRR6805883.tiny.fastq.gz  unzip.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mkdir bash_output
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+40874762.error   40875403.output  bash_output               SRR6805883.tiny.fastq.gz  unzip.bash
+40874762.output  40875465.error   new_unzip.bash            SRR6805884.tiny.fastq.gz
+40875349.error   40875465.output  SRR6805880.tiny.fastq.gz  SRR6805885.tiny.fastq.gz
+40875349.output  40876370.error   SRR6805881.tiny.fastq.gz  test_unzipped
+40875403.error   40876370.output  SRR6805882.tiny.fastq.gz  unzip_3.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mv *.error bash_output/
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+40874762.output  40876370.output           SRR6805881.tiny.fastq.gz  SRR6805885.tiny.fastq.gz
+40875349.output  bash_output               SRR6805882.tiny.fastq.gz  test_unzipped
+40875403.output  new_unzip.bash            SRR6805883.tiny.fastq.gz  unzip_3.bash
+40875465.output  SRR6805880.tiny.fastq.gz  SRR6805884.tiny.fastq.gz  unzip.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mv *.output bash_output/
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+bash_output               SRR6805881.tiny.fastq.gz  SRR6805884.tiny.fastq.gz  unzip_3.bash
+new_unzip.bash            SRR6805882.tiny.fastq.gz  SRR6805885.tiny.fastq.gz  unzip.bash
+SRR6805880.tiny.fastq.gz  SRR6805883.tiny.fastq.gz  test_unzipped
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls bash_output/
+40874762.error   40875349.error   40875403.error   40875465.error   40876370.error
+40874762.output  40875349.output  40875403.output  40875465.output  40876370.output
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+bash_output               SRR6805881.tiny.fastq.gz  SRR6805884.tiny.fastq.gz  unzip_3.bash
+new_unzip.bash            SRR6805882.tiny.fastq.gz  SRR6805885.tiny.fastq.gz  unzip.bash
+SRR6805880.tiny.fastq.gz  SRR6805883.tiny.fastq.gz  test_unzipped
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano new_unzip.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mv new_unzip.bash unzip_2.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+bash_output               SRR6805882.tiny.fastq.gz  SRR6805885.tiny.fastq.gz  unzip_3.bash
+SRR6805880.tiny.fastq.gz  SRR6805883.tiny.fastq.gz  test_unzipped             unzip.bash
+SRR6805881.tiny.fastq.gz  SRR6805884.tiny.fastq.gz  unzip_2.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_3.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_3.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ sbatch unzip_3.bash
+Submitted batch job 41047242
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue -u hudson.ka
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047242     short unzippin hudson.k PD       0:00      1 (Priority)
+          41047103     short     bash hudson.k  R      21:14      1 c2000
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue -u hudson.ka
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047242     short unzippin hudson.k PD       0:00      1 (Priority)
+          41047103     short     bash hudson.k  R      22:20      1 c2000
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue -u hudson.ka
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047242     short unzippin hudson.k PD       0:00      1 (Priority)
+          41047103     short     bash hudson.k  R      25:25      1 c2000
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+bash_output               SRR6805882.tiny.fastq.gz  SRR6805885.tiny.fastq.gz  unzip_3.bash
+SRR6805880.tiny.fastq.gz  SRR6805883.tiny.fastq.gz  test_unzipped             unzip.bash
+SRR6805881.tiny.fastq.gz  SRR6805884.tiny.fastq.gz  unzip_2.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue --me
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047242     short unzippin hudson.k PD       0:00      1 (Priority)
+          41047103     short     bash hudson.k  R      26:52      1 c2000
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+bash_output               SRR6805882.tiny.fastq.gz  SRR6805885.tiny.fastq.gz  unzip_3.bash
+SRR6805880.tiny.fastq.gz  SRR6805883.tiny.fastq.gz  test_unzipped             unzip.bash
+SRR6805881.tiny.fastq.gz  SRR6805884.tiny.fastq.gz  unzip_2.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue -u hudson.ka
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047242     short unzippin hudson.k PD       0:00      1 (Priority)
+          41047103     short     bash hudson.k  R      27:52      1 c2000
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue -u hudson.ka
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047242     short unzippin hudson.k PD       0:00      1 (Priority)
+          41047103     short     bash hudson.k  R      28:37      1 c2000
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue -u hudson.ka
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047242     short unzippin hudson.k PD       0:00      1 (Priority)
+          41047103     short     bash hudson.k  R      31:03      1 c2000
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue -u hudson.ka
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047242     short unzippin hudson.k PD       0:00      1 (Priority)
+          41047103     short     bash hudson.k  R      33:51      1 c2000
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue -u hudson.ka
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047242     short unzippin hudson.k PD       0:00      1 (Priority)
+          41047103     short     bash hudson.k  R      39:38      1 c2000
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ scontrol show job 41047103 > scontrol_41047103.txt
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+bash_output               SRR6805881.tiny.fastq.gz  SRR6805884.tiny.fastq.gz  unzip_2.bash
+scontrol_41047103.txt     SRR6805882.tiny.fastq.gz  SRR6805885.tiny.fastq.gz  unzip_3.bash
+SRR6805880.tiny.fastq.gz  SRR6805883.tiny.fastq.gz  test_unzipped             unzip.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano scontrol_41047103.txt
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue -u hudson.ka
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047242     short unzippin hudson.k PD       0:00      1 (Priority)
+          41047103     short     bash hudson.k  R      41:18      1 c2000
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ scontrol show job 41047242 > scontrol_41047242.txt
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+bash_output               SRR6805881.tiny.fastq.gz  SRR6805885.tiny.fastq.gz  unzip.bash
+scontrol_41047103.txt     SRR6805882.tiny.fastq.gz  test_unzipped
+scontrol_41047242.txt     SRR6805883.tiny.fastq.gz  unzip_2.bash
+SRR6805880.tiny.fastq.gz  SRR6805884.tiny.fastq.gz  unzip_3.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano scontrol_41047242.txt
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error                   SRR6805883.tiny.fastq.gz
+41047242.output                  SRR6805883.tiny.fastq.gz%.fastq
+bash_output                      SRR6805884.tiny.fastq.gz
+scontrol_41047103.txt            SRR6805884.tiny.fastq.gz%.fastq
+scontrol_41047242.txt            SRR6805885.tiny.fastq.gz
+SRR6805880.tiny.fastq.gz         SRR6805885.tiny.fastq.gz%.fastq
+SRR6805880.tiny.fastq.gz%.fastq  test_unzipped
+SRR6805881.tiny.fastq.gz         unzip_2.bash
+SRR6805881.tiny.fastq.gz%.fastq  unzip_3.bash
+SRR6805882.tiny.fastq.gz         unzip.bash
+SRR6805882.tiny.fastq.gz%.fastq
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue -u hudson.ka
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047103     short     bash hudson.k  R      43:49      1 c2000
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano 41047242.output
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano 41047242.error
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_3.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mv *%.fastq test_unzipped/
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error         scontrol_41047242.txt     SRR6805883.tiny.fastq.gz  unzip_2.bash
+41047242.output        SRR6805880.tiny.fastq.gz  SRR6805884.tiny.fastq.gz  unzip_3.bash
+bash_output            SRR6805881.tiny.fastq.gz  SRR6805885.tiny.fastq.gz  unzip.bash
+scontrol_41047103.txt  SRR6805882.tiny.fastq.gz  test_unzipped
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_3.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ cp unzip_3.bash unzip_4.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error         scontrol_41047242.txt     SRR6805883.tiny.fastq.gz  unzip_2.bash
+41047242.output        SRR6805880.tiny.fastq.gz  SRR6805884.tiny.fastq.gz  unzip_3.bash
+bash_output            SRR6805881.tiny.fastq.gz  SRR6805885.tiny.fastq.gz  unzip_4.bash
+scontrol_41047103.txt  SRR6805882.tiny.fastq.gz  test_unzipped             unzip.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_4.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_4.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_4.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_4.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ sbatch unzip_4.bash
+Submitted batch job 41047457
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue -u hudson.ka
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047457     short unzippin hudson.k PD       0:00      1 (Priority)
+          41047103     short     bash hudson.k  R      54:31      1 c2000
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue -u hudson.ka
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047103     short     bash hudson.k  R      55:54      1 c2000
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error            SRR6805880.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq
+41047242.output           SRR6805881.tiny.fastq.gz        SRR6805885.tiny.fastq.gz
+41047457.error            SRR6805881.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+41047457.output           SRR6805882.tiny.fastq.gz        test_unzipped
+bash_output               SRR6805882.tiny.fastq.gz.fastq  unzip_2.bash
+scontrol_41047103.txt     SRR6805883.tiny.fastq.gz        unzip_3.bash
+scontrol_41047242.txt     SRR6805883.tiny.fastq.gz.fastq  unzip_4.bash
+SRR6805880.tiny.fastq.gz  SRR6805884.tiny.fastq.gz        unzip.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano 41047457.error
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_4.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_4.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mv *.gz.fastq test_unzipped/
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error   scontrol_41047103.txt     SRR6805883.tiny.fastq.gz  unzip_3.bash
+41047242.output  scontrol_41047242.txt     SRR6805884.tiny.fastq.gz  unzip_4.bash
+41047457.error   SRR6805880.tiny.fastq.gz  SRR6805885.tiny.fastq.gz  unzip.bash
+41047457.output  SRR6805881.tiny.fastq.gz  test_unzipped
+bash_output      SRR6805882.tiny.fastq.gz  unzip_2.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_4.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_4.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ sbatch unzip_4.bash
+Submitted batch job 41047499
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue -u hudson.ka
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047499     short unzippin hudson.k PD       0:00      1 (Priority)
+          41047103     short     bash hudson.k  R    1:04:13      1 c2000
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue -u hudson.ka
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047499     short unzippin hudson.k PD       0:00      1 (Priority)
+          41047103     short     bash hudson.k  R    1:06:38      1 c2000
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error   41047499.output           SRR6805881.tiny.fastq.gz  test_unzipped
+41047242.output  bash_output               SRR6805882.tiny.fastq.gz  unzip_2.bash
+41047457.error   scontrol_41047103.txt     SRR6805883.tiny.fastq.gz  unzip_3.bash
+41047457.output  scontrol_41047242.txt     SRR6805884.tiny.fastq.gz  unzip_4.bash
+41047499.error   SRR6805880.tiny.fastq.gz  SRR6805885.tiny.fastq.gz  unzip.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano 41047499.error
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ cd test_unzipped
+[hudson.ka@c2000 test_unzipped]$ ls
+SRR6805880.tiny.fastq            SRR6805883.tiny.fastq.gz.fastq
+SRR6805880.tiny.fastq.gz.fastq   SRR6805883.tiny.fastq.gz%.fastq
+SRR6805880.tiny.fastq.gz%.fastq  SRR6805884.tiny.fastq.gz.fastq
+SRR6805881.tiny.fastq.gz.fastq   SRR6805884.tiny.fastq.gz%.fastq
+SRR6805881.tiny.fastq.gz%.fastq  SRR6805885.tiny.fastq.gz.fastq
+SRR6805882.tiny.fastq.gz.fastq   SRR6805885.tiny.fastq.gz%.fastq
+SRR6805882.tiny.fastq.gz%.fastq
+[hudson.ka@c2000 test_unzipped]$ nano unzip_3
+[hudson.ka@c2000 test_unzipped]$ nano unzip_3
+[hudson.ka@c2000 test_unzipped]$ cd ..
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_3.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_4.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_4.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error   41047499.output           SRR6805881.tiny.fastq.gz  test_unzipped
+41047242.output  bash_output               SRR6805882.tiny.fastq.gz  unzip_2.bash
+41047457.error   scontrol_41047103.txt     SRR6805883.tiny.fastq.gz  unzip_3.bash
+41047457.output  scontrol_41047242.txt     SRR6805884.tiny.fastq.gz  unzip_4.bash
+41047499.error   SRR6805880.tiny.fastq.gz  SRR6805885.tiny.fastq.gz  unzip.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ sbatch nano unzip_4.bash
+sbatch: error: This does not look like a batch script.  The first
+sbatch: error: line must start with #! followed by the path to an interpreter.
+sbatch: error: For instance: #!/bin/sh
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ sbatch unzip_4.bash
+Submitted batch job 41047655
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue --me
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047655     short unzippin hudson.k PD       0:00      1 (Priority)
+          41047103     short     bash hudson.k  R    1:18:13      1 c2000
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error         scontrol_41047242.txt           SRR6805884.tiny.fastq.gz.fastq
+41047242.output        SRR6805880.tiny.fastq.gz        SRR6805885.tiny.fastq.gz
+41047457.error         SRR6805880.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+41047457.output        SRR6805881.tiny.fastq.gz        test_unzipped
+41047499.error         SRR6805881.tiny.fastq.gz.fastq  unzip_2.bash
+41047499.output        SRR6805882.tiny.fastq.gz        unzip_3.bash
+41047655.error         SRR6805882.tiny.fastq.gz.fastq  unzip_4.bash
+41047655.output        SRR6805883.tiny.fastq.gz        unzip.bash
+bash_output            SRR6805883.tiny.fastq.gz.fastq
+scontrol_41047103.txt  SRR6805884.tiny.fastq.gz
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_4.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mkdir *.fastq unzipped_fastq
+mkdir: cannot create directory ‘SRR6805880.tiny.fastq.gz.fastq’: File exists
+mkdir: cannot create directory ‘SRR6805881.tiny.fastq.gz.fastq’: File exists
+mkdir: cannot create directory ‘SRR6805882.tiny.fastq.gz.fastq’: File exists
+mkdir: cannot create directory ‘SRR6805883.tiny.fastq.gz.fastq’: File exists
+mkdir: cannot create directory ‘SRR6805884.tiny.fastq.gz.fastq’: File exists
+mkdir: cannot create directory ‘SRR6805885.tiny.fastq.gz.fastq’: File exists
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error   bash_output                     SRR6805882.tiny.fastq.gz.fastq  unzip_2.bash
+41047242.output  scontrol_41047103.txt           SRR6805883.tiny.fastq.gz        unzip_3.bash
+41047457.error   scontrol_41047242.txt           SRR6805883.tiny.fastq.gz.fastq  unzip_4.bash
+41047457.output  SRR6805880.tiny.fastq.gz        SRR6805884.tiny.fastq.gz        unzip.bash
+41047499.error   SRR6805880.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq  unzipped_fastq
+41047499.output  SRR6805881.tiny.fastq.gz        SRR6805885.tiny.fastq.gz
+41047655.error   SRR6805881.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+41047655.output  SRR6805882.tiny.fastq.gz        test_unzipped
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls unzipped_fastq/
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ cd unzipped_fastq/
+[hudson.ka@c2000 unzipped_fastq]$ ls
+[hudson.ka@c2000 unzipped_fastq]$ cd ..
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ rm -i unzipped_fastq/
+rm: cannot remove ‘unzipped_fastq/’: Is a directory
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls unzipped_fastq/
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ rm -ir unzipped_fastq/
+rm: remove directory ‘unzipped_fastq/’? Y
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error         scontrol_41047242.txt           SRR6805884.tiny.fastq.gz.fastq
+41047242.output        SRR6805880.tiny.fastq.gz        SRR6805885.tiny.fastq.gz
+41047457.error         SRR6805880.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+41047457.output        SRR6805881.tiny.fastq.gz        test_unzipped
+41047499.error         SRR6805881.tiny.fastq.gz.fastq  unzip_2.bash
+41047499.output        SRR6805882.tiny.fastq.gz        unzip_3.bash
+41047655.error         SRR6805882.tiny.fastq.gz.fastq  unzip_4.bash
+41047655.output        SRR6805883.tiny.fastq.gz        unzip.bash
+bash_output            SRR6805883.tiny.fastq.gz.fastq
+scontrol_41047103.txt  SRR6805884.tiny.fastq.gz
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mv *.fastq unzipped_fastq
+mv: target ‘unzipped_fastq’ is not a directory
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mkdir unzipped_fastq
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error   bash_output                     SRR6805882.tiny.fastq.gz.fastq  unzip_2.bash
+41047242.output  scontrol_41047103.txt           SRR6805883.tiny.fastq.gz        unzip_3.bash
+41047457.error   scontrol_41047242.txt           SRR6805883.tiny.fastq.gz.fastq  unzip_4.bash
+41047457.output  SRR6805880.tiny.fastq.gz        SRR6805884.tiny.fastq.gz        unzip.bash
+41047499.error   SRR6805880.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq  unzipped_fastq
+41047499.output  SRR6805881.tiny.fastq.gz        SRR6805885.tiny.fastq.gz
+41047655.error   SRR6805881.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+41047655.output  SRR6805882.tiny.fastq.gz        test_unzipped
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mv *.fastq unzipped_fastq/
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error   41047655.error            SRR6805881.tiny.fastq.gz  unzip_2.bash
+41047242.output  41047655.output           SRR6805882.tiny.fastq.gz  unzip_3.bash
+41047457.error   bash_output               SRR6805883.tiny.fastq.gz  unzip_4.bash
+41047457.output  scontrol_41047103.txt     SRR6805884.tiny.fastq.gz  unzip.bash
+41047499.error   scontrol_41047242.txt     SRR6805885.tiny.fastq.gz  unzipped_fastq
+41047499.output  SRR6805880.tiny.fastq.gz  test_unzipped
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls unzipped_fastq/
+SRR6805880.tiny.fastq.gz.fastq  SRR6805882.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq
+SRR6805881.tiny.fastq.gz.fastq  SRR6805883.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls unzipped_fastq/
+SRR6805880.tiny.fastq.gz.fastq  SRR6805882.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq
+SRR6805881.tiny.fastq.gz.fastq  SRR6805883.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ rm -ir unzipped_fastq/
+rm: descend into directory ‘unzipped_fastq/’? Y
+rm: remove regular empty file ‘unzipped_fastq/SRR6805880.tiny.fastq.gz.fastq’? Y
+rm: remove regular empty file ‘unzipped_fastq/SRR6805881.tiny.fastq.gz.fastq’? Y
+rm: remove regular empty file ‘unzipped_fastq/SRR6805882.tiny.fastq.gz.fastq’? Y
+rm: remove regular empty file ‘unzipped_fastq/SRR6805883.tiny.fastq.gz.fastq’? Y
+rm: remove regular empty file ‘unzipped_fastq/SRR6805884.tiny.fastq.gz.fastq’? Y
+rm: remove regular empty file ‘unzipped_fastq/SRR6805885.tiny.fastq.gz.fastq’? Y
+rm: remove directory ‘unzipped_fastq/’? Y
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error   41047655.error            SRR6805881.tiny.fastq.gz  unzip_2.bash
+41047242.output  41047655.output           SRR6805882.tiny.fastq.gz  unzip_3.bash
+41047457.error   bash_output               SRR6805883.tiny.fastq.gz  unzip_4.bash
+41047457.output  scontrol_41047103.txt     SRR6805884.tiny.fastq.gz  unzip.bash
+41047499.error   scontrol_41047242.txt     SRR6805885.tiny.fastq.gz
+41047499.output  SRR6805880.tiny.fastq.gz  test_unzipped
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mv unzip_4.bash unzip_5_newdir.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error   41047655.error            SRR6805881.tiny.fastq.gz  unzip_2.bash
+41047242.output  41047655.output           SRR6805882.tiny.fastq.gz  unzip_3.bash
+41047457.error   bash_output               SRR6805883.tiny.fastq.gz  unzip_5_newdir.bash
+41047457.output  scontrol_41047103.txt     SRR6805884.tiny.fastq.gz  unzip.bash
+41047499.error   scontrol_41047242.txt     SRR6805885.tiny.fastq.gz
+41047499.output  SRR6805880.tiny.fastq.gz  test_unzipped
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_5_newdir.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error   41047655.error            SRR6805881.tiny.fastq.gz  unzip_2.bash
+41047242.output  41047655.output           SRR6805882.tiny.fastq.gz  unzip_3.bash
+41047457.error   bash_output               SRR6805883.tiny.fastq.gz  unzip_5_newdir.bash
+41047457.output  scontrol_41047103.txt     SRR6805884.tiny.fastq.gz  unzip.bash
+41047499.error   scontrol_41047242.txt     SRR6805885.tiny.fastq.gz
+41047499.output  SRR6805880.tiny.fastq.gz  test_unzipped
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_5_newdir.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ sbatch unzip_5_newdir.bash
+Submitted batch job 41047877
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error   41047655.output           SRR6805881.tiny.fastq.gz  unzip_3.bash
+41047242.output  41047877.error            SRR6805882.tiny.fastq.gz  unzip_5_newdir.bash
+41047457.error   41047877.output           SRR6805883.tiny.fastq.gz  unzip.bash
+41047457.output  bash_output               SRR6805884.tiny.fastq.gz  unzipped_fastq
+41047499.error   scontrol_41047103.txt     SRR6805885.tiny.fastq.gz
+41047499.output  scontrol_41047242.txt     test_unzipped
+41047655.error   SRR6805880.tiny.fastq.gz  unzip_2.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls unzipped_fastq/
+SRR6805880.tiny.fastq.gz.fastq  SRR6805882.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq
+SRR6805881.tiny.fastq.gz.fastq  SRR6805883.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_5_newdir.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ cd unzipped_fastq/
+[hudson.ka@c2000 unzipped_fastq]$ ls
+SRR6805880.tiny.fastq.gz.fastq  SRR6805882.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq
+SRR6805881.tiny.fastq.gz.fastq  SRR6805883.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+[hudson.ka@c2000 unzipped_fastq]$ nano SRR6805880.tiny.fastq.gz.fastq
+[hudson.ka@c2000 unzipped_fastq]$ nano SRR6805880.tiny.fastq.gz.fastq
+[hudson.ka@c2000 unzipped_fastq]$ nano SRR6805881.tiny.fastq.gz.fastq
+[hudson.ka@c2000 unzipped_fastq]$ cd ..
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ gunzip -c SRR6805880.tiny.fastq.gz > SRR6805880.tiny.f                                                                          astq
+
+gzip: SRR6805880.tiny.fastq.gz: unexpected end of file
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error   41047655.output        SRR6805880.tiny.fastq.gz  unzip_2.bash
+41047242.output  41047877.error         SRR6805881.tiny.fastq.gz  unzip_3.bash
+41047457.error   41047877.output        SRR6805882.tiny.fastq.gz  unzip_5_newdir.bash
+41047457.output  bash_output            SRR6805883.tiny.fastq.gz  unzip.bash
+41047499.error   scontrol_41047103.txt  SRR6805884.tiny.fastq.gz  unzipped_fastq
+41047499.output  scontrol_41047242.txt  SRR6805885.tiny.fastq.gz
+41047655.error   SRR6805880.tiny.fastq  test_unzipped
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano SRR6805880.tiny.fastq
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ gunzip -c SRR6805880.tiny.fastq.gz > test_unzip.tiny.f                                                                          astq
+
+gzip: SRR6805880.tiny.fastq.gz: unexpected end of file
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano SRR6805880.tiny.fastq.gz
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ cd ../fastq_work_wk6_20240221
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ ls
+41047987.error         SRR6805880.tiny.fastq.gz  SRR6805885.tiny.fastq.gz  unzip.bash
+41047987.output        SRR6805881.tiny.fastq.gz  test_unzipped             unzipped_fastq
+bash_output            SRR6805882.tiny.fastq.gz  unzip_2.bash
+scontrol_41047103.txt  SRR6805883.tiny.fastq.gz  unzip_3.bash
+scontrol_41047242.txt  SRR6805884.tiny.fastq.gz  unzip_5_newdir.bash
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ module load OpenJDK/19.0.1
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ module load fastqc/0.11.9
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06   2) OpenJDK/19.0.1         3) fastqc/0.11.9
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ ls
+41047987.error         SRR6805880.tiny.fastq.gz  SRR6805885.tiny.fastq.gz  unzip.bash
+41047987.output        SRR6805881.tiny.fastq.gz  test_unzipped             unzipped_fastq
+bash_output            SRR6805882.tiny.fastq.gz  unzip_2.bash
+scontrol_41047103.txt  SRR6805883.tiny.fastq.gz  unzip_3.bash
+scontrol_41047242.txt  SRR6805884.tiny.fastq.gz  unzip_5_newdir.bash
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ nano SRR6805880.tiny.fastq.gz
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ fastqc SRR6805880.tiny.fastq.gz
+Started analysis of SRR6805880.tiny.fastq.gz
+Approx 100% complete for SRR6805880.tiny.fastq.gz
+Analysis complete for SRR6805880.tiny.fastq.gz
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ ls
+41047987.error               SRR6805880.tiny.fastq.gz  unzip_2.bash
+41047987.output              SRR6805881.tiny.fastq.gz  unzip_3.bash
+bash_output                  SRR6805882.tiny.fastq.gz  unzip_5_newdir.bash
+scontrol_41047103.txt        SRR6805883.tiny.fastq.gz  unzip.bash
+scontrol_41047242.txt        SRR6805884.tiny.fastq.gz  unzipped_fastq
+SRR6805880.tiny_fastqc.html  SRR6805885.tiny.fastq.gz
+SRR6805880.tiny_fastqc.zip   test_unzipped
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ pwd
+/courses/BIOL3411.202430/students/hudson.ka/class_examples/fastq_work_wk6_20240221
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ open SRR6805880.tiny_fastqc.html
+Couldn't get a file descriptor referring to the console
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ client_loop: send disconnect: Connection reset by peer
+                                                                                                ?
+
+ ? 21/02/2024 ? ? 10:31.04 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.edu
+hudson.ka@login.discovery.neu.edu's password:
+hudson.ka@login.discovery.neu.edu's password:
+Last failed login: Wed Feb 21 12:26:18 EST 2024 from 10.110.210.130 on ssh:notty
+There was 1 failed login attempt since the last successful login.
+Last login: Wed Feb  7 16:09:35 2024 from 10.110.26.70
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+[hudson.ka@login-01 ~]$ cd /courses/BIOL3411.202430/students/hudson.ka/class_examples/fastq_work_                                                                          wk6_20240221
+[hudson.ka@login-01 fastq_work_wk6_20240221]$ ls
+41047987.error               SRR6805880.tiny.fastq.gz  unzip_2.bash
+41047987.output              SRR6805881.tiny.fastq.gz  unzip_3.bash
+bash_output                  SRR6805882.tiny.fastq.gz  unzip_5_newdir.bash
+scontrol_41047103.txt        SRR6805883.tiny.fastq.gz  unzip.bash
+scontrol_41047242.txt        SRR6805884.tiny.fastq.gz  unzipped_fastq
+SRR6805880.tiny_fastqc.html  SRR6805885.tiny.fastq.gz
+SRR6805880.tiny_fastqc.zip   test_unzipped
+[hudson.ka@login-01 fastq_work_wk6_20240221]$ srun --pty /bin/bash
+srun: job 41053943 queued and waiting for resources
+srun: job 41053943 has been allocated resources
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls
+41047987.error               SRR6805880.tiny.fastq.gz  unzip_2.bash
+41047987.output              SRR6805881.tiny.fastq.gz  unzip_3.bash
+bash_output                  SRR6805882.tiny.fastq.gz  unzip_5_newdir.bash
+scontrol_41047103.txt        SRR6805883.tiny.fastq.gz  unzip.bash
+scontrol_41047242.txt        SRR6805884.tiny.fastq.gz  unzipped_fastq
+SRR6805880.tiny_fastqc.html  SRR6805885.tiny.fastq.gz
+SRR6805880.tiny_fastqc.zip   test_unzipped
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ cp unzip_5_newdir.bash generate_qc_reports.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls
+41047987.error               SRR6805880.tiny_fastqc.zip  test_unzipped
+41047987.output              SRR6805880.tiny.fastq.gz    unzip_2.bash
+bash_output                  SRR6805881.tiny.fastq.gz    unzip_3.bash
+generate_qc_reports.bash     SRR6805882.tiny.fastq.gz    unzip_5_newdir.bash
+scontrol_41047103.txt        SRR6805883.tiny.fastq.gz    unzip.bash
+scontrol_41047242.txt        SRR6805884.tiny.fastq.gz    unzipped_fastq
+SRR6805880.tiny_fastqc.html  SRR6805885.tiny.fastq.gz
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano generate_qc_reports.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ pwd
+/courses/BIOL3411.202430/students/hudson.ka/class_examples/fastq_work_wk6_20240221
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano generate_qc_reports.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano generate_qc_reports.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano generate_qc_reports.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano generate_qc_reports.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano SRR6805880.tiny.fastq.gz
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano SRR6805881.tiny.fastq.gz
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano unzip_5_newdir.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano generate_qc_reports.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano generate_qc_reports.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ sbatch generate_qc_reports.bash
+Submitted batch job 41054030
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls
+41047987.error            SRR6805880.tiny_fastqc.zip  SRR6805884.tiny.fastq.gz
+41047987.output           SRR6805880.tiny.fastq.gz    SRR6805885.tiny_fastqc.zip
+41054030.error            SRR6805881.tiny_fastqc.zip  SRR6805885.tiny.fastq.gz
+41054030.output           SRR6805881.tiny.fastq.gz    test_unzipped
+bash_output               SRR6805882.tiny_fastqc.zip  unzip_2.bash
+generate_qc_reports.bash  SRR6805882.tiny.fastq.gz    unzip_3.bash
+html_qc_reports           SRR6805883.tiny_fastqc.zip  unzip_5_newdir.bash
+scontrol_41047103.txt     SRR6805883.tiny.fastq.gz    unzip.bash
+scontrol_41047242.txt     SRR6805884.tiny_fastqc.zip  unzipped_fastq
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls html_qc_reports/
+SRR6805880.tiny_fastqc.html  SRR6805882.tiny_fastqc.html  SRR6805884.tiny_fastqc.html
+SRR6805881.tiny_fastqc.html  SRR6805883.tiny_fastqc.html  SRR6805885.tiny_fastqc.html
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ cd html_qc_reports/
+[hudson.ka@c0279 html_qc_reports]$ cd -
+/courses/BIOL3411.202430/students/hudson.ka/class_examples/fastq_work_wk6_20240221
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls
+41047987.error            SRR6805880.tiny_fastqc.zip  SRR6805884.tiny.fastq.gz
+41047987.output           SRR6805880.tiny.fastq.gz    SRR6805885.tiny_fastqc.zip
+41054030.error            SRR6805881.tiny_fastqc.zip  SRR6805885.tiny.fastq.gz
+41054030.output           SRR6805881.tiny.fastq.gz    test_unzipped
+bash_output               SRR6805882.tiny_fastqc.zip  unzip_2.bash
+generate_qc_reports.bash  SRR6805882.tiny.fastq.gz    unzip_3.bash
+html_qc_reports           SRR6805883.tiny_fastqc.zip  unzip_5_newdir.bash
+scontrol_41047103.txt     SRR6805883.tiny.fastq.gz    unzip.bash
+scontrol_41047242.txt     SRR6805884.tiny_fastqc.zip  unzipped_fastq
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano generate_qc_reports.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ mkdir fastqc_zips
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls
+41047987.error            SRR6805880.tiny_fastqc.zip  SRR6805885.tiny_fastqc.zip
+41047987.output           SRR6805880.tiny.fastq.gz    SRR6805885.tiny.fastq.gz
+41054030.error            SRR6805881.tiny_fastqc.zip  test_unzipped
+41054030.output           SRR6805881.tiny.fastq.gz    unzip_2.bash
+bash_output               SRR6805882.tiny_fastqc.zip  unzip_3.bash
+fastqc_zips               SRR6805882.tiny.fastq.gz    unzip_5_newdir.bash
+generate_qc_reports.bash  SRR6805883.tiny_fastqc.zip  unzip.bash
+html_qc_reports           SRR6805883.tiny.fastq.gz    unzipped_fastq
+scontrol_41047103.txt     SRR6805884.tiny_fastqc.zip
+scontrol_41047242.txt     SRR6805884.tiny.fastq.gz
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ mv *fastqc.zip fastqc_zips/
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls
+41047987.error   generate_qc_reports.bash  SRR6805882.tiny.fastq.gz  unzip_3.bash
+41047987.output  html_qc_reports           SRR6805883.tiny.fastq.gz  unzip_5_newdir.bash
+41054030.error   scontrol_41047103.txt     SRR6805884.tiny.fastq.gz  unzip.bash
+41054030.output  scontrol_41047242.txt     SRR6805885.tiny.fastq.gz  unzipped_fastq
+bash_output      SRR6805880.tiny.fastq.gz  test_unzipped
+fastqc_zips      SRR6805881.tiny.fastq.gz  unzip_2.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ mv html_qc_reports/ fastqc_html_reports
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls
+41047987.error       fastqc_zips               SRR6805882.tiny.fastq.gz  unzip_3.bash
+41047987.output      generate_qc_reports.bash  SRR6805883.tiny.fastq.gz  unzip_5_newdir.bash
+41054030.error       scontrol_41047103.txt     SRR6805884.tiny.fastq.gz  unzip.bash
+41054030.output      scontrol_41047242.txt     SRR6805885.tiny.fastq.gz  unzipped_fastq
+bash_output          SRR6805880.tiny.fastq.gz  test_unzipped
+fastqc_html_reports  SRR6805881.tiny.fastq.gz  unzip_2.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls fastqc_html_reports/
+SRR6805880.tiny_fastqc.html  SRR6805882.tiny_fastqc.html  SRR6805884.tiny_fastqc.html
+SRR6805881.tiny_fastqc.html  SRR6805883.tiny_fastqc.html  SRR6805885.tiny_fastqc.html
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls
+41047987.error       fastqc_zips               SRR6805882.tiny.fastq.gz  unzip_3.bash
+41047987.output      generate_qc_reports.bash  SRR6805883.tiny.fastq.gz  unzip_5_newdir.bash
+41054030.error       scontrol_41047103.txt     SRR6805884.tiny.fastq.gz  unzip.bash
+41054030.output      scontrol_41047242.txt     SRR6805885.tiny.fastq.gz  unzipped_fastq
+bash_output          SRR6805880.tiny.fastq.gz  test_unzipped
+fastqc_html_reports  SRR6805881.tiny.fastq.gz  unzip_2.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ mv unzip_5_newdir.bash unzip_into_new_dir.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls
+41047987.error       fastqc_zips               SRR6805882.tiny.fastq.gz  unzip_3.bash
+41047987.output      generate_qc_reports.bash  SRR6805883.tiny.fastq.gz  unzip.bash
+41054030.error       scontrol_41047103.txt     SRR6805884.tiny.fastq.gz  unzip_into_new_dir.bash
+41054030.output      scontrol_41047242.txt     SRR6805885.tiny.fastq.gz  unzipped_fastq
+bash_output          SRR6805880.tiny.fastq.gz  test_unzipped
+fastqc_html_reports  SRR6805881.tiny.fastq.gz  unzip_2.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano unzip_into_new_dir.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ cd /courses/BIOL3411.202430/shared/
+[hudson.ka@c0279 shared]$ ls
+angsd_env     C_ele_chr_III.fasta  dataformat  Day_data     SRR6805880.tiny.fastq
+bcftools_env  cutadapt_env         datasets    Marine_data
+[hudson.ka@c0279 shared]$ cp -r Day_data/ /courses/BIOL3411.202430/students/hudson.ka/class_examp                                                                          les/
+[hudson.ka@c0279 shared]$ cd -
+/courses/BIOL3411.202430/students/hudson.ka/class_examples/fastq_work_wk6_20240221
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ cd ..
+[hudson.ka@c0279 class_examples]$ ls
+computing_node_intro_wk4  dna_name_intro_wk1       fastq_work_wk6_20240221
+Day_data                  fastq_work_wk6_20240214  unit2_intro_exercise
+[hudson.ka@c0279 class_examples]$ cd Day_data/
+[hudson.ka@c0279 Day_data]$ ls
+10_S1_L001_R1_001.fastq.gz  15_S1_L001_R1_001.fastq.gz  5_S1_L001_R1_001.fastq.gz
+10_S1_L001_R2_001.fastq.gz  15_S1_L001_R2_001.fastq.gz  5_S1_L001_R2_001.fastq.gz
+11_S1_L001_R1_001.fastq.gz  1_S1_L001_R1_001.fastq.gz   6_S1_L001_R1_001.fastq.gz
+11_S1_L001_R2_001.fastq.gz  1_S1_L001_R2_001.fastq.gz   6_S1_L001_R2_001.fastq.gz
+12_S1_L001_R1_001.fastq.gz  2_S1_L001_R1_001.fastq.gz   7_S1_L001_R1_001.fastq.gz
+12_S1_L001_R2_001.fastq.gz  2_S1_L001_R2_001.fastq.gz   7_S1_L001_R2_001.fastq.gz
+13_S1_L001_R1_001.fastq.gz  3_S1_L001_R1_001.fastq.gz   8_S1_L001_R1_001.fastq.gz
+13_S1_L001_R2_001.fastq.gz  3_S1_L001_R2_001.fastq.gz   8_S1_L001_R2_001.fastq.gz
+14_S1_L001_R1_001.fastq.gz  4_S1_L001_R1_001.fastq.gz   9_S1_L001_R1_001.fastq.gz
+14_S1_L001_R2_001.fastq.gz  4_S1_L001_R2_001.fastq.gz   9_S1_L001_R2_001.fastq.gz
+[hudson.ka@c0279 Day_data]$  cp ../fastq_work_wk6_20240221/unzip_into_new_dir.bash unzip_into_new                                                                          _dir.bash
+[hudson.ka@c0279 Day_data]$ ls
+10_S1_L001_R1_001.fastq.gz  15_S1_L001_R2_001.fastq.gz  6_S1_L001_R1_001.fastq.gz
+10_S1_L001_R2_001.fastq.gz  1_S1_L001_R1_001.fastq.gz   6_S1_L001_R2_001.fastq.gz
+11_S1_L001_R1_001.fastq.gz  1_S1_L001_R2_001.fastq.gz   7_S1_L001_R1_001.fastq.gz
+11_S1_L001_R2_001.fastq.gz  2_S1_L001_R1_001.fastq.gz   7_S1_L001_R2_001.fastq.gz
+12_S1_L001_R1_001.fastq.gz  2_S1_L001_R2_001.fastq.gz   8_S1_L001_R1_001.fastq.gz
+12_S1_L001_R2_001.fastq.gz  3_S1_L001_R1_001.fastq.gz   8_S1_L001_R2_001.fastq.gz
+13_S1_L001_R1_001.fastq.gz  3_S1_L001_R2_001.fastq.gz   9_S1_L001_R1_001.fastq.gz
+13_S1_L001_R2_001.fastq.gz  4_S1_L001_R1_001.fastq.gz   9_S1_L001_R2_001.fastq.gz
+14_S1_L001_R1_001.fastq.gz  4_S1_L001_R2_001.fastq.gz   unzip_into_new_dir.bash
+14_S1_L001_R2_001.fastq.gz  5_S1_L001_R1_001.fastq.gz
+15_S1_L001_R1_001.fastq.gz  5_S1_L001_R2_001.fastq.gz
+[hudson.ka@c0279 Day_data]$ pwd
+/courses/BIOL3411.202430/students/hudson.ka/class_examples/Day_data
+[hudson.ka@c0279 Day_data]$ nano unzip_into_new_dir.bash
+[hudson.ka@c0279 Day_data]$ nano unzip_into_new_dir.bash
+[hudson.ka@c0279 Day_data]$ nano 10_S1_L001_R1_001.fastq.gz
+[hudson.ka@c0279 Day_data]$ head 10_S1_L001_R1_001.fastq.gz
+¦,¦¦¦¦a¦Q#?¦¦¦_¦¦¦¦')¦:¦¦¦O¦¦I2I¦r¦¦?¦¦¦¦?¦¦o?/¦/¦¦¦¦?¦¦¦u8<¦:¦]¦¦:<_N¦¦¦?¦¦¦¦¦¦x¦¦¦¦¦w¦¦¦¦¦¦¦¦~¦                                                                          ~||¦_K¦?¦]?>>¦¦M¦¦¦¦k¦¦¦¦¦¦7¦¦¦O\¦_[?¦¦¦g¦¦7&gs9¦¦¦/¦¦N¦¦¦¦¦¦¦¦¦[kl,=U¦¦Ua¦¦:¦3k?¦Z/¦¦}¦¦¦x¦]¦¦¦}¦                                                                          ¦¦+B¦¦¦¦'¦)¦r-F¦¦!¦¦¦/¦?w¦¦k\[¦¦t¦g\¦¦yy¦m¦{¦¦¦¦-¦¦(<ql;¦;¦^¦:o¦j¦T¦¦7¦!¦o¦¦¦¦¦?e)¦¦}¦¦¦W=_¦?-¦B¦                                                                          ¦?-¦¦87Yb¦¦¦¦¦x^_O¦]¦¦+¦¦}¦\=¦¦k¦¦+¦a¦+<¦¦¦¦¦k/]¦*¦¦
+¦¦¦8?¦@=¦¦'¦¦¦B¦¦¦¦¦¦¦¦¦¦Wg¦?#¦¦4¦||=¦¦¦¦~
+        {I-¦
+            A¦uj¦¦
+w
+ ¦(¦!¦p¦du      ¦¦D¦¦5¦;¦]S8¦¦¦
+?¦>_¦¦¦¦qp¦¦Y¦0ePO$¦J!¦¦>¦¦W¦¦+¦=MBi[¦¦¦:2¦s¦¦)¦?¦/¦6¦¦¦k¦¦¦¦f¦pk?w¦d?j¦
+¦+@WE>¦m?¦``¦R¦,z¦R¦¦U¦¦? M¦]i¦¦?¦¦Z;¦¦¦4¦¦¦¦x¦6¦¦¦KN¦¦¦d¦¦?¦a¦~¦¦`¦P¦l¦A¦4
+L¦¦\*.¦N¦#¦[¦o¦=(¦[?¦a¦¦x2¦
+                           V¦¦¦w ¦¦¦¦D¦&¦rV¦u¦x¦l¦iK¦¦¦¦"p?¦?¦¦
+                                                               8,[?¦¦b¦¦¦:uf¦:R6q¦¦)¦nm
+¦¦¦\¦¦z¦"?6¦&q¦U¦¦j7|¦¦¦/¦¦E¦=¦_¦¦YW¦¦vem¦_[¦W¦$OI{V¦V¦h¦G¦¦/mp¦qc?¦J*?u¦¦T
+5¦¦¦vX¦-¦VQ%¦¦3¦¦3¦d¦x¦(¦¦¦?¦0¦C¦¦¦¦¦?¦¦Bi¦¦o/¦o#¦Tc¦Z?+l)X¦
+¦¦¦¦    ¦¦9\¦H¦&¦¦Pu¦¦
+                      ¦¦¦"¦¦¦?V7¦¦¦6¦¦7¦¦¦P¦6hS¦¦¦¦|¦¦¦¦c¦f¦Xbr¦I¦9¦¦¦\¦¦
+H?¦G;¦¦vs\¦¦¦@¦¦o8¦f¦i¦pam¦o¦   F?D¦?¦´¦?j¦¦tc¦
+¦6¦¦Nz¦¦?E¦¦[?¦¦=¦¦¦¦¦t¦R-¦¦¦x¦¦O?F¦+¦¦
+¦B}¦N¦x¦¦¦¦%¦¦¦¦@)w¦¦¦¦¦¦¦¦~6¦<J¦m ¦J¦¦¦?¦¦¦M¦¦%X¦d¦=¦
+o¦¦¦?¦m¦?¦¦¦¦¦¦¦/¦[I ¦¦¦
+¦?¦,X¦W`?2-¦¦?¦Efu8A¦¦¦¦¦9b¦R^¦¦^^¦¦¦^¦|k9¦¦¦D¦P)&¦[¦n¦tm?6¦¦¦]8¦T¦N¦¦G¦O¦,e¦dV:¦!|rQ$E¦¦n¦¦¦.¦9¦                                                                          ~¦a¦J=¦C¦¦g=U¦¦V]`;¦F¦?x¦e¦¦m¦¦¦#¦?¦¦<K  &!r¦D¦P,TG¦¦!3¦¦"¦$5¦¦L2¦??!¦n*¦Oh(%)?¦]+¦?¦¦O?¦¦¦¦B¦¦¦¦¦                                                                          ?¦`I¦0¦B¦~Xi<Tl3¦6¦¦?&)¦U:¦¦¦5¦K¦*¦¦¦33sj¦6¦¦Zl¦Cb¦~¦0l?
+?¦¦C¦¦4¦:R9¦x¦fJ¦¦¦¦¦~¦¦Y¦r¦Hr*¦r¦¦
+¦S¦(¦¦¦I¦¦cQiN¦¦-¦s¦¦E¦g]T¦!?¦b¦¦P?¦`wT¦m¦}¦:?¦¦¦(¦ad:¦B¦¦¦¦¦R
+[hudson.ka@c0279 Day_data]$ nano unzip_into_new_dir.bash
+[hudson.ka@c0279 Day_data]$ sbatch unzip_into_new_dir.bash
+Submitted batch job 41054315
+[hudson.ka@c0279 Day_data]$ squeue --me
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41054315     short biol3411 hudson.k PD       0:00      1 (Priority)
+          41053943     short     bash hudson.k  R      36:14      1 c0279
+[hudson.ka@c0279 Day_data]$ squeue --me
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41054315     short biol3411 hudson.k  R       2:37      1 c2001
+          41053943     short     bash hudson.k  R      39:26      1 c0279
+[hudson.ka@c0279 Day_data]$ squeue --me
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41054315     short biol3411 hudson.k  R       7:28      1 c2001
+          41053943     short     bash hudson.k  R      44:17      1 c0279
+[hudson.ka@c0279 Day_data]$ squeue --me
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41054315     short biol3411 hudson.k  R      10:49      1 c2001
+          41053943     short     bash hudson.k  R      47:38      1 c0279
+[hudson.ka@c0279 Day_data]$ client_loop: send disconnect: Connection reset by peer
+                                                                                                ?
+
+ ? 21/02/2024 ? ? 14:49.15 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.edu
+_ssh: Could not resolve hostname login.discovery.neu.edu: Name or service not known
+                                                                                                ?
+
+ ? 21/02/2024 ? ? 14:49.35 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.edu
+_ssh: Could not resolve hostname login.discovery.neu.edu: Name or service not known
+                                                                                                ?
+
+ ? 21/02/2024 ? ? 14:49.55 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.edu
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Wed Feb 21 13:03:00 2024 from 10.110.210.130
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+[hudson.ka@login-01 ~]$ srun --pty /bin/bash
+srun: job 41056782 queued and waiting for resources
+srun: job 41056782 has been allocated resources
+[hudson.ka@c0279 ~]$ cd /courses/BIOL3411.202430/students/hudson.ka/
+[hudson.ka@c0279 hudson.ka]$ cd class_examples/
+[hudson.ka@c0279 class_examples]$ ls
+computing_node_intro_wk4  dna_name_intro_wk1       fastq_work_wk6_20240221
+Day_data                  fastq_work_wk6_20240214  unit2_intro_exercise
+[hudson.ka@c0279 class_examples]$ cd Day_data/
+[hudson.ka@c0279 Day_data]$ ls
+10_S1_L001_R1_001.fastq.gz  1_S1_L001_R1_001.fastq.gz  6_S1_L001_R1_001.fastq.gz
+10_S1_L001_R2_001.fastq.gz  1_S1_L001_R2_001.fastq.gz  6_S1_L001_R2_001.fastq.gz
+11_S1_L001_R1_001.fastq.gz  2_S1_L001_R1_001.fastq.gz  7_S1_L001_R1_001.fastq.gz
+11_S1_L001_R2_001.fastq.gz  2_S1_L001_R2_001.fastq.gz  7_S1_L001_R2_001.fastq.gz
+12_S1_L001_R1_001.fastq.gz  3_S1_L001_R1_001.fastq.gz  8_S1_L001_R1_001.fastq.gz
+12_S1_L001_R2_001.fastq.gz  3_S1_L001_R2_001.fastq.gz  8_S1_L001_R2_001.fastq.gz
+13_S1_L001_R1_001.fastq.gz  41054315.error             9_S1_L001_R1_001.fastq.gz
+13_S1_L001_R2_001.fastq.gz  41054315.output            9_S1_L001_R2_001.fastq.gz
+14_S1_L001_R1_001.fastq.gz  4_S1_L001_R1_001.fastq.gz  unzip_into_new_dir.bash
+14_S1_L001_R2_001.fastq.gz  4_S1_L001_R2_001.fastq.gz  unzipped_fastq
+15_S1_L001_R1_001.fastq.gz  5_S1_L001_R1_001.fastq.gz
+15_S1_L001_R2_001.fastq.gz  5_S1_L001_R2_001.fastq.gz
+[hudson.ka@c0279 Day_data]$ cd unzipped_fastq/
+[hudson.ka@c0279 unzipped_fastq]$ ls
+10_S1_L001_R1_001.fastq.gz.fastq  2_S1_L001_R2_001.fastq.gz.fastq
+10_S1_L001_R2_001.fastq.gz.fastq  3_S1_L001_R1_001.fastq.gz.fastq
+11_S1_L001_R1_001.fastq.gz.fastq  3_S1_L001_R2_001.fastq.gz.fastq
+11_S1_L001_R2_001.fastq.gz.fastq  4_S1_L001_R1_001.fastq.gz.fastq
+12_S1_L001_R1_001.fastq.gz.fastq  4_S1_L001_R2_001.fastq.gz.fastq
+12_S1_L001_R2_001.fastq.gz.fastq  5_S1_L001_R1_001.fastq.gz.fastq
+13_S1_L001_R1_001.fastq.gz.fastq  5_S1_L001_R2_001.fastq.gz.fastq
+13_S1_L001_R2_001.fastq.gz.fastq  6_S1_L001_R1_001.fastq.gz.fastq
+14_S1_L001_R1_001.fastq.gz.fastq  6_S1_L001_R2_001.fastq.gz.fastq
+14_S1_L001_R2_001.fastq.gz.fastq  7_S1_L001_R1_001.fastq.gz.fastq
+15_S1_L001_R1_001.fastq.gz.fastq  7_S1_L001_R2_001.fastq.gz.fastq
+15_S1_L001_R2_001.fastq.gz.fastq  8_S1_L001_R1_001.fastq.gz.fastq
+1_S1_L001_R1_001.fastq.gz.fastq   8_S1_L001_R2_001.fastq.gz.fastq
+1_S1_L001_R2_001.fastq.gz.fastq   9_S1_L001_R1_001.fastq.gz.fastq
+2_S1_L001_R1_001.fastq.gz.fastq   9_S1_L001_R2_001.fastq.gz.fastq
+[hudson.ka@c0279 unzipped_fastq]$ head -n 6 10_S1_L001_R1_001.fastq.gz.fastq
+@lh00172:133:223LN7LT4:5:1101:4787:1084 1:N:0:AATCCAGC+AACCAGGT
+CNGGAAACTGCCTCGTCATGCGACTGTTCCCCGGGGTCAGGGCCGCTGGTATTTGCTGTAAAGAGGGGCGTTGAGTCCGTCCGACTTCACTGCCCCC                                                                          TTTCAGCCTTTTGGGTCCTGTATCCCAATTCTCAGAGGTCCCGCCGAGATCGG
++
+I#IIIIIIIII99III9IIII9-IIIIII9III9I-IIIIIII-II9IIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9                                                                          IIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIII-IIIIIIII9IIIIIIIII
+@lh00172:133:223LN7LT4:5:1101:7862:1084 1:N:0:AATCCAGC+AACCAGGT
+CNGGAGACGACGTGCAGAAATGGCACCTCGAAAGGGGAAGGAAAAGAAGGAAGAACAGGTCATCAGCCTCGGACCTCAGGTGGCTGAAGGAGAGAAT                                                                          GTATTTGGTGTCTGCAATATCTTTGCATCCTTCAATGACACTTTTGTCCATGT
+[hudson.ka@c0279 unzipped_fastq]$ head -n 6 9_S1_L001_R2_001.fastq.gz.fastq
+@lh00172:133:223LN7LT4:5:1101:15477:1098 2:N:0:AATCCAGC+AACCTCTC
+NTTGTCTGAGGGGTAGAGTTCAACAGTCAACACGTCCAGCGCATTCCAGGATGCAATGCTGACCCCGCCAAAAAGGCAGAGCAGAGCGATCATGGCC                                                                          GACTCACTGTTCCCAAAAGACAGGAAGAAGCAGGAGACACAGGACATCACGCT
++
+#9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIII                                                                          IIIIIIIIIIIIIIIIIIIIIIIIIIII-IIIIIII-IIIIIIII9IIIIIII
+@lh00172:133:223LN7LT4:5:1101:24217:1098 2:N:0:AATCCAGC+AACCTCTC
+NGTGGACTTCGTACTGCTAGGAAGCTCCGTAGTCACCGACGAGACCAGAAGTGGCATGATAAACAGTATAAGAAAGCTCATTTGGGCACAGCCCTAA                                                                          AGGCCAACCCTTTTGGAGGTGCTTCTCATGCAAAAGAAATCGTGCTGGAAAAA
+[hudson.ka@c0279 unzipped_fastq]$ cd ..
+[hudson.ka@c0279 Day_data]$ ls -l
+total 72557352
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2216411777 Feb 21 12:55 10_S1_L001_R1_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2261164011 Feb 21 12:55 10_S1_L001_R2_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2266017592 Feb 21 12:55 11_S1_L001_R1_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2311626760 Feb 21 12:55 11_S1_L001_R2_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2243240246 Feb 21 12:55 12_S1_L001_R1_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2289505196 Feb 21 12:55 12_S1_L001_R2_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2239290723 Feb 21 12:56 13_S1_L001_R1_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2281098759 Feb 21 12:56 13_S1_L001_R2_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 1968640698 Feb 21 12:56 14_S1_L001_R1_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2004239468 Feb 21 12:56 14_S1_L001_R2_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2180667938 Feb 21 12:56 15_S1_L001_R1_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2218149489 Feb 21 12:56 15_S1_L001_R2_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2630505779 Feb 21 12:56 1_S1_L001_R1_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2667919462 Feb 21 12:56 1_S1_L001_R2_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2706460918 Feb 21 12:56 2_S1_L001_R1_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2757544254 Feb 21 12:56 2_S1_L001_R2_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2871633364 Feb 21 12:56 3_S1_L001_R1_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2924180716 Feb 21 12:56 3_S1_L001_R2_001.fastq.gz
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff        137 Feb 21 13:05 41054315.error
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff          0 Feb 21 13:05 41054315.output
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2942110530 Feb 21 12:56 4_S1_L001_R1_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2995163755 Feb 21 12:57 4_S1_L001_R2_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2975459202 Feb 21 12:57 5_S1_L001_R1_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 3023928779 Feb 21 12:57 5_S1_L001_R2_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2519821204 Feb 21 12:57 6_S1_L001_R1_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2564749931 Feb 21 12:57 6_S1_L001_R2_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2850026122 Feb 21 12:57 7_S1_L001_R1_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2895883827 Feb 21 12:57 7_S1_L001_R2_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 1946636064 Feb 21 12:57 8_S1_L001_R1_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 1984313514 Feb 21 12:57 8_S1_L001_R2_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2261152319 Feb 21 12:57 9_S1_L001_R1_001.fastq.gz
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff 2301176138 Feb 21 12:57 9_S1_L001_R2_001.fastq.gz
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff        485 Feb 21 13:01 unzip_into_new_dir.bash
+drwxrws---+ 2 hudson.ka BIOL3411.202430-staff       4096 Feb 21 13:54 unzipped_fastq
+[hudson.ka@c0279 Day_data]$ nano 41054315.error
+[hudson.ka@c0279 Day_data]$ client_loop: send disconnect: Connection reset by peer
+                                                                                                         ?
+
+ ? 21/02/2024 ? ? 19:49.19 ? ? /home/mobaxterm ?
