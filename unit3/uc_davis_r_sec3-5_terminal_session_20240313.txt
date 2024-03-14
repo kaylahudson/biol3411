@@ -1,0 +1,978 @@
+    +----------------------------------------------------------------------+
+    ¦                 • MobaXterm Personal Edition v23.6 •                 ¦
+    ¦               (SSH client, X server and network tools)               ¦
+    ¦                                                                      ¦
+    ¦ ? Linux distribution: ?Default                                      ¦
+    ¦ ? Windows drives are mounted into /mnt path (by default)             ¦
+    ¦ ? Your DISPLAY is set to 10.0.0.93:0.0                               ¦
+    ¦ ? For more info, ctrl+click on help or visit our website.            ¦
+    +----------------------------------------------------------------------+
+
+Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.146.1-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+This message is shown once a day. To disable it please create the
+/home/kunix/.hushlogin file.
+kunix@DESKTOP-3LNCP2A:~$ ssh hudson.ka@login.discovery.neu.edu
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Sat Mar  9 13:51:35 2024 from 10.110.214.54
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+we believe connectivity to the datacenter to be nominal, as of
+tuesday, 11 march 2024 at 1500ET.
+
+thank you for your patience
+&& happy computing !
+
+[hudson.ka@login-00 ~]$ srun --pty /bin/bash
+srun: job 41383184 queued and waiting for resources
+srun: job 41383184 has been allocated resources
+[hudson.ka@c3085 ~]$ cd /courses/BIOL3411.202430/students/hudson.ka/unit3/
+[hudson.ka@c3085 unit3]$ ls
+MarineGenomics  intro_R  week5_semester.tar.gz
+[hudson.ka@c3085 unit3]$ cd intro_R/
+[hudson.ka@c3085 intro_R]$ ls
+birthweight.csv  new_birthweight.csv
+[hudson.ka@c3085 intro_R]$ module avail R
+
+------------------------------ /shared/centos7/modulefiles -------------------------------
+R/3.5.1 R/3.5.3 R/3.6.1 R/3.6.2 R/3.6.3 R/4.0.2 R/4.0.3 R/4.2.0
+[hudson.ka@c3085 intro_R]$ module load R/4.2.0
+[hudson.ka@c3085 intro_R]$ module lsit
+cmdTrace.c(713):ERROR:104: 'lsit' is an unrecognized subcommand
+cmdModule.c(411):ERROR:104: 'lsit' is an unrecognized subcommand
+[hudson.ka@c3085 intro_R]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06   2) R/4.2.0
+[hudson.ka@c3085 intro_R]$ R
+
+R version 4.2.0 (2022-04-22) -- "Vigorous Calisthenics"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C"
+2: Setting LC_COLLATE failed, using "C"
+3: Setting LC_TIME failed, using "C"
+4: Setting LC_MESSAGES failed, using "C"
+5: Setting LC_MONETARY failed, using "C"
+6: Setting LC_PAPER failed, using "C"
+7: Setting LC_MEASUREMENT failed, using "C"
+> setwd("/courses/BIOL3411.202430/students/hudson.ka/unit3/intro_R/")
+> birthweight <- read.csv("birthweight.csv")
+> head(birthweight, 3)
+    ID birth.date    location length birthweight head.circumference
+1 1107  1/25/1967     General     52        3.23                 36
+2  697   2/6/1967 Silver Hill     48        3.03                 35
+3 1683  2/14/1967 Silver Hill     53        3.35                 33
+  weeks.gestation smoker maternal.age maternal.cigarettes maternal.height
+1              38     no           31                   0             164
+2              39     no           27                   0             162
+3              41     no           27                   0             164
+  maternal.prepregnant.weight paternal.age paternal.education
+1                          57           NA                 NA
+2                          62           27                 14
+3                          62           37                 14
+  paternal.cigarettes paternal.height low.birthweight geriatric.pregnancy
+1                  NA              NA               0               FALSE
+2                   0             178               0               FALSE
+3                   0             170               0               FALSE
+> colnames(birthweight)
+ [1] "ID"                          "birth.date"
+ [3] "location"                    "length"
+ [5] "birthweight"                 "head.circumference"
+ [7] "weeks.gestation"             "smoker"
+ [9] "maternal.age"                "maternal.cigarettes"
+[11] "maternal.height"             "maternal.prepregnant.weight"
+[13] "paternal.age"                "paternal.education"
+[15] "paternal.cigarettes"         "paternal.height"
+[17] "low.birthweight"             "geriatric.pregnancy"
+> birthweight$low.birthweight
+ [1] 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 1
+[39] 0 0 0 0
+> low_birthweight <- birthweight[birthweight$low.birthweight == 1]
+Error in `[.data.frame`(birthweight, birthweight$low.birthweight == 1) :
+  undefined columns selected
+> low_birthweight <- birthweight[, birthweight$low.birthweight == 1]
+Error in `[.data.frame`(birthweight, , birthweight$low.birthweight ==  :
+  undefined columns selected
+> birthweight$low.birthweight == 1
+ [1] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+[13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE
+[25] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE
+[37]  TRUE  TRUE FALSE FALSE FALSE FALSE
+> birthweight[birthweight$low.birthweight == 1, ]
+     ID birth.date    location length birthweight head.circumference
+6   569  3/23/1967    Memorial     50        2.51                 35
+22  516   1/8/1968 Silver Hill     47        2.66                 33
+28 1363   4/2/1968     General     48        2.37                 30
+32  300  7/18/1968 Silver Hill     46        2.05                 32
+37  431  9/16/1968 Silver Hill     48        1.92                 30
+38 1313  9/27/1968 Silver Hill     43        2.65                 32
+   weeks.gestation smoker maternal.age maternal.cigarettes maternal.height
+6               39    yes           22                   7             159
+22              35    yes           20                  35             170
+28              37    yes           20                   7             163
+32              35    yes           41                   7             166
+37              33    yes           20                   7             161
+38              33     no           24                   0             149
+   maternal.prepregnant.weight paternal.age paternal.education
+6                           52           23                 14
+22                          57           23                 12
+28                          47           20                 10
+32                          57           37                 14
+37                          50           20                 10
+38                          45           26                 16
+   paternal.cigarettes paternal.height low.birthweight geriatric.pregnancy
+6                   25              NA               1               FALSE
+22                  50             186               1               FALSE
+28                  35             185               1               FALSE
+32                  25             173               1                TRUE
+37                  35             180               1               FALSE
+38                   0             169               1               FALSE
+> subset_low_birthweight <- birthweight[birthweight$low.birthweight == 1, ]
+> subset_low_birthweight
+     ID birth.date    location length birthweight head.circumference
+6   569  3/23/1967    Memorial     50        2.51                 35
+22  516   1/8/1968 Silver Hill     47        2.66                 33
+28 1363   4/2/1968     General     48        2.37                 30
+32  300  7/18/1968 Silver Hill     46        2.05                 32
+37  431  9/16/1968 Silver Hill     48        1.92                 30
+38 1313  9/27/1968 Silver Hill     43        2.65                 32
+   weeks.gestation smoker maternal.age maternal.cigarettes maternal.height
+6               39    yes           22                   7             159
+22              35    yes           20                  35             170
+28              37    yes           20                   7             163
+32              35    yes           41                   7             166
+37              33    yes           20                   7             161
+38              33     no           24                   0             149
+   maternal.prepregnant.weight paternal.age paternal.education
+6                           52           23                 14
+22                          57           23                 12
+28                          47           20                 10
+32                          57           37                 14
+37                          50           20                 10
+38                          45           26                 16
+   paternal.cigarettes paternal.height low.birthweight geriatric.pregnancy
+6                   25              NA               1               FALSE
+22                  50             186               1               FALSE
+28                  35             185               1               FALSE
+32                  25             173               1                TRUE
+37                  35             180               1               FALSE
+38                   0             169               1               FALSE
+> subset_not_low_birthweight <- birthweight[birthweight$low.birthweight == 0, ]
+> head(subset_not_low_birthweight_
++
+> head(subset_not_low_birthweight)
+    ID birth.date    location length birthweight head.circumference
+1 1107  1/25/1967     General     52        3.23                 36
+2  697   2/6/1967 Silver Hill     48        3.03                 35
+3 1683  2/14/1967 Silver Hill     53        3.35                 33
+4   27   3/9/1967 Silver Hill     53        3.55                 37
+5 1522  3/13/1967    Memorial     50        2.74                 33
+7  365  4/23/1967    Memorial     52        3.53                 37
+  weeks.gestation smoker maternal.age maternal.cigarettes maternal.height
+1              38     no           31                   0             164
+2              39     no           27                   0             162
+3              41     no           27                   0             164
+4              41    yes           37                  25             161
+5              39    yes           21                  17             156
+7              40    yes           26                  25             170
+  maternal.prepregnant.weight paternal.age paternal.education
+1                          57           NA                 NA
+2                          62           27                 14
+3                          62           37                 14
+4                          66           46                 NA
+5                          53           24                 12
+7                          62           30                 10
+  paternal.cigarettes paternal.height low.birthweight geriatric.pregnancy
+1                  NA              NA               0               FALSE
+2                   0             178               0               FALSE
+3                   0             170               0               FALSE
+4                   0             175               0                TRUE
+5                   7             179               0               FALSE
+7                  25             181               0               FALSE
+> summary(subset_low_birthweight_
++
+> summary(subset_low_birthweight)
+       ID          birth.date          location             length
+ Min.   : 300.0   Length:6           Length:6           Min.   :43.00
+ 1st Qu.: 452.2   Class :character   Class :character   1st Qu.:46.25
+ Median : 542.5   Mode  :character   Mode  :character   Median :47.50
+ Mean   : 748.7                                         Mean   :47.00
+ 3rd Qu.:1127.0                                         3rd Qu.:48.00
+ Max.   :1363.0                                         Max.   :50.00
+
+  birthweight    head.circumference weeks.gestation    smoker
+ Min.   :1.920   Min.   :30.00      Min.   :33.00   Length:6
+ 1st Qu.:2.130   1st Qu.:30.50      1st Qu.:33.50   Class :character
+ Median :2.440   Median :32.00      Median :35.00   Mode  :character
+ Mean   :2.360   Mean   :32.00      Mean   :35.33
+ 3rd Qu.:2.615   3rd Qu.:32.75      3rd Qu.:36.50
+ Max.   :2.660   Max.   :35.00      Max.   :39.00
+
+  maternal.age  maternal.cigarettes maternal.height maternal.prepregnant.weight
+ Min.   :20.0   Min.   : 0.0        Min.   :149.0   Min.   :45.00
+ 1st Qu.:20.0   1st Qu.: 7.0        1st Qu.:159.5   1st Qu.:47.75
+ Median :21.0   Median : 7.0        Median :162.0   Median :51.00
+ Mean   :24.5   Mean   :10.5        Mean   :161.3   Mean   :51.33
+ 3rd Qu.:23.5   3rd Qu.: 7.0        3rd Qu.:165.2   3rd Qu.:55.75
+ Max.   :41.0   Max.   :35.0        Max.   :170.0   Max.   :57.00
+
+  paternal.age   paternal.education paternal.cigarettes paternal.height
+ Min.   :20.00   Min.   :10.00      Min.   : 0.00       Min.   :169.0
+ 1st Qu.:20.75   1st Qu.:10.50      1st Qu.:25.00       1st Qu.:173.0
+ Median :23.00   Median :13.00      Median :30.00       Median :180.0
+ Mean   :24.83   Mean   :12.67      Mean   :28.33       Mean   :178.6
+ 3rd Qu.:25.25   3rd Qu.:14.00      3rd Qu.:35.00       3rd Qu.:185.0
+ Max.   :37.00   Max.   :16.00      Max.   :50.00       Max.   :186.0
+                                                        NA's   :1
+ low.birthweight geriatric.pregnancy
+ Min.   :1       Mode :logical
+ 1st Qu.:1       FALSE:5
+ Median :1       TRUE :1
+ Mean   :1
+ 3rd Qu.:1
+ Max.   :1
+
+> summary(subset_low_birthweight$low.birthweight)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
+      1       1       1       1       1       1
+> summary(subset_not_low_birthweight$low.birthweight)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
+      0       0       0       0       0       0
+> summary(subset_low_birthweight$maternal.prepregnant.weight)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
+  45.00   47.75   51.00   51.33   55.75   57.00
+> summary(subset_not_low_birthweight$maternal.prepregnant.weight)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
+  48.00   53.00   58.50   58.53   62.00   78.00
+> mean(subset_low_birthweight$maternal.prepregnant.weight) < mean(subset_not_low_birthweig                                                [1] TRUEnal.prepregnant.weight)
+>
+> #################### Section 4 Basic Data Types ###############
+> class(birthweight$birthweight)
+[1] "numeric"
+> class(birthweight$smoker)
+[1] "character"
+> class(birthweight$geriatric.pregnancy)
+[1] "logical"
+> is.numeric(birthweight$ID)
+[1] TRUE
+> is.numeric(birthweight$smoker)
+[1] FALSE
+> as.logical(birthweight$low.birthweight)
+ [1] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+[13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE
+[25] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE
+[37]  TRUE  TRUE FALSE FALSE FALSE FALSE
+> birthweight$low.birthweight <- as.logical(birthweight$low.birthweight)
+> birthweight$low.birthweight
+ [1] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+[13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE
+[25] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE
+[37]  TRUE  TRUE FALSE FALSE FALSE FALSE
+> ########## 4.3 Exercise 2: converting "smoker" from chr to logical ###
+> head(birthweight$smoker)
+[1] "no"  "no"  "no"  "yes" "yes" "yes"
+> birthweight["smoker"][birthweight["smoker"] == "no"] <- FALSE
+> head(birthweight["smoker"]
++
+> head(birthweight["smoker"])
+  smoker
+1  FALSE
+2  FALSE
+3  FALSE
+4    yes
+5    yes
+6    yes
+> birthweight["smoker"][birthweight["smoker"] == "yes"] <- TRUE
+> birthweight$smoker
+ [1] "FALSE" "FALSE" "FALSE" "TRUE"  "TRUE"  "TRUE"  "TRUE"  "FALSE" "TRUE"
+[10] "TRUE"  "FALSE" "TRUE"  "TRUE"  "TRUE"  "FALSE" "TRUE"  "FALSE" "TRUE"
+[19] "TRUE"  "TRUE"  "FALSE" "TRUE"  "TRUE"  "FALSE" "FALSE" "FALSE" "TRUE"
+[28] "TRUE"  "FALSE" "FALSE" "FALSE" "TRUE"  "FALSE" "TRUE"  "FALSE" "FALSE"
+[37] "TRUE"  "FALSE" "FALSE" "TRUE"  "TRUE"  "FALSE"
+> birthweight["smoker"][birthweight["smoker"] == "FALSE"] <- 0
+> birthweight["smoker"][birthweight["smoker"] == "TRUE"] <- 1
+> birthweight$smoker
+ [1] "0" "0" "0" "1" "1" "1" "1" "0" "1" "1" "0" "1" "1" "1" "0" "1" "0" "1" "1"
+[20] "1" "0" "1" "1" "0" "0" "0" "1" "1" "0" "0" "0" "1" "0" "1" "0" "0" "1" "0"
+[39] "0" "1" "1" "0"
+> birthweight$smoker <- as.numeric(birthweight$smoker)
+> birthweight$smoker
+ [1] 0 0 0 1 1 1 1 0 1 1 0 1 1 1 0 1 0 1 1 1 0 1 1 0 0 0 1 1 0 0 0 1 0 1 0 0 1 0
+[39] 0 1 1 0
+> birthweight$smoker <- as.logical(birthweight$smoker)
+> birthweight$smoker
+ [1] FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE  TRUE
+[13]  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE
+[25] FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE
+[37]  TRUE FALSE FALSE  TRUE  TRUE FALSE
+> ############################# Section 5 Functions #################################
+>
+>
+>
+>
+> help(table)
+> table(birthweight$geriatric.pregnancy, birthweight$low.birthweight)
+
+        FALSE TRUE
+  FALSE    33    5
+  TRUE      3    1
+> help(chisq.test)
+> chisq.test(birthweight$geriatric.pregnancy, birthweight$low.birthweight)
+
+        Pearson's Chi-squared test with Yates' continuity correction
+
+data:  birthweight$geriatric.pregnancy and birthweight$low.birthweight
+X-squared = 2.7398e-31, df = 1, p-value = 1
+
+Warning message:
+In chisq.test(birthweight$geriatric.pregnancy, birthweight$low.birthweight) :
+  Chi-squared approximation may be incorrect
+> mean(birthweight$birth
+birthweight$birth.date   birthweight$birthweight
+> mean(birthweight$birthweight[birthweight$geriatric.pregnancy])
+[1] 3.1125
+> # the ! character is used for negation
+> mean(birthweight$birthweight[!birthweight$geriatric.pregnancy])
+[1] 3.333947
+> mean(birthweight$paternal.age)
+[1] NA
+> mean(birthweight$paternal.age, na.rm=TRUE)
+[1] 28.76316
+> sd(birthweight$paternal.age, na.rm=TRUE)
+[1] 7.061254
+> help(strsplit)
+> strsplit(birthweight$birth.date, split = "/")
+[[1]]
+[1] "1"    "25"   "1967"
+
+[[2]]
+[1] "2"    "6"    "1967"
+
+[[3]]
+[1] "2"    "14"   "1967"
+
+[[4]]
+[1] "3"    "9"    "1967"
+
+[[5]]
+[1] "3"    "13"   "1967"
+
+[[6]]
+[1] "3"    "23"   "1967"
+
+[[7]]
+[1] "4"    "23"   "1967"
+
+[[8]]
+[1] "5"    "5"    "1967"
+
+[[9]]
+[1] "6"    "4"    "1967"
+
+[[10]]
+[1] "6"    "7"    "1967"
+
+[[11]]
+[1] "6"    "14"   "1967"
+
+[[12]]
+[1] "6"    "20"   "1967"
+
+[[13]]
+[1] "6"    "25"   "1967"
+
+[[14]]
+[1] "7"    "12"   "1967"
+
+[[15]]
+[1] "7"    "13"   "1967"
+
+[[16]]
+[1] "9"    "7"    "1967"
+
+[[17]]
+[1] "10"   "7"    "1967"
+
+[[18]]
+[1] "10"   "19"   "1967"
+
+[[19]]
+[1] "11"   "1"    "1967"
+
+[[20]]
+[1] "12"   "7"    "1967"
+
+[[21]]
+[1] "12"   "14"   "1967"
+
+[[22]]
+[1] "1"    "8"    "1968"
+
+[[23]]
+[1] "1"    "10"   "1968"
+
+[[24]]
+[1] "1"    "21"   "1968"
+
+[[25]]
+[1] "2"    "2"    "1968"
+
+[[26]]
+[1] "2"    "16"   "1968"
+
+[[27]]
+[1] "2"    "22"   "1968"
+
+[[28]]
+[1] "4"    "2"    "1968"
+
+[[29]]
+[1] "4"    "24"   "1968"
+
+[[30]]
+[1] "4"    "25"   "1968"
+
+[[31]]
+[1] "6"    "19"   "1968"
+
+[[32]]
+[1] "7"    "18"   "1968"
+
+[[33]]
+[1] "7"    "24"   "1968"
+
+[[34]]
+[1] "8"    "12"   "1968"
+
+[[35]]
+[1] "8"    "17"   "1968"
+
+[[36]]
+[1] "9"    "7"    "1968"
+
+[[37]]
+[1] "9"    "16"   "1968"
+
+[[38]]
+[1] "9"    "27"   "1968"
+
+[[39]]
+[1] "10"   "9"    "1968"
+
+[[40]]
+[1] "10"   "25"   "1968"
+
+[[41]]
+[1] "12"   "11"   "1968"
+
+[[42]]
+[1] "12"   "19"   "1968"
+
+> unlist(strsplit(birthweight$birth.date, split = "/"))
+  [1] "1"    "25"   "1967" "2"    "6"    "1967" "2"    "14"   "1967" "3"
+ [11] "9"    "1967" "3"    "13"   "1967" "3"    "23"   "1967" "4"    "23"
+ [21] "1967" "5"    "5"    "1967" "6"    "4"    "1967" "6"    "7"    "1967"
+ [31] "6"    "14"   "1967" "6"    "20"   "1967" "6"    "25"   "1967" "7"
+ [41] "12"   "1967" "7"    "13"   "1967" "9"    "7"    "1967" "10"   "7"
+ [51] "1967" "10"   "19"   "1967" "11"   "1"    "1967" "12"   "7"    "1967"
+ [61] "12"   "14"   "1967" "1"    "8"    "1968" "1"    "10"   "1968" "1"
+ [71] "21"   "1968" "2"    "2"    "1968" "2"    "16"   "1968" "2"    "22"
+ [81] "1968" "4"    "2"    "1968" "4"    "24"   "1968" "4"    "25"   "1968"
+ [91] "6"    "19"   "1968" "7"    "18"   "1968" "7"    "24"   "1968" "8"
+[101] "12"   "1968" "8"    "17"   "1968" "9"    "7"    "1968" "9"    "16"
+[111] "1968" "9"    "27"   "1968" "10"   "9"    "1968" "10"   "25"   "1968"
+[121] "12"   "11"   "1968" "12"   "19"   "1968"
+> help(strsplit)
+> apply(birthweight[ , c("maternal.cigarettes", "paternal.cigarettes")], 1, sum)
+ [1] NA  0  0 25 24 32 50 25 75 62  0 50 60  7  0 14  0 37 27 37  7 85 75  0 NA
+[26] 35 19 42 NA 25 25 32  0 NA  0 25 42  0 NA 62 25 25
+> help(apply)
+> apply(birthweight[ , c("maternal.cigarettes", "paternal.cigarettes")], 2, sum)
+maternal.cigarettes paternal.cigarettes
+                396                  NA
+> mapply(sum, birthweight$maternal.cigarettes, birthweight$paternal.cigarettes)
+ [1] NA  0  0 25 24 32 50 25 75 62  0 50 60  7  0 14  0 37 27 37  7 85 75  0 NA
+[26] 35 19 42 NA 25 25 32  0 NA  0 25 42  0 NA 62 25 25
+> tapply(birthweight$birthweight, birthweight$smoker, mean)
+   FALSE     TRUE
+3.509500 3.134091
+> lapply(strsplit(birthweight$birth.date, split = "/"), "[[", 1)
+[[1]]
+[1] "1"
+
+[[2]]
+[1] "2"
+
+[[3]]
+[1] "2"
+
+[[4]]
+[1] "3"
+
+[[5]]
+[1] "3"
+
+[[6]]
+[1] "3"
+
+[[7]]
+[1] "4"
+
+[[8]]
+[1] "5"
+
+[[9]]
+[1] "6"
+
+[[10]]
+[1] "6"
+
+[[11]]
+[1] "6"
+
+[[12]]
+[1] "6"
+
+[[13]]
+[1] "6"
+
+[[14]]
+[1] "7"
+
+[[15]]
+[1] "7"
+
+[[16]]
+[1] "9"
+
+[[17]]
+[1] "10"
+
+[[18]]
+[1] "10"
+
+[[19]]
+[1] "11"
+
+[[20]]
+[1] "12"
+
+[[21]]
+[1] "12"
+
+[[22]]
+[1] "1"
+
+[[23]]
+[1] "1"
+
+[[24]]
+[1] "1"
+
+[[25]]
+[1] "2"
+
+[[26]]
+[1] "2"
+
+[[27]]
+[1] "2"
+
+[[28]]
+[1] "4"
+
+[[29]]
+[1] "4"
+
+[[30]]
+[1] "4"
+
+[[31]]
+[1] "6"
+
+[[32]]
+[1] "7"
+
+[[33]]
+[1] "7"
+
+[[34]]
+[1] "8"
+
+[[35]]
+[1] "8"
+
+[[36]]
+[1] "9"
+
+[[37]]
+[1] "9"
+
+[[38]]
+[1] "9"
+
+[[39]]
+[1] "10"
+
+[[40]]
+[1] "10"
+
+[[41]]
+[1] "12"
+
+[[42]]
+[1] "12"
+
+> sapply(strsplit(birthweight$birth.date, split = "/"), "[[", 1)
+ [1] "1"  "2"  "2"  "3"  "3"  "3"  "4"  "5"  "6"  "6"  "6"  "6"  "6"  "7"  "7"
+[16] "9"  "10" "10" "11" "12" "12" "1"  "1"  "1"  "2"  "2"  "2"  "4"  "4"  "4"
+[31] "6"  "7"  "7"  "8"  "8"  "9"  "9"  "9"  "10" "10" "12" "12"
+> ##### NOTE:  the ("[[", 1) portion of lapply() and sapply() above mean go to the second layer and                                       > help(lapply() element in that list (in this case, the month)
++ help(lapply)
+Error: unexpected symbol in:
+"help(lapply()
+help"
+> help(lapply)
+> help(seq)
+> help(names)
+> help(do.call)
+> # custom function takes a vector of dates and returns a data frame with columns day, month, and y                                       > split_MMDDYYYY <- function(date_vector){
++   date_list = lapply(seq(1:3), function(i){
++     as.integer(sapply(strsplit(date_vector, split = "/"), '[[', i))
++   })
++   names(date_list) = c("month", "day", "year")
++   as.data.frame(do.call("cbind", date_list))
++ }
+> split_MMDDYYYY(birthweight$birth.date)
+   month day year
+1      1  25 1967
+2      2   6 1967
+3      2  14 1967
+4      3   9 1967
+5      3  13 1967
+6      3  23 1967
+7      4  23 1967
+8      5   5 1967
+9      6   4 1967
+10     6   7 1967
+11     6  14 1967
+12     6  20 1967
+13     6  25 1967
+14     7  12 1967
+15     7  13 1967
+16     9   7 1967
+17    10   7 1967
+18    10  19 1967
+19    11   1 1967
+20    12   7 1967
+21    12  14 1967
+22     1   8 1968
+23     1  10 1968
+24     1  21 1968
+25     2   2 1968
+26     2  16 1968
+27     2  22 1968
+28     4   2 1968
+29     4  24 1968
+30     4  25 1968
+31     6  19 1968
+32     7  18 1968
+33     7  24 1968
+34     8  12 1968
+35     8  17 1968
+36     9   7 1968
+37     9  16 1968
+38     9  27 1968
+39    10   9 1968
+40    10  25 1968
+41    12  11 1968
+42    12  19 1968
+> birthweight <- cbind(birthweight, split_MMDDYYYY(birthweight$birth.date)
++
+> birthweight <- cbind(birthweight, split_MMDDYYYY(birthweight$birth.date))
+> colnames(birthweight)
+ [1] "ID"                          "birth.date"
+ [3] "location"                    "length"
+ [5] "birthweight"                 "head.circumference"
+ [7] "weeks.gestation"             "smoker"
+ [9] "maternal.age"                "maternal.cigarettes"
+[11] "maternal.height"             "maternal.prepregnant.weight"
+[13] "paternal.age"                "paternal.education"
+[15] "paternal.cigarettes"         "paternal.height"
+[17] "low.birthweight"             "geriatric.pregnancy"
+[19] "month"                       "day"
+[21] "year"
+> tapply(birthweight$birthweight, birthweight$month, mean)
+       1        2        3        4        5        6        7        8
+3.215000 3.600000 2.933333 3.062500 2.920000 3.273333 3.105000 3.630000
+       9       10       11       12
+2.965000 3.395000 3.410000 4.035000
+> #################### 5.5 Exercise 3: summarizing the data ######################
+>
+>
+> head(birthweight$maternal.cigarettes)
+[1]  0  0  0 25 17  7
+> birthweight$maternal.cigarettes
+ [1]  0  0  0 25 17  7 25  0 25 12  0 50 35  7  0  2  0 12 25 12  0 35 25  0  0
+[26]  0  7  7  0  0  0  7  0 17  0  0  7  0  0 12 25  0
+> birthweight$paternal.cigarettes
+ [1] NA  0  0  0  7 25 25 25 50 50  0  0 25  0  0 12  0 25  2 25  7 50 50  0 NA
+[26] 35 12 35 NA 25 25 25  0 NA  0 25 35  0 NA 50  0 25
+> birthweight$location
+ [1] "General"     "Silver Hill" "Silver Hill" "Silver Hill" "Memorial"
+ [6] "Memorial"    "Memorial"    "Silver Hill" "Silver Hill" "Memorial"
+[11] "Memorial"    "Memorial"    "Silver Hill" "Memorial"    "Silver Hill"
+[16] "Memorial"    "General"     "General"     "Memorial"    "Silver Hill"
+[21] "Silver Hill" "Silver Hill" "Memorial"    "Silver Hill" "Silver Hill"
+[26] "General"     "Memorial"    "General"     "Silver Hill" "Memorial"
+[31] "Silver Hill" "Silver Hill" "General"     "Memorial"    "Silver Hill"
+[36] "General"     "Silver Hill" "Silver Hill" "General"     "General"
+[41] "General"     "Silver Hill"
+> tapply(birthweight$maternal.cigarettes, birthweight$location, sum)
+    General    Memorial Silver Hill
+         56         194         146
+> tapply(birthweight$paternal.cigarettes, birthweight$location, sum)
+    General    Memorial Silver Hill
+         NA          NA          NA
+> tapply(birthweight$paternal.cigarettes, birthweight$location, sum(na.rm=TRUE))
+Error in match.fun(FUN) :
+  'sum(na.rm = TRUE)' is not a function, character or symbol
+> help(tapply)
+> tapply(birthweight$paternal.cigarettes, birthweight$location, sum, na.rm=TRUE)
+    General    Memorial Silver Hill
+        170         208         292
+> maternal_cig_by_location <- tapply(birthweight$maternal.cigarettes, birthweight$location, sum)
+> paternal_cig_by_location <- tapply(birthweight$paternal.cigarettes, birthweight$location, sum, na                                       > maternal_cig_by_location
+    General    Memorial Silver Hill
+         56         194         146
+> paternal_cig_by_location
+    General    Memorial Silver Hill
+        170         208         292
+> maternal_cig_by_location$General
+Error in maternal_cig_by_location$General :
+  $ operator is invalid for atomic vectors
+> maternal_cig_by_location[1]
+General
+     56
+> for location in maternal_cig_by_location:
+Error: unexpected symbol in "for location"
+> for location in maternal_cig_by_location {
+Error: unexpected symbol in "for location"
+> for (location in maternal_cig_by_location) {
++ print(location)
++ }
+[1] 56
+[1] 194
+[1] 146
+> for (location in maternal_cig_by_location) {
++
+> for (mat_cig in maternal_cig_by_location) {
++ for (pat_cig in paternal_cig_by_location) {
++ print(mat_cig * pat_cig)
++ }
++ }
+[1] 9520
+[1] 11648
+[1] 16352
+[1] 32980
+[1] 40352
+[1] 56648
+[1] 24820
+[1] 30368
+[1] 42632
+> names(maternal_cig_by_location)
+[1] "General"     "Memorial"    "Silver Hill"
+> maternal_cig_by_location["General"]
+General
+     56
+> for (name in names(maternal_cig_by_location)) {
++ for (mat_cig in maternal_cig_by_location) {
++ for (pat_cig in paternal_cig_by_location) {
++ print(mat_cig * pat_cig)
++ }
++ }
++ }
+[1] 9520
+[1] 11648
+[1] 16352
+[1] 32980
+[1] 40352
+[1] 56648
+[1] 24820
+[1] 30368
+[1] 42632
+[1] 9520
+[1] 11648
+[1] 16352
+[1] 32980
+[1] 40352
+[1] 56648
+[1] 24820
+[1] 30368
+[1] 42632
+[1] 9520
+[1] 11648
+[1] 16352
+[1] 32980
+[1] 40352
+[1] 56648
+[1] 24820
+[1] 30368
+[1] 42632
+> for (name in names(maternal_cig_by_location)) {
++ for (mat_cig in maternal_cig_by_location[name]) {
++ for (pat_cig in paternal_cig_by_location[name]) {
++ print(mat_cig * pat_cig)
++ }}}
+[1] 9520
+[1] 40352
+[1] 42632
+> for (name in names(maternal_cig_by_location)) {
++ for (mat_cig in maternal_cig_by_location[name]) {
++ for (pat_cig in paternal_cig_by_location[name]) {
++ print(mat_cig / pat_cig)
++ }}}
+[1] 0.3294118
+[1] 0.9326923
+[1] 0.5
+> mat_to_pat_cig_ratio <- data.frame(matrix(nrow = 0, ncol = length(names(maternal_cig_by_lo                                              > mat_to_pat_cig_ratio
+[1] X1 X2 X3
+<0 rows> (or 0-length row.names)
+> colnames(mat_to_pat_cig_ratio) = names(maternal_cig_by_location)
+> mat_to_pat_cig_ratio
+[1] General     Memorial    Silver Hill
+<0 rows> (or 0-length row.names)
+> for (name in mat_to_pat_cig_ratio) {
++ for (mat_cig in maternal_cig_by_location[name]) {
++ for (pat_cig in paternal_cig_by_location[name]) {
++ mat_to_pat_cig_ratio[name] <- mat_cig / pat_cig
++ }}}
+> mat_to_pat_cig_ratio
+[1] General     Memorial    Silver Hill
+<0 rows> (or 0-length row.names)
+> mat_to_pat_cig_ratio <- data.frame(matrix(nrow = 1, ncol = length(names(maternal_cig_by_lo                                              > mat_to_pat_cig_ratio
+  X1 X2 X3
+1 NA NA NA
+> colnames(mat_to_pat_cig_ratio) <- names(maternal_cig_by_location_
++
+> colnames(mat_to_pat_cig_ratio) <- names(maternal_cig_by_location)
+> mat_to_pat_cig_ratio
+  General Memorial Silver Hill
+1      NA       NA          NA
+> for (name in mat_to_pat_cig_ratio) {
++ for (mat_cig in maternal_cig_by_location[name]) {
++ for (pat_cig in paternal_cig_by_location[name]) {
++ mat_to_pat_cig_ratio[name] <- mat_cig / pat_cig
++ }}}
+Error in `[<-.data.frame`(`*tmp*`, name, value = NA_real_) :
+  missing values are not allowed in subscripted assignments of data frames
+> ratios_cig <- c()
+> mat_to_pat_cig_ratio
+  General Memorial Silver Hill
+1      NA       NA          NA
+> for (name in mat_to_pat_cig_ratio) {
++ for (mat_cig in maternal_cig_by_location[name]) {
++ for (pat_cig in paternal_cig_by_location[name]) {
++ append(ratios_cig, mat_cig / pat_cig)
++ }}}
+> ratios_cig
+NULL
+> for (name in mat_to_pat_cig_ratio) {
++ for (mat_cig in maternal_cig_by_location[name]) {
++ for (pat_cig in paternal_cig_by_location[name]) {
++ append(ratios_cig, (mat_cig / pat_cig))
++ }}}
+> ratios_cig
+NULL
+> for (name in mat_to_pat_cig_ratio) {
++ for (mat_cig in maternal_cig_by_location[name]) {
++ for (pat_cig in paternal_cig_by_location[name]) {
++ ratio <- mat_cig / pat_cig
++ append(ratios_cig, ratio)
++ }}}
+> ratios_cig
+NULL
+> for (name in names(maternal_cig_by_location)) {
++ for (mat_cig in maternal_cig_by_location[name]) {
++ for (pat_cig in paternal_cig_by_location[name]) {
++ print(mat_cig * pat_cig)
++ }}}
+[1] 9520
+[1] 40352
+[1] 42632
+> for (name in names(maternal_cig_by_location)) {
++ for (mat_cig in maternal_cig_by_location[name]) {
++ for (pat_cig in paternal_cig_by_location[name]) {
++ print(name, ":", mat_cig * pat_cig)
++ }}}
+Error in print.default(name, ":", mat_cig * pat_cig) :
+  invalid printing digits -2147483648
+In addition: Warning message:
+In print.default(name, ":", mat_cig * pat_cig) : NAs introduced by coercion
+> for (name in names(maternal_cig_by_location)) {
++ for (mat_cig in maternal_cig_by_location[name]) {
++ for (pat_cig in paternal_cig_by_location[name])
++ print(name, (mat_cig * pat_cig))
++ }}}
+Error: unexpected '}' in:
+"print(name, (mat_cig * pat_cig))
+}}}"
+> for (name in names(maternal_cig_by_location)) {
++ for (mat_cig in maternal_cig_by_location[name]) {
++ for (pat_cig in paternal_cig_by_location[name]) {
++ print(name, (mat_cig * pat_cig))
++ }}}
+Error in print.default(name, (mat_cig * pat_cig)) :
+  invalid printing digits 9520
+> for (name in names(maternal_cig_by_location)) {
++ for (mat_cig in maternal_cig_by_location[name]) {
++ for (pat_cig in paternal_cig_by_location[name]) {
++ print(name, as.character(mat_cig * pat_cig))
++ }}}
+Error in print.default(name, as.character(mat_cig * pat_cig)) :
+  invalid printing digits 9520
+> for (name in names(maternal_cig_by_location)) {
++ for (mat_cig in maternal_cig_by_location[name]) {
++ for (pat_cig in paternal_cig_by_location[name]) {
++ print(name)
++ print(mat_cig / pat_cig)
++ }}}
+[1] "General"
+[1] 0.3294118
+[1] "Memorial"
+[1] 0.9326923
+[1] "Silver Hill"
+[1] 0.5
+>
+>
