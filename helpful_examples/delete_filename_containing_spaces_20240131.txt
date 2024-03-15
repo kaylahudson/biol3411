@@ -1,0 +1,121 @@
+     +--------------------------------------------------------------------+
+     ¦                • MobaXterm Personal Edition v23.6 •                ¦
+     ¦              (X server, SSH client and network tools)              ¦
+     ¦                                                                    ¦
+     ¦ ? Your computer drives are accessible through the /drives path     ¦
+     ¦ ? Your DISPLAY is set to 10.0.0.93:0.0                             ¦
+     ¦ ? When using SSH, your remote DISPLAY is automatically forwarded   ¦
+     ¦ ? Your HOME folder is not persistent: it will be erased on restart ¦
+     ¦ ? Each command status is specified by a special symbol (? or ?)    ¦
+     ¦                                                                    ¦
+     ¦ • Important:                                                       ¦
+     ¦ This is MobaXterm Personal Edition. The Professional edition       ¦
+     ¦ allows you to customize MobaXterm for your company: you can add    ¦
+     ¦ your own logo, your parameters, your welcome message and generate  ¦
+     ¦ either an MSI installation package or a portable executable.       ¦
+     ¦ We can also modify MobaXterm or develop the plugins you need.      ¦
+     ¦ For more information: https://mobaxterm.mobatek.net/download.html  ¦
+     +--------------------------------------------------------------------+
+
+ ? 31/01/2024 ? ? 15:20.20 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.edu
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Wed Jan 31 15:13:22 2024 from 10.110.126.22
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+[hudson.ka@login-01 ~]$ cd /scratch/hudson.ka/ncbi_dataset/data/
+[hudson.ka@login-01 data]$ ls
+assembly_data_report.jsonl  dataset_catalog.json  GCA_000008685.2
+[hudson.ka@login-01 data]$ cd GCA_000008685.2/
+[hudson.ka@login-01 GCA_000008685.2]$ pwd
+/scratch/hudson.ka/ncbi_dataset/data/GCA_000008685.2
+[hudson.ka@login-01 GCA_000008685.2]$ ls
+AE001583.1          AE001583.1.rev   GCA_000008685.2_ASM868v2_genomic.fna
+AE001583.1.pep      AE001583.1.save  GCA_000008685.2.txt
+AE001583.1.protein  AE001583.1.txt   list.txt
+[hudson.ka@login-01 GCA_000008685.2]$
+[hudson.ka@login-01 GCA_000008685.2]$ cd /courses/BIOL3411.202430/students/hudson.ka/
+[hudson.ka@login-01 hudson.ka]$ ls
+AE001583.1.rev  class_examples  dna_name_intro                         NR; print -bash}
+assignments     datasets.exe    GCA_000008685.2_ASM868v2_genomic.fna
+[hudson.ka@login-01 hudson.ka]$ ls -F
+AE001583.1.rev  class_examples/  dna_name_intro/                        NR; print -bash}
+assignments/    datasets.exe*    GCA_000008685.2_ASM868v2_genomic.fna
+[hudson.ka@login-01 hudson.ka]$ mv dna_name_intro/ class_examples/
+[hudson.ka@login-01 hudson.ka]$ ls
+AE001583.1.rev  class_examples  GCA_000008685.2_ASM868v2_genomic.fna
+assignments     datasets.exe     NR; print -bash}
+[hudson.ka@login-01 hudson.ka]$ ls class_examples/
+dna_name_intro
+[hudson.ka@login-01 hudson.ka]$ ls
+AE001583.1.rev  class_examples  GCA_000008685.2_ASM868v2_genomic.fna
+assignments     datasets.exe     NR; print -bash}
+[hudson.ka@login-01 hudson.ka]$ nano GCA_000008685.2_ASM868v2_genomic.fna
+[hudson.ka@login-01 hudson.ka]$ mkdir trash
+[hudson.ka@login-01 hudson.ka]$ ls
+AE001583.1.rev  class_examples  GCA_000008685.2_ASM868v2_genomic.fna  trash
+assignments     datasets.exe     NR; print -bash}
+[hudson.ka@login-01 hudson.ka]$ mv "
+[hudson.ka@login-01 hudson.ka]$ mv "NR; print -bash" trash/
+mv: cannot stat ‘NR; print -bash’: No such file or directory
+[hudson.ka@login-01 hudson.ka]$ mv NR\ \print\ \-bash trash/
+mv: cannot stat ‘NR print -bash’: No such file or directory
+[hudson.ka@login-01 hudson.ka]$ ls
+AE001583.1.rev  class_examples  GCA_000008685.2_ASM868v2_genomic.fna  trash
+assignments     datasets.exe     NR; print -bash}
+[hudson.ka@login-01 hudson.ka]$ ls -l
+total 16555
+-rw-r-----+ 1 hudson.ka BIOL3411.202430-staff     5394 Jan 29 16:27 AE001583.1.rev
+drwxrws---+ 2 hudson.ka BIOL3411.202430-staff     4096 Jan 18 12:05 assignments
+drwxrws---+ 2 hudson.ka BIOL3411.202430-staff     4096 Jan 31 15:51 class_examples
+-rwxr-x---+ 1 hudson.ka BIOL3411.202430-staff 15404032 Jan 24 18:18 datasets.exe
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff  1541758 Sep 11  2021 GCA_000008685.2_ASM868v2_genomic.fna
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff        0 Jan 22 16:01  NR; print -bash}
+drwxrws---+ 2 hudson.ka BIOL3411.202430-staff     4096 Jan 31 15:55 trash
+[hudson.ka@login-01 hudson.ka]$ mv "
+[hudson.ka@login-01 hudson.ka]$ mv " NR; print -bash" trash
+mv: cannot stat ‘ NR; print -bash’: No such file or directory
+[hudson.ka@login-01 hudson.ka]$ mv \ NR;\ print\ -bash trash/
+mv: missing destination file operand after ‘ NR’
+Try 'mv --help' for more information.
+-bash:  print -bash: command not found
+[hudson.ka@login-01 hudson.ka]$ rm -i --*\ *
+rm: unrecognized option '--* *'
+Try 'rm --help' for more information.
+[hudson.ka@login-01 hudson.ka]$ find . -type f -name "* *"
+./ NR; print -bash}
+[hudson.ka@login-01 hudson.ka]$ rm -i find . -type f -name "* *"
+rm: invalid option -- 't'
+Try 'rm --help' for more information.
+[hudson.ka@login-01 hudson.ka]$ mv \ NR;\ print\ -bash} trash/
+mv: missing destination file operand after ‘ NR’
+Try 'mv --help' for more information.
+-bash:  print -bash}: command not found
+[hudson.ka@login-01 hudson.ka]$ find . -type f -name "* *"
+./ NR; print -bash}
+[hudson.ka@login-01 hudson.ka]$ rm -i ./ NR; print -bash}
+rm: cannot remove ‘./’: Is a directory
+rm: cannot remove ‘NR’: No such file or directory
+-bash: print: command not found
+[hudson.ka@login-01 hudson.ka]$ rm -i / NR; print -bash}
+rm: cannot remove ‘/’: Is a directory
+rm: cannot remove ‘NR’: No such file or directory
+-bash: print: command not found
+[hudson.ka@login-01 hudson.ka]$ rm -i \ NR\ print\ -bash}
+rm: cannot remove ‘ NR print -bash}’: No such file or directory
+[hudson.ka@login-01 hudson.ka]$ ls -i "strange file"
+ls: cannot access strange file: No such file or directory
+[hudson.ka@login-01 hudson.ka]$ rm -i " NR; print -bash}"
+rm: remove regular empty file ‘ NR; print -bash}’? Y
+[hudson.ka@login-01 hudson.ka]$ ls
+AE001583.1.rev  class_examples  GCA_000008685.2_ASM868v2_genomic.fna
+assignments     datasets.exe    trash
+[hudson.ka@login-01 hudson.ka]$
+[hudson.ka@login-01 hudson.ka]$

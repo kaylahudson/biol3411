@@ -1,0 +1,953 @@
+    +----------------------------------------------------------------------+
+    ¦                 • MobaXterm Personal Edition v23.6 •                 ¦
+    ¦               (SSH client, X server and network tools)               ¦
+    ¦                                                                      ¦
+    ¦ ? Linux distribution: ?Default                                      ¦
+    ¦ ? Windows drives are mounted into /mnt path (by default)             ¦
+    ¦ ? Your DISPLAY is set to 10.0.0.93:0.0                               ¦
+    ¦ ? For more info, ctrl+click on help or visit our website.            ¦
+    +----------------------------------------------------------------------+
+
+kunix@DESKTOP-3LNCP2A:~$ ssh hudson.ka@login.discovery.neu.edu
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Sat Mar  9 13:37:33 2024 from 10.110.214.54
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+We are testing new hardware to resolve the intermittent
+network connectivity issues. so far, so good.
+
+[hudson.ka@login-00 ~]$ srun --pty /bin/bash
+srun: job 41333801 queued and waiting for resources
+srun: job 41333801 has been allocated resources
+[hudson.ka@c0315 ~]$ cd /courses/BIOL3411.202430/students/hudson.ka/unit2/
+[hudson.ka@c0315 unit2]$ ls
+Day_data                               fastq_work_wk6_20240214
+MarineGenomics_week4_tut               fastq_work_wk6_20240221
+bowtie_lambda_phage_tutorial_20240221  unit2_intro_exercise_20240207
+[hudson.ka@c0315 unit2]$ cd MarineGenomics_week4_tut/
+[hudson.ka@c0315 MarineGenomics_week4_tut]$ ls
+week4  week4_semester.tar.gz
+[hudson.ka@c0315 MarineGenomics_week4_tut]$ cd week4
+[hudson.ka@c0315 week4]$ ls
+41138439.error                    SRR6805882.tiny_trimmed.fastq.gz
+41138439.output                   SRR6805883.tiny.fastq.gz
+Ppar_tinygenome.fna               SRR6805883.tiny_fastqc.zip
+Ppar_tinygenome.fna.gz            SRR6805883.tiny_trimmed.fastq.gz
+Ppar_tinygenome_seq_count.txt     SRR6805884.tiny.fastq.gz
+SRR6805880.tiny.fastq.gz          SRR6805884.tiny_fastqc.zip
+SRR6805880.tiny_fastqc.zip        SRR6805884.tiny_trimmed.fastq.gz
+SRR6805880.tiny_trimmed.fastq.gz  SRR6805885.tiny.fastq.gz
+SRR6805881.tiny.fastq.gz          SRR6805885.tiny_fastqc.zip
+SRR6805881.tiny_fastqc.zip        SRR6805885.tiny_trimmed.fastq.gz
+SRR6805881.tiny_trimmed.fastq.gz  fastqc_html_reports
+SRR6805882.tiny.fastq.gz          unzip_into_new_dir.bash
+SRR6805882.tiny_fastqc.zip        unzipped_fastq
+[hudson.ka@c0315 week4]$ pwd
+/courses/BIOL3411.202430/students/hudson.ka/unit2/MarineGenomics_week4_tut/week4
+[hudson.ka@c0315 week4]$ cd unzipped_fastq/
+[hudson.ka@c0315 unzipped_fastq]$ ls
+SRR6805880.tiny.fastq.gz.fastq  SRR6805883.tiny.fastq.gz.fastq  read_counts_all_seqs.txt
+SRR6805881.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq
+SRR6805882.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+[hudson.ka@c0315 unzipped_fastq]$ hed SRR6805880.tiny.fastq.gz.fastq
+bash: hed: command not found
+[hudson.ka@c0315 unzipped_fastq]$ head SRR6805880.tiny.fastq.gz.fastq
+@SRR6805880.2151832 OCD6D:00225:02960 length=80
+TGCAGAAGGCATGACCTTACCTACTGAATAAAAGATGAGACACCTTCTCATTGGCCAAGAAGAAACAACACTCTATTACA
++
+47:7775<59999995:6;;5:7664621111*/52245554404/33533/3/30436724461./,.:79999:4:9:
+@SRR6805880.576388 9F8KO:05533:11649 length=80
+TGCAGTCGTAATCTAGGAACACACCTACGGGATTATTTACTATTTTACAATCCATAGTCGGAGTCTACAAACAGTTACCA
++
+135445878868?;:7474889//+/665628958::2788:>;;09:9556-315447817999::;::28///27:18
+@SRR6805880.501486 9F8KO:05578:13178 length=80
+TGCAGCAAGACCGTAGATCTGTCAAACGCAAAGCTTTAGCGAGCTCTCTAAGTAGCTTGAGAGGTCTGAAGAGAGCAGTG
+[hudson.ka@c0315 unzipped_fastq]$ head SRR6805881.tiny.fastq.gz.fastq
+@SRR6805881.2151832 7BT9W:08109:13228 length=80
+TGCAGGTCAGAAGAATTTGTACGGTATCGTTCTGGCCAGTGACGGAGCTAGGGGTATTGGTCAGGGGGGCGAGAATGTTC
++
+.3255158>;=7=>6<=098:8818;:::<5;<>19289;<<<=5;;;96666+59:6;6;<=<===A*;;;;;4;;<19
+@SRR6805881.576388 5GD86:08270:07332 length=80
+TGCAGTAAGCTTTCTTAATTACTATATTCGACCTTTACAGAATTCATTTCTGTAGTGAATTCTCAACCATCTCAAAGAGT
++
+6;;:;;;688=>4<:6=6>6;:::;;>7><<<7<<4=B=<<7<6=:88/8;;;:::<<4:5:<<<5;5;<><;;;3;;::
+@SRR6805881.501486 5GD86:06850:06440 length=80
+TGCAGGTACGTAATATCTTCGTAGCATATAAGAACCCAGTCTGGACAATCTTCTATAAAGTATACTTTCATGTCATGCTT
+[hudson.ka@c0315 unzipped_fastq]$ head SRR6805884.tiny.fastq.gz.fastq
+@SRR6805884.216106 U2HVQ:07843:13528 length=80
+TGCAGTAGAGAGTTCTCCAGTTTTCTGCTTCTTCCTTATAGACCTACTTGTAGTTGGTCGCTCATATTGTGGCGCGGGCA
++
+6<<==<<<==>?=7@<=6;::::.:::;<676165;5;:9:::5::9<58999;5:59999:A<<<?1999299788/8;
+@SRR6805884.576388 U2HVQ:02019:13780 length=80
+TGCAGTGGCTCATTTTCTTTTGAAATTTGGTTTCCTTATCATGATTGGAAGCCTGAAACCTGTGGGGGGGGGAGGCAGGG
++
+278<:;<7===<;<;,7666+38;/9828467176=6<<=<;<<<5;1817=4::::1:6;;666666667%36189982
+@SRR6805884.501486 U2HVQ:05592:12714 length=80
+TGCAGCTAAGCCTGCAAATAACCTGCAACGAGGTCTTTCTCGCCTTAATAATGATATGTACAGTCTGCAAATCTATCACC
+[hudson.ka@c0315 unzipped_fastq]$ module load anaconda3/2022.05
+[hudson.ka@c0315 unzipped_fastq]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06   2) anaconda3/2022.05
+[hudson.ka@c0315 unzipped_fastq]$ source activate /courses/BIOL3411.202430/shared/cutadapt_env/
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 unzipped_fastq]$ cd ..
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ ls
+41138439.error                    SRR6805882.tiny_trimmed.fastq.gz
+41138439.output                   SRR6805883.tiny.fastq.gz
+Ppar_tinygenome.fna               SRR6805883.tiny_fastqc.zip
+Ppar_tinygenome.fna.gz            SRR6805883.tiny_trimmed.fastq.gz
+Ppar_tinygenome_seq_count.txt     SRR6805884.tiny.fastq.gz
+SRR6805880.tiny.fastq.gz          SRR6805884.tiny_fastqc.zip
+SRR6805880.tiny_fastqc.zip        SRR6805884.tiny_trimmed.fastq.gz
+SRR6805880.tiny_trimmed.fastq.gz  SRR6805885.tiny.fastq.gz
+SRR6805881.tiny.fastq.gz          SRR6805885.tiny_fastqc.zip
+SRR6805881.tiny_fastqc.zip        SRR6805885.tiny_trimmed.fastq.gz
+SRR6805881.tiny_trimmed.fastq.gz  fastqc_html_reports
+SRR6805882.tiny.fastq.gz          unzip_into_new_dir.bash
+SRR6805882.tiny_fastqc.zip        unzipped_fastq
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ nano bad-reads-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ cd unzipped_fastq/
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 unzipped_fastq]$ ls
+SRR6805880.tiny.fastq.gz.fastq  SRR6805883.tiny.fastq.gz.fastq  read_counts_all_seqs.txt
+SRR6805881.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq
+SRR6805882.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 unzipped_fastq]$ cd ..
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ nano bad-reads-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ mv bad-reads-script.sh unzipped_fastq/
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ cd unzipped_fastq/
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 unzipped_fastq]$ ls
+SRR6805880.tiny.fastq.gz.fastq  SRR6805883.tiny.fastq.gz.fastq  bad-reads-script.sh
+SRR6805881.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq  read_counts_all_seqs.txt
+SRR6805882.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 unzipped_fastq]$ bash bad-reads-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 unzipped_fastq]$ ls
+SRR6805880.tiny.fastq.gz.fastq  SRR6805883.tiny.fastq.gz.fastq  bad-reads-script.sh
+SRR6805881.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq  read_counts_all_seqs.txt
+SRR6805882.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq  scripted_bad_reads.txt
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 unzipped_fastq]$ nano scripted_bad_reads.txt
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 unzipped_fastq]$ nano bad-reads-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 unzipped_fastq]$ bash bad-reads-script.sh
+Script finished!
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 unzipped_fastq]$ ls
+SRR6805880.tiny.fastq.gz.fastq  SRR6805883.tiny.fastq.gz.fastq  bad-reads-script.sh
+SRR6805881.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq  read_counts_all_seqs.txt
+SRR6805882.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq  scripted_bad_reads.txt
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 unzipped_fastq]$ cat scripted_bad_reads.txt
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 unzipped_fastq]$ ls -l bad-reads-script.sh
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 100 Mar  9 14:35 bad-reads-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 unzipped_fastq]$ chmod 760 bad-reads-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 unzipped_fastq]$ ls -l bad-reads-script.sh
+-rwxrw----+ 1 hudson.ka BIOL3411.202430-staff 100 Mar  9 14:35 bad-reads-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 unzipped_fastq]$ ./bad-reads-script.sh
+Script finished!
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 unzipped_fastq]$ nano trim-adapters-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 unzipped_fastq]$ cd ..
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ ls
+41138439.error                    SRR6805882.tiny_trimmed.fastq.gz
+41138439.output                   SRR6805883.tiny.fastq.gz
+Ppar_tinygenome.fna               SRR6805883.tiny_fastqc.zip
+Ppar_tinygenome.fna.gz            SRR6805883.tiny_trimmed.fastq.gz
+Ppar_tinygenome_seq_count.txt     SRR6805884.tiny.fastq.gz
+SRR6805880.tiny.fastq.gz          SRR6805884.tiny_fastqc.zip
+SRR6805880.tiny_fastqc.zip        SRR6805884.tiny_trimmed.fastq.gz
+SRR6805880.tiny_trimmed.fastq.gz  SRR6805885.tiny.fastq.gz
+SRR6805881.tiny.fastq.gz          SRR6805885.tiny_fastqc.zip
+SRR6805881.tiny_fastqc.zip        SRR6805885.tiny_trimmed.fastq.gz
+SRR6805881.tiny_trimmed.fastq.gz  fastqc_html_reports
+SRR6805882.tiny.fastq.gz          unzip_into_new_dir.bash
+SRR6805882.tiny_fastqc.zip        unzipped_fastq
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ ls
+41138439.error                    SRR6805883.tiny.fastq.gz
+41138439.output                   SRR6805883.tiny_fastqc.zip
+Ppar_tinygenome.fna               SRR6805883.tiny_trimmed.fastq.gz
+Ppar_tinygenome.fna.gz            SRR6805884.tiny.fastq.gz
+Ppar_tinygenome_seq_count.txt     SRR6805884.tiny_fastqc.zip
+SRR6805880.tiny.fastq.gz          SRR6805884.tiny_trimmed.fastq.gz
+SRR6805880.tiny_fastqc.zip        SRR6805885.tiny.fastq.gz
+SRR6805880.tiny_trimmed.fastq.gz  SRR6805885.tiny_fastqc.zip
+SRR6805881.tiny.fastq.gz          SRR6805885.tiny_trimmed.fastq.gz
+SRR6805881.tiny_fastqc.zip        fastqc_html_reports
+SRR6805881.tiny_trimmed.fastq.gz  trim-adapters-script.sh
+SRR6805882.tiny.fastq.gz          unzip_into_new_dir.bash
+SRR6805882.tiny_fastqc.zip        unzipped_fastq
+SRR6805882.tiny_trimmed.fastq.gz
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ ls -l trim-adapters-script.sh
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 204 Mar  9 14:46 trim-adapters-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ chmod 760 trim-adapters-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ ls -l trim-adapters-script.sh
+-rwxrw----+ 1 hudson.ka BIOL3411.202430-staff 204 Mar  9 14:46 trim-adapters-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ ./trim-adapters-script.sh
+SRR6805880
+This is cutadapt 4.6 with Python 3.10.13
+Command line parameters: -g TGCAG SRR6805880.tiny.fastq.gz -o SRR6805880.tiny_trimmed.fastq.gz
+Processing single-end reads on 1 core ...
+Done           00:00:00         1,000 reads @  47.9 µs/read;   1.25 M reads/minute
+Finished in 0.073 s (72.824 µs/read; 0.82 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                   1,000
+Reads with adapters:                     1,000 (100.0%)
+Reads written (passing filters):         1,000 (100.0%)
+
+Total basepairs processed:        80,000 bp
+Total written (filtered):         75,000 bp (93.8%)
+
+=== Adapter 1 ===
+
+Sequence: TGCAG; Type: regular 5'; Length: 5; Trimmed: 1000 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-5 bp: 0
+
+Overview of removed sequences
+length  count   expect  max.err error counts
+5       1000    1.0     0       1000
+SRR6805881
+This is cutadapt 4.6 with Python 3.10.13
+Command line parameters: -g TGCAG SRR6805881.tiny.fastq.gz -o SRR6805881.tiny_trimmed.fastq.gz
+Processing single-end reads on 1 core ...
+Done           00:00:00         1,000 reads @  44.7 µs/read;   1.34 M reads/minute
+Finished in 0.059 s (58.785 µs/read; 1.02 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                   1,000
+Reads with adapters:                     1,000 (100.0%)
+Reads written (passing filters):         1,000 (100.0%)
+
+Total basepairs processed:        80,000 bp
+Total written (filtered):         75,000 bp (93.8%)
+
+=== Adapter 1 ===
+
+Sequence: TGCAG; Type: regular 5'; Length: 5; Trimmed: 1000 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-5 bp: 0
+
+Overview of removed sequences
+length  count   expect  max.err error counts
+5       1000    1.0     0       1000
+SRR6805882
+This is cutadapt 4.6 with Python 3.10.13
+Command line parameters: -g TGCAG SRR6805882.tiny.fastq.gz -o SRR6805882.tiny_trimmed.fastq.gz
+Processing single-end reads on 1 core ...
+Done           00:00:00         1,000 reads @  41.2 µs/read;   1.45 M reads/minute
+Finished in 0.055 s (55.427 µs/read; 1.08 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                   1,000
+Reads with adapters:                     1,000 (100.0%)
+Reads written (passing filters):         1,000 (100.0%)
+
+Total basepairs processed:        80,000 bp
+Total written (filtered):         75,000 bp (93.8%)
+
+=== Adapter 1 ===
+
+Sequence: TGCAG; Type: regular 5'; Length: 5; Trimmed: 1000 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-5 bp: 0
+
+Overview of removed sequences
+length  count   expect  max.err error counts
+5       1000    1.0     0       1000
+SRR6805883
+This is cutadapt 4.6 with Python 3.10.13
+Command line parameters: -g TGCAG SRR6805883.tiny.fastq.gz -o SRR6805883.tiny_trimmed.fastq.gz
+Processing single-end reads on 1 core ...
+Done           00:00:00         1,000 reads @  42.2 µs/read;   1.42 M reads/minute
+Finished in 0.057 s (56.524 µs/read; 1.06 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                   1,000
+Reads with adapters:                     1,000 (100.0%)
+Reads written (passing filters):         1,000 (100.0%)
+
+Total basepairs processed:        80,000 bp
+Total written (filtered):         75,000 bp (93.8%)
+
+=== Adapter 1 ===
+
+Sequence: TGCAG; Type: regular 5'; Length: 5; Trimmed: 1000 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-5 bp: 0
+
+Overview of removed sequences
+length  count   expect  max.err error counts
+5       1000    1.0     0       1000
+SRR6805884
+This is cutadapt 4.6 with Python 3.10.13
+Command line parameters: -g TGCAG SRR6805884.tiny.fastq.gz -o SRR6805884.tiny_trimmed.fastq.gz
+Processing single-end reads on 1 core ...
+Done           00:00:00         1,000 reads @  45.3 µs/read;   1.32 M reads/minute
+Finished in 0.065 s (64.850 µs/read; 0.93 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                   1,000
+Reads with adapters:                     1,000 (100.0%)
+Reads written (passing filters):         1,000 (100.0%)
+
+Total basepairs processed:        80,000 bp
+Total written (filtered):         75,000 bp (93.8%)
+
+=== Adapter 1 ===
+
+Sequence: TGCAG; Type: regular 5'; Length: 5; Trimmed: 1000 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-5 bp: 0
+
+Overview of removed sequences
+length  count   expect  max.err error counts
+5       1000    1.0     0       1000
+SRR6805885
+This is cutadapt 4.6 with Python 3.10.13
+Command line parameters: -g TGCAG SRR6805885.tiny.fastq.gz -o SRR6805885.tiny_trimmed.fastq.gz
+Processing single-end reads on 1 core ...
+Done           00:00:00         1,000 reads @  40.2 µs/read;   1.49 M reads/minute
+Finished in 0.053 s (53.206 µs/read; 1.13 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                   1,000
+Reads with adapters:                     1,000 (100.0%)
+Reads written (passing filters):         1,000 (100.0%)
+
+Total basepairs processed:        80,000 bp
+Total written (filtered):         75,000 bp (93.8%)
+
+=== Adapter 1 ===
+
+Sequence: TGCAG; Type: regular 5'; Length: 5; Trimmed: 1000 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-5 bp: 0
+
+Overview of removed sequences
+length  count   expect  max.err error counts
+5       1000    1.0     0       1000
+All files trimmed!
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ ls *trimmed*
+SRR6805880.tiny_trimmed.fastq.gz  SRR6805883.tiny_trimmed.fastq.gz
+SRR6805881.tiny_trimmed.fastq.gz  SRR6805884.tiny_trimmed.fastq.gz
+SRR6805882.tiny_trimmed.fastq.gz  SRR6805885.tiny_trimmed.fastq.gz
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ ls -l *trimmed*
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 86610 Mar  9 14:49 SRR6805880.tiny_trimmed.fastq.gz
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 85617 Mar  9 14:49 SRR6805881.tiny_trimmed.fastq.gz
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 86189 Mar  9 14:49 SRR6805882.tiny_trimmed.fastq.gz
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 86924 Mar  9 14:49 SRR6805883.tiny_trimmed.fastq.gz
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 86140 Mar  9 14:49 SRR6805884.tiny_trimmed.fastq.gz
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 86374 Mar  9 14:49 SRR6805885.tiny_trimmed.fastq.gz
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ module load bowtie/2.5.3.1
+ModuleCmd_Load.c(213):ERROR:105: Unable to locate a modulefile for 'bowtie/2.5.3.1'
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ module load bowtie/2.3.5.1
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06   2) anaconda3/2022.05      3) bowtie/2.3.5.1
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ bowtie2-build Ppar_tinygenome.fna.gz Ppar_tinygenome
+Settings:
+  Output files: "Ppar_tinygenome.*.bt2"
+  Line rate: 6 (line is 64 bytes)
+  Lines per side: 1 (side is 64 bytes)
+  Offset rate: 4 (one in 16)
+  FTable chars: 10
+  Strings: unpacked
+  Max bucket size: default
+  Max bucket size, sqrt multiplier: default
+  Max bucket size, len divisor: 4
+  Difference-cover sample period: 1024
+  Endianness: little
+  Actual local endianness: little
+  Sanity checking: disabled
+  Assertions: disabled
+  Random seed: 0
+  Sizeofs: void*:8, int:4, long:8, size_t:8
+Input files DNA, FASTA:
+  Ppar_tinygenome.fna.gz
+Building a SMALL index
+Reading reference sizes
+  Time reading reference sizes: 00:00:01
+Calculating joined length
+Writing header
+Reserving space for joined string
+Joining reference sequences
+  Time to join reference sequences: 00:00:00
+bmax according to bmaxDivN setting: 18275892
+Using parameters --bmax 13706919 --dcv 1024
+  Doing ahead-of-time memory usage test
+  Passed!  Constructing with these parameters: --bmax 13706919 --dcv 1024
+Constructing suffix-array element generator
+Building DifferenceCoverSample
+  Building sPrime
+  Building sPrimeOrder
+  V-Sorting samples
+  V-Sorting samples time: 00:00:01
+  Allocating rank array
+  Ranking v-sort output
+  Ranking v-sort output time: 00:00:00
+  Invoking Larsson-Sadakane on ranks
+  Invoking Larsson-Sadakane on ranks time: 00:00:01
+  Sanity-checking and returning
+Building samples
+Reserving space for 12 sample suffixes
+Generating random suffixes
+QSorting 12 sample offsets, eliminating duplicates
+QSorting sample offsets, eliminating duplicates time: 00:00:00
+Multikey QSorting 12 samples
+  (Using difference cover)
+  Multikey QSorting samples time: 00:00:00
+Calculating bucket sizes
+Splitting and merging
+  Splitting and merging time: 00:00:00
+Avg bucket size: 7.31036e+07 (target: 13706918)
+Converting suffix-array elements to index image
+Allocating ftab, absorbFtab
+Entering Ebwt loop
+Getting block 1 of 1
+  No samples; assembling all-inclusive block
+  Sorting block of length 73103571 for bucket 1
+  (Using difference cover)
+  Sorting block time: 00:00:23
+Returning block of 73103572 for bucket 1
+Exited Ebwt loop
+fchr[A]: 0
+fchr[C]: 22982187
+fchr[G]: 36581257
+fchr[T]: 50152032
+fchr[$]: 73103571
+Exiting Ebwt::buildToDisk()
+Returning from initFromVector
+Wrote 28992651 bytes to primary EBWT file: Ppar_tinygenome.1.bt2
+Wrote 18275900 bytes to secondary EBWT file: Ppar_tinygenome.2.bt2
+Re-opening _in1 and _in2 as input streams
+Returning from Ebwt constructor
+Headers:
+    len: 73103571
+    bwtLen: 73103572
+    sz: 18275893
+    bwtSz: 18275893
+    lineRate: 6
+    offRate: 4
+    offMask: 0xfffffff0
+    ftabChars: 10
+    eftabLen: 20
+    eftabSz: 80
+    ftabLen: 1048577
+    ftabSz: 4194308
+    offsLen: 4568974
+    offsSz: 18275896
+    lineSz: 64
+    sideSz: 64
+    sideBwtSz: 48
+    sideBwtLen: 192
+    numSides: 380748
+    numLines: 380748
+    ebwtTotLen: 24367872
+    ebwtTotSz: 24367872
+    color: 0
+    reverse: 0
+Total time for call to driver() for forward index: 00:00:36
+Reading reference sizes
+  Time reading reference sizes: 00:00:01
+Calculating joined length
+Writing header
+Reserving space for joined string
+Joining reference sequences
+  Time to join reference sequences: 00:00:00
+  Time to reverse reference sequence: 00:00:00
+bmax according to bmaxDivN setting: 18275892
+Using parameters --bmax 13706919 --dcv 1024
+  Doing ahead-of-time memory usage test
+  Passed!  Constructing with these parameters: --bmax 13706919 --dcv 1024
+Constructing suffix-array element generator
+Building DifferenceCoverSample
+  Building sPrime
+  Building sPrimeOrder
+  V-Sorting samples
+  V-Sorting samples time: 00:00:02
+  Allocating rank array
+  Ranking v-sort output
+  Ranking v-sort output time: 00:00:00
+  Invoking Larsson-Sadakane on ranks
+  Invoking Larsson-Sadakane on ranks time: 00:00:00
+  Sanity-checking and returning
+Building samples
+Reserving space for 12 sample suffixes
+Generating random suffixes
+QSorting 12 sample offsets, eliminating duplicates
+QSorting sample offsets, eliminating duplicates time: 00:00:00
+Multikey QSorting 12 samples
+  (Using difference cover)
+  Multikey QSorting samples time: 00:00:00
+Calculating bucket sizes
+Splitting and merging
+  Splitting and merging time: 00:00:00
+Avg bucket size: 7.31036e+07 (target: 13706918)
+Converting suffix-array elements to index image
+Allocating ftab, absorbFtab
+Entering Ebwt loop
+Getting block 1 of 1
+  No samples; assembling all-inclusive block
+  Sorting block of length 73103571 for bucket 1
+  (Using difference cover)
+  Sorting block time: 00:00:22
+Returning block of 73103572 for bucket 1
+Exited Ebwt loop
+fchr[A]: 0
+fchr[C]: 22982187
+fchr[G]: 36581257
+fchr[T]: 50152032
+fchr[$]: 73103571
+Exiting Ebwt::buildToDisk()
+Returning from initFromVector
+Wrote 28992651 bytes to primary EBWT file: Ppar_tinygenome.rev.1.bt2
+Wrote 18275900 bytes to secondary EBWT file: Ppar_tinygenome.rev.2.bt2
+Re-opening _in1 and _in2 as input streams
+Returning from Ebwt constructor
+Headers:
+    len: 73103571
+    bwtLen: 73103572
+    sz: 18275893
+    bwtSz: 18275893
+    lineRate: 6
+    offRate: 4
+    offMask: 0xfffffff0
+    ftabChars: 10
+    eftabLen: 20
+    eftabSz: 80
+    ftabLen: 1048577
+    ftabSz: 4194308
+    offsLen: 4568974
+    offsSz: 18275896
+    lineSz: 64
+    sideSz: 64
+    sideBwtSz: 48
+    sideBwtLen: 192
+    numSides: 380748
+    numLines: 380748
+    ebwtTotLen: 24367872
+    ebwtTotSz: 24367872
+    color: 0
+    reverse: 1
+Total time for backward call to driver() for mirror index: 00:00:34
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ ls
+41138439.error                    SRR6805882.tiny.fastq.gz
+41138439.output                   SRR6805882.tiny_fastqc.zip
+Ppar_tinygenome.1.bt2             SRR6805882.tiny_trimmed.fastq.gz
+Ppar_tinygenome.2.bt2             SRR6805883.tiny.fastq.gz
+Ppar_tinygenome.3.bt2             SRR6805883.tiny_fastqc.zip
+Ppar_tinygenome.4.bt2             SRR6805883.tiny_trimmed.fastq.gz
+Ppar_tinygenome.fna               SRR6805884.tiny.fastq.gz
+Ppar_tinygenome.fna.gz            SRR6805884.tiny_fastqc.zip
+Ppar_tinygenome.rev.1.bt2         SRR6805884.tiny_trimmed.fastq.gz
+Ppar_tinygenome.rev.2.bt2         SRR6805885.tiny.fastq.gz
+Ppar_tinygenome_seq_count.txt     SRR6805885.tiny_fastqc.zip
+SRR6805880.tiny.fastq.gz          SRR6805885.tiny_trimmed.fastq.gz
+SRR6805880.tiny_fastqc.zip        fastqc_html_reports
+SRR6805880.tiny_trimmed.fastq.gz  trim-adapters-script.sh
+SRR6805881.tiny.fastq.gz          unzip_into_new_dir.bash
+SRR6805881.tiny_fastqc.zip        unzipped_fastq
+SRR6805881.tiny_trimmed.fastq.gz
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ head Ppar_tinygenome.1.bt2
+¦x[
+¦¦¦¦¦NX¦
+5¦H&JB  ¦¦O%D6o¦¦¦¦1¦¦
+¦S4¦¦4¦¦¦¦¦I¦R6¦
+¦F¦2¦\¦?
+        \¦¦¦¦X¦i\D¦u¦¦¦¦¦z.`$+¦?%X¦T¦7¦
+¦\H¦D¦¦<¦¦¦p[,¦¦y79¦PC¦¦nZ3¦W¦M*?¦¦0sy¦¦¦=¦5¦~¦{¦g¦¦¦k¦¦E¦s(¦@^¦\¦¦
+¦¦¦¦/¦}_¦¦&w¦                                                                              ~W[¦¦         ¦#knl¦¦¦¦
+3 ;Ie¦?M¦¦}-{"Y¦C*"A¦¦  ¦¦¦yi;^&¦>R¦¦¦¦,b¦¦¦5?¦¦¦N
+¦¦d¦N^u¦]o¦
+:<¦#V¦¦Tl¦`¦Ea¦¦5¦
+O¦¦'¦¦¦+¦
+.p¦Sn ?¦¦¦Ao¦n¦¦0u¦pD2¦C¦¦a¦Y 5'¦¦¦¦
+                                    ¦¦k{V¦¦
+`APOH¦%¦n>Kv¦5;¦UZa@Gu!2¦¦¦i¦¦]¦E¦w¦¦'¦l¦Bb¦¦WU¦¦V3     ¦>¦xZF¦4¦¦C5Ph¦x
+dP¦+¦9qF¦&i8!'¦ ¦6
+¦>
+        ¦¦N¦¦¦6a¦¦-:¦¦¦
+                       ¦9¦&¦%'¦Zi`
+                                  ¦O¦¦¦x&3¦¦=¦  ¦¦p¦i¦¦¦!¦      ¦¦I¦"¦93"¦¦¦T¦
+%¦bAG¦¦$m8
+¦UN@[¦¦¦
+        ¦¦`¦
+            ¦?¦cd¦¦¦    HH<¦!*¦¦0¦2U¦M}¦B¦z¦a3¦HUe77¦¦¦}¦¦F¦*|¦¦>¦¦j¦P¦¦o¦¦F¦14¦?qP¦¦¦;(z6x|F¦Z¦\f¦¦T¦Xc¦¦¦W¦2¦¦¦¦¦W¦x¦¦¦¦¦/B¦¦¦
+¦¦¦¦¦¦QD¦¦                          ¦)x
+¦¦3¦¦>¦ œ}
+z k¦U¦¦l¦ku¦O"i¦\p¦P`c¦5
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ head Ppar_tinygenome.rev.1.bt2
+¦x[
+¦¦¦¦¦NX¦
+5¦H&JB  ¦¦O%D6o¦¦¦¦1¦¦
+¦S4¦¦4¦¦¦¦¦I¦R6¦
+¦F¦2¦\¦?
+        \¦¦¦¦X¦i\D¦u¦¦¦¦¦z.`$+¦?%X¦T¦7¦
+¦\H¦D¦¦<¦¦¦p[,¦¦y79¦PC¦¦nZ3¦W¦M*?¦¦0sy¦¦¦=¦5¦~¦{¦g¦¦¦k¦¦E¦s(¦@^¦\¦¦
+¦¦¦¦/¦}_¦¦&w¦                                                                              ~W[¦¦         ¦#knl¦¦¦¦
+3 ;Ie¦?M¦¦}-{"Y¦C*"A¦¦  ¦¦¦yi;^&¦>R¦¦¦¦,b¦¦¦5?¦¦¦N
+¦¦d¦N^u¦]o¦
+:<¦#V¦¦Tl¦`¦Ea¦¦5¦
+O¦¦'¦¦¦+¦
+.p¦Sn ?¦¦¦Ao¦n¦¦0u¦pD2¦C¦¦a¦Y 5'¦¦¦¦
+                                    ¦¦k{V¦¦
+`APOH¦%¦n>Kv¦5;¦UZa@Gu!2¦¦¦i¦¦]¦E¦w¦¦'¦l¦Bb¦¦WU¦¦V3     ¦>¦xZF¦4¦¦C5Ph¦x
+dP¦+¦9qF¦&i8!'¦ ¦6
+¦>
+        ¦¦N¦¦¦6a¦¦-:¦¦¦
+                       ¦9¦&¦%'¦Zi`
+                                  ¦O¦¦¦x&3¦¦=¦  ¦¦p¦i¦¦¦!¦      ¦¦I¦"¦93"¦¦¦T¦
+%¦bAG¦¦$m8
+¦UN@[¦¦¦
+        ¦¦`¦
+            ¦?¦cd¦¦¦    HH<¦!*¦¦0¦2U¦M}¦B¦z¦a3¦HUe77¦¦¦}¦¦F¦*|¦¦>¦¦j¦P¦¦o¦¦F¦14¦?qP¦¦¦;(z6x|F¦Z¦\f¦¦T¦Xc¦¦¦W¦2¦¦¦¦¦W¦x¦¦¦¦¦/B¦¦¦
+¦¦¦¦¦¦QD¦¦                          ¦)x
+¦¦3¦¦>¦ œ}
+z k¦U¦¦l¦ku¦O"i¦\p¦P`c¦5
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ nano map-reads-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ ls
+41138439.error                    SRR6805882.tiny.fastq.gz
+41138439.output                   SRR6805882.tiny_fastqc.zip
+Ppar_tinygenome.1.bt2             SRR6805882.tiny_trimmed.fastq.gz
+Ppar_tinygenome.2.bt2             SRR6805883.tiny.fastq.gz
+Ppar_tinygenome.3.bt2             SRR6805883.tiny_fastqc.zip
+Ppar_tinygenome.4.bt2             SRR6805883.tiny_trimmed.fastq.gz
+Ppar_tinygenome.fna               SRR6805884.tiny.fastq.gz
+Ppar_tinygenome.fna.gz            SRR6805884.tiny_fastqc.zip
+Ppar_tinygenome.rev.1.bt2         SRR6805884.tiny_trimmed.fastq.gz
+Ppar_tinygenome.rev.2.bt2         SRR6805885.tiny.fastq.gz
+Ppar_tinygenome_seq_count.txt     SRR6805885.tiny_fastqc.zip
+SRR6805880.tiny.fastq.gz          SRR6805885.tiny_trimmed.fastq.gz
+SRR6805880.tiny_fastqc.zip        fastqc_html_reports
+SRR6805880.tiny_trimmed.fastq.gz  map-reads-script.sh
+SRR6805881.tiny.fastq.gz          trim-adapters-script.sh
+SRR6805881.tiny_fastqc.zip        unzip_into_new_dir.bash
+SRR6805881.tiny_trimmed.fastq.gz  unzipped_fastq
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ nano map-reads-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ ls -l map-reads-script.sh
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 234 Mar  9 15:07 map-reads-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ chmod 760 map-reads-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ ls -l map-reads-script.sh
+-rwxrw----+ 1 hudson.ka BIOL3411.202430-staff 234 Mar  9 15:07 map-reads-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ ./map-reads-script.sh
+SRR6805880
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+        LANGUAGE = (unset),
+        LC_ALL = (unset),
+        LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+1000 reads; of these:
+  1000 (100.00%) were unpaired; of these:
+    782 (78.20%) aligned 0 times
+    111 (11.10%) aligned exactly 1 time
+    107 (10.70%) aligned >1 times
+21.80% overall alignment rate
+SRR6805881
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+        LANGUAGE = (unset),
+        LC_ALL = (unset),
+        LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+1000 reads; of these:
+  1000 (100.00%) were unpaired; of these:
+    782 (78.20%) aligned 0 times
+    109 (10.90%) aligned exactly 1 time
+    109 (10.90%) aligned >1 times
+21.80% overall alignment rate
+SRR6805882
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+        LANGUAGE = (unset),
+        LC_ALL = (unset),
+        LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+1000 reads; of these:
+  1000 (100.00%) were unpaired; of these:
+    772 (77.20%) aligned 0 times
+    116 (11.60%) aligned exactly 1 time
+    112 (11.20%) aligned >1 times
+22.80% overall alignment rate
+SRR6805883
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+        LANGUAGE = (unset),
+        LC_ALL = (unset),
+        LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+1000 reads; of these:
+  1000 (100.00%) were unpaired; of these:
+    792 (79.20%) aligned 0 times
+    103 (10.30%) aligned exactly 1 time
+    105 (10.50%) aligned >1 times
+20.80% overall alignment rate
+SRR6805884
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+        LANGUAGE = (unset),
+        LC_ALL = (unset),
+        LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+1000 reads; of these:
+  1000 (100.00%) were unpaired; of these:
+    789 (78.90%) aligned 0 times
+    110 (11.00%) aligned exactly 1 time
+    101 (10.10%) aligned >1 times
+21.10% overall alignment rate
+SRR6805885
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+        LANGUAGE = (unset),
+        LC_ALL = (unset),
+        LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+1000 reads; of these:
+  1000 (100.00%) were unpaired; of these:
+    766 (76.60%) aligned 0 times
+    115 (11.50%) aligned exactly 1 time
+    119 (11.90%) aligned >1 times
+23.40% overall alignment rate
+\nDone mapping reads to genome!
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ ls
+41138439.error                    SRR6805882.tiny.fastq.gz
+41138439.output                   SRR6805882.tiny_fastqc.zip
+Ppar_tinygenome.1.bt2             SRR6805882.tiny_trimmed.fastq.gz
+Ppar_tinygenome.2.bt2             SRR6805883.sam
+Ppar_tinygenome.3.bt2             SRR6805883.tiny.fastq.gz
+Ppar_tinygenome.4.bt2             SRR6805883.tiny_fastqc.zip
+Ppar_tinygenome.fna               SRR6805883.tiny_trimmed.fastq.gz
+Ppar_tinygenome.fna.gz            SRR6805884.sam
+Ppar_tinygenome.rev.1.bt2         SRR6805884.tiny.fastq.gz
+Ppar_tinygenome.rev.2.bt2         SRR6805884.tiny_fastqc.zip
+Ppar_tinygenome_seq_count.txt     SRR6805884.tiny_trimmed.fastq.gz
+SRR6805880.sam                    SRR6805885.sam
+SRR6805880.tiny.fastq.gz          SRR6805885.tiny.fastq.gz
+SRR6805880.tiny_fastqc.zip        SRR6805885.tiny_fastqc.zip
+SRR6805880.tiny_trimmed.fastq.gz  SRR6805885.tiny_trimmed.fastq.gz
+SRR6805881.sam                    fastqc_html_reports
+SRR6805881.tiny.fastq.gz          map-reads-script.sh
+SRR6805881.tiny_fastqc.zip        trim-adapters-script.sh
+SRR6805881.tiny_trimmed.fastq.gz  unzip_into_new_dir.bash
+SRR6805882.sam                    unzipped_fastq
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ head SRR6805880.sam
+@HD     VN:1.0  SO:unsorted
+@SQ     SN:KN893585.1   LN:22606
+@SQ     SN:KN897506.1   LN:3832
+@SQ     SN:JXUT01146130.1       LN:3328
+@SQ     SN:KN897010.1   LN:3247
+@SQ     SN:KN894258.1   LN:13593
+@SQ     SN:KN887772.1   LN:84168
+@SQ     SN:KN882209.1   LN:477734
+@SQ     SN:JXUT01150820.1       LN:2370
+@SQ     SN:JXUT01148685.1       LN:1169
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ less SRR6805880.sam
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ nano SRR6805880.sam
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ head SRR6805881.sam
+@HD     VN:1.0  SO:unsorted
+@SQ     SN:KN893585.1   LN:22606
+@SQ     SN:KN897506.1   LN:3832
+@SQ     SN:JXUT01146130.1       LN:3328
+@SQ     SN:KN897010.1   LN:3247
+@SQ     SN:KN894258.1   LN:13593
+@SQ     SN:KN887772.1   LN:84168
+@SQ     SN:KN882209.1   LN:477734
+@SQ     SN:JXUT01150820.1       LN:2370
+@SQ     SN:JXUT01148685.1       LN:1169
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ nano sam-to-bam-conversion-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ ls -l sam-to-bam-conversion-script.sh
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 189 Mar  9 15:21 sam-to-bam-conversion-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ chmod 760 sam-to-bam-conversion-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ ls -l sam-to-bam-conversion-script.sh
+-rwxrw----+ 1 hudson.ka BIOL3411.202430-staff 189 Mar  9 15:21 sam-to-bam-conversion-script.sh
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ ./sam-to-bam-conversion-script.sh
+SRR6805880
+./sam-to-bam-conversion-script.sh: line 7: samtools: command not found
+./sam-to-bam-conversion-script.sh: line 7: samtools: command not found
+SRR6805881
+./sam-to-bam-conversion-script.sh: line 7: samtools: command not found
+./sam-to-bam-conversion-script.sh: line 7: samtools: command not found
+SRR6805882
+./sam-to-bam-conversion-script.sh: line 7: samtools: command not found
+./sam-to-bam-conversion-script.sh: line 7: samtools: command not found
+SRR6805883
+./sam-to-bam-conversion-script.sh: line 7: samtools: command not found
+./sam-to-bam-conversion-script.sh: line 7: samtools: command not found
+SRR6805884
+./sam-to-bam-conversion-script.sh: line 7: samtools: command not found
+./sam-to-bam-conversion-script.sh: line 7: samtools: command not found
+SRR6805885
+./sam-to-bam-conversion-script.sh: line 7: samtools: command not found
+./sam-to-bam-conversion-script.sh: line 7: samtools: command not found
+Done converting sam to bam files!
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ module load samtools/1.10
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06   3) bowtie/2.3.5.1
+  2) anaconda3/2022.05      4) samtools/1.10
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ ./sam-to-bam-conversion-script.sh
+SRR6805880
+SRR6805881
+SRR6805882
+SRR6805883
+SRR6805884
+SRR6805885
+Done converting sam to bam files!
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ ls
+41138439.error                    SRR6805882.tiny_fastqc.zip
+41138439.output                   SRR6805882.tiny_trimmed.fastq.gz
+Ppar_tinygenome.1.bt2             SRR6805883.bam
+Ppar_tinygenome.2.bt2             SRR6805883.sam
+Ppar_tinygenome.3.bt2             SRR6805883.tiny.fastq.gz
+Ppar_tinygenome.4.bt2             SRR6805883.tiny_fastqc.zip
+Ppar_tinygenome.fna               SRR6805883.tiny_trimmed.fastq.gz
+Ppar_tinygenome.fna.gz            SRR6805884.bam
+Ppar_tinygenome.rev.1.bt2         SRR6805884.sam
+Ppar_tinygenome.rev.2.bt2         SRR6805884.tiny.fastq.gz
+Ppar_tinygenome_seq_count.txt     SRR6805884.tiny_fastqc.zip
+SRR6805880.bam                    SRR6805884.tiny_trimmed.fastq.gz
+SRR6805880.sam                    SRR6805885.bam
+SRR6805880.tiny.fastq.gz          SRR6805885.sam
+SRR6805880.tiny_fastqc.zip        SRR6805885.tiny.fastq.gz
+SRR6805880.tiny_trimmed.fastq.gz  SRR6805885.tiny_fastqc.zip
+SRR6805881.bam                    SRR6805885.tiny_trimmed.fastq.gz
+SRR6805881.sam                    fastqc_html_reports
+SRR6805881.tiny.fastq.gz          map-reads-script.sh
+SRR6805881.tiny_fastqc.zip        sam-to-bam-conversion-script.sh
+SRR6805881.tiny_trimmed.fastq.gz  trim-adapters-script.sh
+SRR6805882.bam                    unzip_into_new_dir.bash
+SRR6805882.sam                    unzipped_fastq
+SRR6805882.tiny.fastq.gz
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0315 week4]$ source activate /courses/BIOL3411.202430/shared/angsd_env/
+(/courses/BIOL3411.202430/shared/angsd_env) [hudson.ka@c0315 week4]$ ls *.bam > bam.filelist
+(/courses/BIOL3411.202430/shared/angsd_env) [hudson.ka@c0315 week4]$ cat bam.filelist
+SRR6805880.bam
+SRR6805881.bam
+SRR6805882.bam
+SRR6805883.bam
+SRR6805884.bam
+SRR6805885.bam
+(/courses/BIOL3411.202430/shared/angsd_env) [hudson.ka@c0315 week4]$ /courses/BIOL3411.202430/shared/angsd_env/angsd/angsd -bam bam.filelist -GL 1 -out genotype_likelihoods -doMaf 2 -SNP_pval 1e-2 -doMajorMinor 1
+        -> angsd version: 0.941-22-gc877e7f (htslib: 1.19.1-4-gdd9c561) build(Feb 12 2024 12:26:27)
+        -> /courses/BIOL3411.202430/shared/angsd_env/angsd/angsd -bam bam.filelist -GL 1 -out genotype_likelihoods -doMaf 2 -SNP_pval 1e-2 -doMajorMinor 1
+        -> Inputtype is BAM/CRAM
+[multiReader] 6 samples in 6 input files
+        -> SNP-filter using a pvalue: 1.000000e-02 correspond to 6.634897 likelihood units
+x2:6.634897
+        -> Parsing 6 number of samples
+No data for chromoId=0 chromoname=KN893585.1
+This could either indicate that there really is no data for this chromosome
+Or it could be problem with this program regSize=0 notDone=6
+x2:8.731647
+        -> Printing at chr: KN885472.1 pos:10691 chunknumber 100 contains 448 sitesx2:10.620176
+x2:8.979799
+x2:10.213437
+        -> Printing at chr: JXUT01148291.1 pos:1939 chunknumber 200 contains 73 sitesx2:8.500098
+x2:8.666539
+        -> Printing at chr: KN884976.1 pos:46465 chunknumber 400 contains 150 sitesx2:9.486057
+x2:10.385879
+x2:8.745459
+        -> Printing at chr: KN886318.1 pos:10526 chunknumber 500 contains 75 sites
+        -> Done reading data waiting for calculations to finish
+        -> Done waiting for threads
+        -> Output filenames:
+                ->"genotype_likelihoods.arg"
+                ->"genotype_likelihoods.mafs.gz"
+        -> Sat Mar  9 15:38:43 2024
+        -> Arguments and parameters for all analysis are located in .arg file
+        -> Total number of sites analyzed: 71450
+        -> Number of sites retained after filtering: 9
+        [ALL done] cpu-time used =  2.21 sec
+        [ALL done] walltime used =  3.00 sec
+(/courses/BIOL3411.202430/shared/angsd_env) [hudson.ka@c0315 week4]$ ls
+41138439.error                    SRR6805882.tiny_trimmed.fastq.gz
+41138439.output                   SRR6805883.bam
+Ppar_tinygenome.1.bt2             SRR6805883.sam
+Ppar_tinygenome.2.bt2             SRR6805883.tiny.fastq.gz
+Ppar_tinygenome.3.bt2             SRR6805883.tiny_fastqc.zip
+Ppar_tinygenome.4.bt2             SRR6805883.tiny_trimmed.fastq.gz
+Ppar_tinygenome.fna               SRR6805884.bam
+Ppar_tinygenome.fna.gz            SRR6805884.sam
+Ppar_tinygenome.rev.1.bt2         SRR6805884.tiny.fastq.gz
+Ppar_tinygenome.rev.2.bt2         SRR6805884.tiny_fastqc.zip
+Ppar_tinygenome_seq_count.txt     SRR6805884.tiny_trimmed.fastq.gz
+SRR6805880.bam                    SRR6805885.bam
+SRR6805880.sam                    SRR6805885.sam
+SRR6805880.tiny.fastq.gz          SRR6805885.tiny.fastq.gz
+SRR6805880.tiny_fastqc.zip        SRR6805885.tiny_fastqc.zip
+SRR6805880.tiny_trimmed.fastq.gz  SRR6805885.tiny_trimmed.fastq.gz
+SRR6805881.bam                    bam.filelist
+SRR6805881.sam                    fastqc_html_reports
+SRR6805881.tiny.fastq.gz          genotype_likelihoods.arg
+SRR6805881.tiny_fastqc.zip        genotype_likelihoods.mafs.gz
+SRR6805881.tiny_trimmed.fastq.gz  map-reads-script.sh
+SRR6805882.bam                    sam-to-bam-conversion-script.sh
+SRR6805882.sam                    trim-adapters-script.sh
+SRR6805882.tiny.fastq.gz          unzip_into_new_dir.bash
+SRR6805882.tiny_fastqc.zip        unzipped_fastq
+(/courses/BIOL3411.202430/shared/angsd_env) [hudson.ka@c0315 week4]$ gunzip -c genotype_likelihoods.mafs.gz > genotype_likelihoods.mafs
+(/courses/BIOL3411.202430/shared/angsd_env) [hudson.ka@c0315 week4]$ ls
+41138439.error                    SRR6805883.bam
+41138439.output                   SRR6805883.sam
+Ppar_tinygenome.1.bt2             SRR6805883.tiny.fastq.gz
+Ppar_tinygenome.2.bt2             SRR6805883.tiny_fastqc.zip
+Ppar_tinygenome.3.bt2             SRR6805883.tiny_trimmed.fastq.gz
+Ppar_tinygenome.4.bt2             SRR6805884.bam
+Ppar_tinygenome.fna               SRR6805884.sam
+Ppar_tinygenome.fna.gz            SRR6805884.tiny.fastq.gz
+Ppar_tinygenome.rev.1.bt2         SRR6805884.tiny_fastqc.zip
+Ppar_tinygenome.rev.2.bt2         SRR6805884.tiny_trimmed.fastq.gz
+Ppar_tinygenome_seq_count.txt     SRR6805885.bam
+SRR6805880.bam                    SRR6805885.sam
+SRR6805880.sam                    SRR6805885.tiny.fastq.gz
+SRR6805880.tiny.fastq.gz          SRR6805885.tiny_fastqc.zip
+SRR6805880.tiny_fastqc.zip        SRR6805885.tiny_trimmed.fastq.gz
+SRR6805880.tiny_trimmed.fastq.gz  bam.filelist
+SRR6805881.bam                    fastqc_html_reports
+SRR6805881.sam                    genotype_likelihoods.arg
+SRR6805881.tiny.fastq.gz          genotype_likelihoods.mafs
+SRR6805881.tiny_fastqc.zip        genotype_likelihoods.mafs.gz
+SRR6805881.tiny_trimmed.fastq.gz  map-reads-script.sh
+SRR6805882.bam                    sam-to-bam-conversion-script.sh
+SRR6805882.sam                    trim-adapters-script.sh
+SRR6805882.tiny.fastq.gz          unzip_into_new_dir.bash
+SRR6805882.tiny_fastqc.zip        unzipped_fastq
+SRR6805882.tiny_trimmed.fastq.gz
+(/courses/BIOL3411.202430/shared/angsd_env) [hudson.ka@c0315 week4]$ cat genotype_likelihoods.mafs
+chromo  position        major   minor   unknownEM       pu-EM   nInd
+KN882277.1      41498   G       T       0.332737        3.127339e-03    3
+KN885472.1      10712   C       G       0.126253        1.118604e-03    6
+KN885472.1      10741   T       A       0.205533        2.729806e-03    6
+KN885472.1      10746   C       T       0.113382        1.394211e-03    6
+KN894013.1      22082   T       C       0.098327        3.551274e-03    2
+KN894013.1      22084   C       T       0.106562        3.241062e-03    2
+KN883616.1      31041   C       A       0.422659        2.070393e-03    3
+KN883616.1      31042   T       G       0.424129        1.269827e-03    3
+KN883758.1      179190  A       T       0.336645        3.103740e-03    3
+(/courses/BIOL3411.202430/shared/angsd_env) [hudson.ka@c0315 week4]$

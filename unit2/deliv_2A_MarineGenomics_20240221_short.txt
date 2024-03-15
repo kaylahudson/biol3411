@@ -1,0 +1,217 @@
+     +--------------------------------------------------------------------+
+     ¦                • MobaXterm Personal Edition v23.6 •                ¦
+     ¦              (X server, SSH client and network tools)              ¦
+     ¦                                                                    ¦
+     ¦ ? Your computer drives are accessible through the /drives path     ¦
+     ¦ ? Your DISPLAY is set to 10.0.0.93:0.0                             ¦
+     ¦ ? When using SSH, your remote DISPLAY is automatically forwarded   ¦
+     ¦ ? Your HOME folder is not persistent: it will be erased on restart ¦
+     ¦ ? Each command status is specified by a special symbol (? or ?)    ¦
+     ¦                                                                    ¦
+     ¦ • Important:                                                       ¦
+     ¦ This is MobaXterm Personal Edition. The Professional edition       ¦
+     ¦ allows you to customize MobaXterm for your company: you can add    ¦
+     ¦ your own logo, your parameters, your welcome message and generate  ¦
+     ¦ either an MSI installation package or a portable executable.       ¦
+     ¦ We can also modify MobaXterm or develop the plugins you need.      ¦
+     ¦ For more information: https://mobaxterm.mobatek.net/download.html  ¦
+     +--------------------------------------------------------------------+
+
+ ? 21/02/2024 ? ? 15:28.27 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.edu
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Wed Feb 21 14:50:21 2024 from 10.110.210.130
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+[hudson.ka@login-01 ~]$ cd /courses/BIOL3411.202430/students/hudson.ka/class_examples/
+[hudson.ka@login-01 class_examples]$ ls
+computing_node_intro_wk4  dna_name_intro_wk1       fastq_work_wk6_20240221
+Day_data                  fastq_work_wk6_20240214  unit2_intro_exercise
+[hudson.ka@login-01 class_examples]$ wget https://raw.githubusercontent.com/BayLab/MarineGenomicsData/main/week4_semester.tar.gz
+--2024-02-21 15:30:01--  https://raw.githubusercontent.com/BayLab/MarineGenomicsData/main/week4_semester.tar.gz
+Connecting to 10.99.0.130:3128... connected.
+Proxy request sent, awaiting response... 200 OK
+Length: 23355373 (22M) [application/octet-stream]
+Saving to: ‘week4_semester.tar.gz’
+
+100%[================================================================>] 23,355,373   110MB/s   in 0.2s
+
+2024-02-21 15:30:02 (110 MB/s) - ‘week4_semester.tar.gz’ saved [23355373/23355373]
+
+[hudson.ka@login-01 class_examples]$ ls
+computing_node_intro_wk4  dna_name_intro_wk1       fastq_work_wk6_20240221  week4_semester.tar.gz
+Day_data                  fastq_work_wk6_20240214  unit2_intro_exercise
+[hudson.ka@login-01 class_examples]$ tar -xzvf week4_semester.tar.gz
+MarineGenomics/week4/
+MarineGenomics/week4/Ppar_tinygenome.fna.gz
+MarineGenomics/week4/SRR6805880.tiny.fastq.gz
+MarineGenomics/week4/SRR6805881.tiny.fastq.gz
+MarineGenomics/week4/SRR6805882.tiny.fastq.gz
+MarineGenomics/week4/SRR6805883.tiny.fastq.gz
+MarineGenomics/week4/SRR6805884.tiny.fastq.gz
+MarineGenomics/week4/SRR6805885.tiny.fastq.gz
+[hudson.ka@login-01 class_examples]$ ls
+computing_node_intro_wk4  dna_name_intro_wk1       fastq_work_wk6_20240221  unit2_intro_exercise
+Day_data                  fastq_work_wk6_20240214  MarineGenomics           week4_semester.tar.gz
+[hudson.ka@login-01 class_examples]$   sudo apt-get -y update && \
+>   sudo apt-get -y install samtools bowtie2 cutadapt fastqc
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[6] Successful Duo login for 'hudson.ka'
+hudson.ka is not in the sudoers file.  This incident will be reported.
+[hudson.ka@login-01 class_examples]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06
+[hudson.ka@login-01 class_examples]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06
+[hudson.ka@login-01 class_examples]$ modul avail
+-bash: modul: command not found
+[hudson.ka@login-01 class_examples]$ module avail
+
+-------------------------------------- /shared/centos7/modulefiles ---------------------------------------
+abaqus/2021                          matlab/R2014a
+abyss/1.0                            matlab/R2018a
+abyss/2.1.5                          matlab/R2019a
+abyss/2.1.5-maxk192                  matlab/R2019b
+admin/2018-10-10                     matlab/R2020a
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@login-01 class_examples]$ ls
+computing_node_intro_wk4  dna_name_intro_wk1       fastq_work_wk6_20240221  unit2_intro_exercise
+Day_data                  fastq_work_wk6_20240214  MarineGenomics           week4_semester.tar.gz
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@login-01 week4]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06
+[hudson.ka@login-01 week4]$ module load OpenJDK/19.0.1
+[hudson.ka@login-01 week4]$ module load fastqc/0.11.9
+[hudson.ka@login-01 week4]$ fastqc SRR6805880.tiny.fastq.gz
+Started analysis of SRR6805880.tiny.fastq.gz
+Approx 100% complete for SRR6805880.tiny.fastq.gz
+Analysis complete for SRR6805880.tiny.fastq.gz
+[hudson.ka@login-01 week4]$ ls
+Ppar_tinygenome.fna.gz       SRR6805880.tiny.fastq.gz  SRR6805883.tiny.fastq.gz
+SRR6805880.tiny_fastqc.html  SRR6805881.tiny.fastq.gz  SRR6805884.tiny.fastq.gz
+SRR6805880.tiny_fastqc.zip   SRR6805882.tiny.fastq.gz  SRR6805885.tiny.fastq.gz
+[hudson.ka@login-01 week4]$ fastqc SRR680588*
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+Started analysis of SRR6805880.tiny.fastq.gz
+Approx 100% complete for SRR6805880.tiny.fastq.gz
+Analysis complete for SRR6805880.tiny.fastq.gz
+Started analysis of SRR6805881.tiny.fastq.gz
+Approx 100% complete for SRR6805881.tiny.fastq.gz
+Analysis complete for SRR6805881.tiny.fastq.gz
+Started analysis of SRR6805882.tiny.fastq.gz
+Approx 100% complete for SRR6805882.tiny.fastq.gz
+Analysis complete for SRR6805882.tiny.fastq.gz
+Started analysis of SRR6805883.tiny.fastq.gz
+Approx 100% complete for SRR6805883.tiny.fastq.gz
+Analysis complete for SRR6805883.tiny.fastq.gz
+Started analysis of SRR6805884.tiny.fastq.gz
+Approx 100% complete for SRR6805884.tiny.fastq.gz
+Analysis complete for SRR6805884.tiny.fastq.gz
+Started analysis of SRR6805885.tiny.fastq.gz
+Approx 100% complete for SRR6805885.tiny.fastq.gz
+Analysis complete for SRR6805885.tiny.fastq.gz
+[hudson.ka@login-01 week4]$ srun --pty /bin/bash
+srun: job 41058219 queued and waiting for resources
+srun: job 41058219 has been allocated resources
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c0234 bowtie_MG_tutorials_20240221]$ cd MarineGenomics/week4/
+[hudson.ka@c0234 week4]$ ls
+Ppar_tinygenome.fna.gz       SRR6805882.tiny_fastqc.html  SRR6805884.tiny_fastqc.zip
+SRR6805880.tiny_fastqc.html  SRR6805882.tiny_fastqc.zip   SRR6805884.tiny.fastq.gz
+SRR6805880.tiny_fastqc.zip   SRR6805882.tiny.fastq.gz     SRR6805885.tiny_fastqc.html
+SRR6805880.tiny.fastq.gz     SRR6805883.tiny_fastqc.html  SRR6805885.tiny_fastqc.zip
+SRR6805881.tiny_fastqc.html  SRR6805883.tiny_fastqc.zip   SRR6805885.tiny.fastq.gz
+SRR6805881.tiny_fastqc.zip   SRR6805883.tiny.fastq.gz
+SRR6805881.tiny.fastq.gz     SRR6805884.tiny_fastqc.html
+[hudson.ka@c0234 week4]$ source activate /courses/BIOL3411.202430/shared/cutadapt_env/
+bash: activate: No such file or directory
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c0234 bowtie_MG_tutorials_20240221]$ cd MarineGenomics/week4/
+[hudson.ka@c0234 week4]$ ls
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c0234 week4]$ module load anaconda3/2022.05
+[hudson.ka@c0234 week4]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06   2) OpenJDK/19.0.1         3) fastqc/0.11.9          4) anaconda3/2022.05
+[hudson.ka@c0234 week4]$ ls
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c0234 week4]$ mkdir fastqc_html_reports
+[hudson.ka@c0234 week4]$ mv *.html fastqc_html_reports/
+[hudson.ka@c0234 week4]$ ls
+fastqc_html_reports         SRR6805881.tiny.fastq.gz    SRR6805884.tiny_fastqc.zip
+Ppar_tinygenome.fna.gz      SRR6805882.tiny_fastqc.zip  SRR6805884.tiny.fastq.gz
+SRR6805880.tiny_fastqc.zip  SRR6805882.tiny.fastq.gz    SRR6805885.tiny_fastqc.zip
+SRR6805880.tiny.fastq.gz    SRR6805883.tiny_fastqc.zip  SRR6805885.tiny.fastq.gz
+SRR6805881.tiny_fastqc.zip  SRR6805883.tiny.fastq.gz
+[hudson.ka@c0234 week4]$ cutadapt -g TGCAG SRR6805880.tiny.fastq.gz -o SRR6805880.tiny_trimmed.fastq.gz
+bash: cutadapt: command not found
+[hudson.ka@c0234 week4]$ source activate /courses/BIOL3411.202430/shared/cutadapt_env/
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0234 week4]$ cutadapt -g TGCAG SRR6805880.tiny.fastq.gz -o SRR6805880.tiny_trimmed.fastq.gz
+This is cutadapt 4.6 with Python 3.10.13
+Command line parameters: -g TGCAG SRR6805880.tiny.fastq.gz -o SRR6805880.tiny_trimmed.fastq.gz
+Processing single-end reads on 1 core ...
+Done           00:00:00         1,000 reads @  61.8 µs/read;   0.97 M reads/minute
+Finished in 0.110 s (110.139 µs/read; 0.54 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                   1,000
+Reads with adapters:                     1,000 (100.0%)
+Reads written (passing filters):         1,000 (100.0%)
+
+Total basepairs processed:        80,000 bp
+Total written (filtered):         75,000 bp (93.8%)
+
+=== Adapter 1 ===
+
+Sequence: TGCAG; Type: regular 5'; Length: 5; Trimmed: 1000 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-5 bp: 0
+
+Overview of removed sequences
+length  count   expect  max.err error counts
+5       1000    1.0     0       1000
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0234 week4]$ ls
+fastqc_html_reports               SRR6805881.tiny_fastqc.zip  SRR6805883.tiny.fastq.gz
+Ppar_tinygenome.fna.gz            SRR6805881.tiny.fastq.gz    SRR6805884.tiny_fastqc.zip
+SRR6805880.tiny_fastqc.zip        SRR6805882.tiny_fastqc.zip  SRR6805884.tiny.fastq.gz
+SRR6805880.tiny.fastq.gz          SRR6805882.tiny.fastq.gz    SRR6805885.tiny_fastqc.zip
+SRR6805880.tiny_trimmed.fastq.gz  SRR6805883.tiny_fastqc.zip  SRR6805885.tiny.fastq.gz
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0234 week4]$ nano SRR6805880.tiny_trimmed.fastq.gz
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0234 week4]$ nano SRR6805880.tiny.fastq.gz
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0234 week4]$ pwd
+/courses/BIOL3411.202430/students/hudson.ka/class_examples/bowtie_MG_tutorials_20240221/MarineGenomics/week4
+(/courses/BIOL3411.202430/shared/cutadapt_env) [hudson.ka@c0234 week4]$ cd ../..
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...

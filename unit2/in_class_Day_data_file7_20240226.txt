@@ -1,0 +1,604 @@
+     +--------------------------------------------------------------------+
+     ¦                • MobaXterm Personal Edition v23.6 •                ¦
+     ¦              (X server, SSH client and network tools)              ¦
+     ¦                                                                    ¦
+     ¦ ? Your computer drives are accessible through the /drives path     ¦
+     ¦ ? Your DISPLAY is set to 10.0.0.92:0.0                             ¦
+     ¦ ? When using SSH, your remote DISPLAY is automatically forwarded   ¦
+     ¦ ? Your HOME folder is not persistent: it will be erased on restart ¦
+     ¦ ? Each command status is specified by a special symbol (? or ?)    ¦
+     ¦                                                                    ¦
+     ¦ • Important:                                                       ¦
+     ¦ This is MobaXterm Personal Edition. The Professional edition       ¦
+     ¦ allows you to customize MobaXterm for your company: you can add    ¦
+     ¦ your own logo, your parameters, your welcome message and generate  ¦
+     ¦ either an MSI installation package or a portable executable.       ¦
+     ¦ We can also modify MobaXterm or develop the plugins you need.      ¦
+     ¦ For more information: https://mobaxterm.mobatek.net/download.html  ¦
+     +--------------------------------------------------------------------+
+s
+ ? 26/02/2024 ? ? 15:04.03 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.edu
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Mon Feb 26 15:01:56 2024 from 10.110.173.127
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+[hudson.ka@login-00 ~]$ srun --pty /bin/bash
+srun: job 41141086 queued and waiting for resources
+srun: job 41141086 has been allocated resources
+[hudson.ka@c0281 ~]$ cd /courses/BIOL3411.202430/students/hudson.ka/unit2/Day_data/
+[hudson.ka@c0281 Day_data]$ ls
+10_S1_L001_R1_001.fastq.gz  13_S1_L001_R1_001.fastq.gz  1_S1_L001_R1_001.fastq.gz  41054315.error             6_S1_L001_R1_001.fastq.gz  9_S1_L00
+10_S1_L001_R2_001.fastq.gz  13_S1_L001_R2_001.fastq.gz  1_S1_L001_R2_001.fastq.gz  41054315.output            6_S1_L001_R2_001.fastq.gz  9_S1_L00
+11_S1_L001_R1_001.fastq.gz  14_S1_L001_R1_001.fastq.gz  2_S1_L001_R1_001.fastq.gz  4_S1_L001_R1_001.fastq.gz  7_S1_L001_R1_001.fastq.gz  unzip_in
+11_S1_L001_R2_001.fastq.gz  14_S1_L001_R2_001.fastq.gz  2_S1_L001_R2_001.fastq.gz  4_S1_L001_R2_001.fastq.gz  7_S1_L001_R2_001.fastq.gz  unzipped
+12_S1_L001_R1_001.fastq.gz  15_S1_L001_R1_001.fastq.gz  3_S1_L001_R1_001.fastq.gz  5_S1_L001_R1_001.fastq.gz  8_S1_L001_R1_001.fastq.gz
+12_S1_L001_R2_001.fastq.gz  15_S1_L001_R2_001.fastq.gz  3_S1_L001_R2_001.fastq.gz  5_S1_L001_R2_001.fastq.gz  8_S1_L001_R2_001.fastq.gz
+[hudson.ka@c0281 Day_data]$ head unzipped_fastq/10_S1_L001_R1_001.fastq.gz.fastq
+@lh00172:133:223LN7LT4:5:1101:4787:1084 1:N:0:AATCCAGC+AACCAGGT
+CNGGAAACTGCCTCGTCATGCGACTGTTCCCCGGGGTCAGGGCCGCTGGTATTTGCTGTAAAGAGGGGCGTTGAGTCCGTCCGACTTCACTGCCCCCTTTCAGCCTTTTGGGTCCTGTATCCCAATTCTCAGAGGTCCCGCCGAG
++
+I#IIIIIIIII99III9IIII9-IIIIII9III9I-IIIIIII-II9IIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIII-IIIIIIII9IIII
+@lh00172:133:223LN7LT4:5:1101:7862:1084 1:N:0:AATCCAGC+AACCAGGT
+CNGGAGACGACGTGCAGAAATGGCACCTCGAAAGGGGAAGGAAAAGAAGGAAGAACAGGTCATCAGCCTCGGACCTCAGGTGGCTGAAGGAGAGAATGTATTTGGTGTCTGCAATATCTTTGCATCCTTCAATGACACTTTTGTC
++
+I#III-IIIIIIIIIIIIIIIII-IIIIIIIIIIIII9IIIIII9I9III--III-IIIIIIIIIIIIIII9IIIIIIIIIIIIIII9IIIIIIIIIIIIII9IIIIIII9I-99III9IIIIIIIIIIII9IIIII-III9III
+@lh00172:133:223LN7LT4:5:1101:7878:1084 1:N:0:AATCCAGC+AACCAGGT
+CNGGAGACGACGTGCAGAAATGGCAACTCGAAAGGGGAAGGAAAAGAAGGAAGAACAGGTCATCAGCCTCGGACCTCAGGTGGCTGAAGACGAGAATGTATTTGGTGTCTGCCCTATCTTTGCATCCTTCAATGACACTTTTGTC
+[hudson.ka@c0281 Day_data]$ cd unzipped_fastq/
+[hudson.ka@c0281 unzipped_fastq]$ ;s
+bash: syntax error near unexpected token `;'
+[hudson.ka@c0281 unzipped_fastq]$ ls
+10_S1_L001_R1_001.fastq.gz.fastq  13_S1_L001_R1_001.fastq.gz.fastq  1_S1_L001_R1_001.fastq.gz.fastq  4_S1_L001_R1_001.fastq.gz.fastq  7_S1_L001_R
+10_S1_L001_R2_001.fastq.gz.fastq  13_S1_L001_R2_001.fastq.gz.fastq  1_S1_L001_R2_001.fastq.gz.fastq  4_S1_L001_R2_001.fastq.gz.fastq  7_S1_L001_R
+11_S1_L001_R1_001.fastq.gz.fastq  14_S1_L001_R1_001.fastq.gz.fastq  2_S1_L001_R1_001.fastq.gz.fastq  5_S1_L001_R1_001.fastq.gz.fastq  8_S1_L001_R
+11_S1_L001_R2_001.fastq.gz.fastq  14_S1_L001_R2_001.fastq.gz.fastq  2_S1_L001_R2_001.fastq.gz.fastq  5_S1_L001_R2_001.fastq.gz.fastq  8_S1_L001_R
+12_S1_L001_R1_001.fastq.gz.fastq  15_S1_L001_R1_001.fastq.gz.fastq  3_S1_L001_R1_001.fastq.gz.fastq  6_S1_L001_R1_001.fastq.gz.fastq  9_S1_L001_R
+12_S1_L001_R2_001.fastq.gz.fastq  15_S1_L001_R2_001.fastq.gz.fastq  3_S1_L001_R2_001.fastq.gz.fastq  6_S1_L001_R2_001.fastq.gz.fastq  9_S1_L001_R
+[hudson.ka@c0281 unzipped_fastq]$ grep -i -c "^@" 7_S1_L001_R* > seq_count_files_7.txt
+[hudson.ka@c0281 unzipped_fastq]$ ls
+10_S1_L001_R1_001.fastq.gz.fastq  13_S1_L001_R2_001.fastq.gz.fastq  2_S1_L001_R1_001.fastq.gz.fastq  5_S1_L001_R2_001.fastq.gz.fastq  9_S1_L001_R
+10_S1_L001_R2_001.fastq.gz.fastq  14_S1_L001_R1_001.fastq.gz.fastq  2_S1_L001_R2_001.fastq.gz.fastq  6_S1_L001_R1_001.fastq.gz.fastq  9_S1_L001_R
+11_S1_L001_R1_001.fastq.gz.fastq  14_S1_L001_R2_001.fastq.gz.fastq  3_S1_L001_R1_001.fastq.gz.fastq  6_S1_L001_R2_001.fastq.gz.fastq  seq_count_f
+11_S1_L001_R2_001.fastq.gz.fastq  15_S1_L001_R1_001.fastq.gz.fastq  3_S1_L001_R2_001.fastq.gz.fastq  7_S1_L001_R1_001.fastq.gz.fastq
+12_S1_L001_R1_001.fastq.gz.fastq  15_S1_L001_R2_001.fastq.gz.fastq  4_S1_L001_R1_001.fastq.gz.fastq  7_S1_L001_R2_001.fastq.gz.fastq
+12_S1_L001_R2_001.fastq.gz.fastq  1_S1_L001_R1_001.fastq.gz.fastq   4_S1_L001_R2_001.fastq.gz.fastq  8_S1_L001_R1_001.fastq.gz.fastq
+13_S1_L001_R1_001.fastq.gz.fastq  1_S1_L001_R2_001.fastq.gz.fastq   5_S1_L001_R1_001.fastq.gz.fastq  8_S1_L001_R2_001.fastq.gz.fastq
+[hudson.ka@c0281 unzipped_fastq]$ nano seq_count_files_7.txt
+[hudson.ka@c0281 unzipped_fastq]$ cat seq_count_files_7.txt
+7_S1_L001_R1_001.fastq.gz.fastq:35536673
+7_S1_L001_R2_001.fastq.gz.fastq:35536673
+[hudson.ka@c0281 unzipped_fastq]$ head -n 16 7_S1_L001_R1_001.fastq.gz.fastq
+@lh00172:133:223LN7LT4:5:1101:10970:1084 1:N:0:GCAGAAGA+TCCGTAGT
+GNCCAGGCGAGCAGATGGTCTCCGTCACTGCCAACCTAAATCAATGCCTGGAGAGGGCGAATGCTGCCAATTAGCAGGATATCCAGAGCTCTTTCTCCCAGCCCCGTGGCCCCACCTGGGAGCCAGGCAGCATGCTTTGCCTCCT
++
+I#IIIIIIIIIIIIIIIIIIIIIIIII-I9IIIIIIIIIIIIIIII9IIIIII9IIIII-IIIIIIIIII-IIIIIIIIIIIIIIIIIIIIIIIII-IIIIII--IIIII-I9III-9IIIII9IIIIIIIIIIIIIIIIIIIII
+@lh00172:133:223LN7LT4:5:1101:4569:1098 1:N:0:GCAGAAGA+TCCGTAGT
+CNTAGGTGGAGACACTTTGGCATCATCAACCTTGATCTCCCCAGGAGGCATCTTGTTTAGACACTGTGCGATAATTCTCAGGGACTGGCGCATCTCCTCCACCCGGCACAGGTACCTATCATAGCAGTCCCCTCGAGAACCAACA
++
+I#IIIIIIIIIII9-9IIIII9IIIIII99IIIIIIII9-9-IIIIIIIIIIIIIIII-IIIIIIIIIIIIIIIIIIIIIIIIIIIII-IIII9I--IIIIIIIIIIIIIIIIIIII9IIIII9IIIIII9-I9IIIIIIIIIII
+@lh00172:133:223LN7LT4:5:1101:9812:1098 1:N:0:GCAGAAGA+TCCGTAGT
+ANTCTCTACAAACCACAAAGACATTGGAACACTATACCTATTATTCGGCGCATGAGCTGGAGTCCTAGGCACAGCTCTAAGCCTCCTTATTCGAGCCGAGCTGGGCCAGCCAGGCAACCTTCTAGGTAACGACCACATCTACAAC
++
+I#IIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+@lh00172:133:223LN7LT4:5:1101:17193:1098 1:N:0:GCAGAAGA+TCCGTAGT
+CNGCCTCCCCCTTGAGCCCCCTCGCTTCCCGACGTTCCGTTCCCCCCTGCCCGCCTTCTCCCGCCACCGCCGCCGCCGCCTTCCGCAGGCCGTTTCCACCGAGGAAAAGGAATCGTATCGTATGTCCGCTATCCAGAACCTCCAC
++
+I#II9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9-IIIIIIIIIIIIIIIIIIIIII-IIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9I
+[hudson.ka@c0281 unzipped_fastq]$ head -n 16 7_S1_L001_R2_001.fastq.gz.fastq
+@lh00172:133:223LN7LT4:5:1101:10970:1084 2:N:0:GCAGAAGA+TCCGTAGT
+NTAATGAGGTAGTTTGCTGGGCAGCATTGTGGTGGCAATAACTGATGAGTCCTCTTGCTAACCTTACCATTTTACAAACGGGGAAACCAAGGCCCAGAGAAGGGAAGAAACCGGATCAAGATGACATGGCTAGCAAAAGCAGCAATCTGA
++
+#99-9999IIII9IIIIIIII-9I99-9999I9I9999-I9-9I-999II--99-9-9-9-I--9999I-9II9IIII-9999I99I-9I9II-II9-999I9IIII9III9III9III-II-II9--III-9-9-II9I9I9-IIII9-
+@lh00172:133:223LN7LT4:5:1101:4569:1098 2:N:0:GCAGAAGA+TCCGTAGT
+NTTTGATGTTCCTGTTGGTTCTCGAGGGGACTGCTATGATAGGTACCTGTGCCGGGTGGAGGAGATGCGCCAGTCCATGAGAATTATCGCACAGTGTCTAAACAAGATGCCTCCTGGGGAGATCAAGGTTGATGATGCCAAAGTGTCTCC
++
+#III9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIII9IIIIIIIIIIIIIIIIIIIIIIIII-IIIIIII9IIIIIIIIIIIIII-IIIIIIIIII-IIIIIIII-III9IIIIII9IIIIIII9IIIIIIIIIII
+@lh00172:133:223LN7LT4:5:1101:9812:1098 2:N:0:GCAGAAGA+TCCGTAGT
+NACCGATTATTAGGGGAACTAGTCAGTTGCCAAAGCCTCAGATTATGATGGGTATTACTATGAAGAAGATTATTACAAATGCATGGGCTGTGACGATAACGTTGTAGATGTGGTCGTTACCTAGAAGGTTGCCTGGCTGGCCCAGCTCGG
++
+#IIIIIIIIIIIIIIIIIIIIIIIIIIIII9II9IIIII-IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIII99IIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIII
+@lh00172:133:223LN7LT4:5:1101:17193:1098 2:N:0:GCAGAAGA+TCCGTAGT
+NTTACTTGCATCAGCAAAGGGGTCGAAAGAGTGGAGGTTCTGGATAGCGGACATACGATACGATTCCTTTTCCTCGGTGGAAACGGCCTGCGGAAGGCGGCGGCGGCGGTGGCGGGAGAAGGCGGGCAGGGGGGAACGGAACGTCGGGAA
++
+#IIIIIIIIIIIIII9-IIIIIII9IIIIIIII-9IIIIIIIIII9IIIIIIIIIIIII9I-IIIIIIIIIIIIIIIIIIII-IIII-IIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIII-9IIIIIIIIIIIIIIIIIIII
+[hudson.ka@c0281 unzipped_fastq]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06
+[hudson.ka@c0281 unzipped_fastq]$ module avail
+
+---------------------------------------------------------- /shared/centos7/modulefiles ----------------------------------------------------------
+abaqus/2021                          gromacs/2020                         openmpi/4.0.3-cuda
+abyss/1.0                            gromacs/2020.3-gpu-mpi               openmpi/4.0.3-skylake-gcc7.3
+abyss/2.1.5                          gromacs/2022.3-mpi(default)          openmpi/4.0.4-amd-intel2020u2
+abyss/2.1.5-maxk192                  gromacs/4.5.5-ls-5.0                 openmpi/4.0.5
+admin/2018-10-10                     gromacs/5.1.4                        openmpi/4.0.5-gcc10.1.0
+afni/18.3.16                         gsl/1.16                             openmpi/4.0.5-skylake-gcc10.1
+afni/18.3.16a                        gsl/2.5                              openmpi/4.0.5-skylake-gcc7.3
+afni/21.3.06                         gsnap/2021-12-17                     openmpi/4.1.0-amd-intel2021
+amber/16-cpu                         guppy/3.3.0                          openmpi/4.1.0-gcc10.1-cuda11.2
+amber/16-gpu                         guppy/6.1.7                          openmpi/4.1.0-zen2-gcc10.1
+amber/18                             gurobi/10.0.1                        openmpi/4.1.1-gcc11.1
+amber/18-cpu                         gurobi/7.5.2                         openmpi/4.1.1-gcc6.4-cuda11.1
+amber/18-gpu                         gurobi/8.1.0                         openmpi/4.1.2-gcc10.1
+amber/18-mpi(default)                gurobi/9.0.2                         openmpi/4.1.2-gcc11.1
+amber/20-gpu                         gurobi/9.1.1                         openmpi/4.1.4-gcc10.1-cuda11.4
+amber/20-gpu-mpi                     gurobi/9.5.0                         opensees/3.0.0-mp
+amber/20-mpi                         gurobi/off-11.0.0                    opensees/3.0.2
+amber/20-python-mpi                  hdf5/1.10.1                          opensees/3.2.0
+amber/22-gpu-mpi                     hdf5/1.12.0-gcc10.1-openmpi4.0.5     opensees/3.4.0-mp
+AMDuProf/3.4.475                     hdf5/1.12.0-intel2020                oracle_java/jdk1.8.0_181
+anaconda2/2018.12                    hdf5/1.12.0-intel2021.2              orca/4.0.1
+anaconda2/2.7                        hdf5/1.12.0-skylake-gcc7.3           ovito/2.9.0
+anaconda3/2018.12                    hdf5/1.12.1-intel2022                ovito/3.0.0-dev234
+anaconda3/2019.10                    hisat2/2.1.0                         p7zip/16.02
+anaconda3/2019.10-HPCtraining        hisat2/2.2.0                         parallel/20200722
+anaconda3/2020.02                    hpc_sdk/2022-229                     pdb2pqr/2.1.1
+anaconda3/2021.05(default)           hpl/2.3                              percolator/3.06
+anaconda3/2021.07-TF                 htop/2.0.2                           perl/5.30.1
+anaconda3/2021.11                    idl/8.8                              perl/5.30.2
+anaconda3/2022.01                    igv/2.8.13                           petsc/3.13.0-gcc7.3.0-skylake
+anaconda3/2022.05                    intel/2019-4                         petsc/3.13.0-intel2020
+anaconda3/3.6                        intel/2020                           pgi/2019-1910
+anaconda3/3.7                        intel/2020.0.166                     plink/1.07
+anaconda3/3.7-cps                    intel/2020.1.217                     plink2/2023-04-19
+anaconda3/L2020-03                   intel/2020.1.217-noMPI               plink2/null(default)
+ansys/211                            intel/2020.2.108                     plumed/2.6.1-skylake
+ansys/221                            intel/2020.2.254                     primesieve/5.7.3
+ants/2018-12-12                      intel/compiler-rt-2022.0.1           primesieve/7.3
+aocl/3.1                             intel/compilers-2020u2(default)      proj/6.0.0
+apbs/1.5                             intel/compilers-2021.1               proj/6.2.0
+atlas/3.10.3                         intel/compilers-2021.2.0             protobuf/3.6.1
+automake/1.15                        intel/compilers-2021.3.0             pwd/1.0
+avogadro/1.2.0                       intel/compilers-2022.0.1             pycharm/2022.3.2
+bamtools/2.5.1                       intel/mkl-2020u2                     pymol/2.2.0
+bart/0.4.04                          intel/mkl-2021.1                     pyrosetta/110
+bart/0.5.00                          intel/mkl-2021.2.0                   python/2.7.15
+bbmap/38.33                          intel/mkl-2021.3.0                   python/3.4.10
+bbmap/39.06                          intel/mkl-2022.0.1                   python/3.6.12
+bcl2fastq/1.0                        intel/mpi-2020u2                     python/3.6.6
+bcl2fastq/2.20                       intel/mpi-2021.1.1                   python/3.7.0
+bedtools/2.29.0                      intel/mpi-2021.2.0                   python/3.7.1
+berkeleygw/2.0.0                     intel/mpi-2021.3.0                   python/3.7.3-base
+berkeleygw/2.0.0.orig                intel/mpi-2021.5.0                   python/3.7-intel2020
+BINF6308/01-14-2022                  intel/oclfpga-2022.0.1               python/3.8.1
+binf6309/01-14-2022                  intel/python-2020u2                  python/3.8.1-cps
+bismark/0.22.2                       intel/python-daal4py-2020u2          pyxaid2/2019-07-07
+boost/1.63.0                         intel/python-daal4py-2021.1          q-e/6.2.0-gcc4
+boost/1.80.0                         intel/python-daal4py-2021.2.0        q-e/6.2.0-gcc7
+boost/1.80.0-iostream                intel/python-daal4py-2021.3.0        q-e/6.3.0-gcc4
+bowtie/1.3.0                         intel/python-daal4py-2022.1.0        qhull/2015.2
+bowtie/2.3.5.1                       intel/tbb-2021.1.1                   R/3.5.1
+bowtie/2.5.2                         intel/tbb-2021.2.0                   R/3.5.3
+bwa/0.7.17                           intel/tbb-2021.3.0                   R/3.6.1
+bzip2/1.0.8                          intel/tbb-2021.5.0                   R/3.6.2
+canu/2.0                             intel/vtune-2021.2.0                 R/3.6.3
+carma/1.7                            intel_mpi/2018u5                     R/4.0.2
+cassandra/1.2                        intel-oneapi/2021.1_u9               R/4.0.3
+cassandra/1.2.2                      iperf/3.7                            R/4.2.0
+cassandra/1.2.5                      isl/0.21                             rainbow/2.0.4
+catdcd/4.0                           jellyfish/1.1.12                     rc/2020
+cd-hit/4.8.1-2019-0228               jellyfish/2.2.10                     rc/2023
+cgal/5.5.2                           jq/1.6                               rc2/2021
+charm/6.10.1-intel2020u2             json-c/0.15                          rclone/1.43.1
+chkrootkit/0.52                      julia/1.1.1                          rclone/1.52.2
+clang/10.0.1                         julia/1.5.3                          rclone/1.53
+clustalw/2.1                         julia/1.6.0                          relion/3.1.2
+cmake/3.10.0                         julia/1.7.3                          relion/3.1.3
+cmake/3.13.1                         julia/1.8.5                          relion/4.0
+cmake/3.18.1                         knime/knime_4.2.0                    relion/4.0.1
+cmake/3.23.2                         knime/knime_4.5.2                    relion/4.0.1-k80
+cmake/3.27.9                         k-SLAM/2018-11-15                    repeatmasker/4.1.0
+cmdstan/2.18.0                       k-SLAM/2018-11-18                    restic/0.12.1
+comsol/54                            lammps/17Nov2016                     rmblast/2.10.0-p2
+comsol/55                            lammps/29Sep2021_u2-gpu-mpi          rmblast/2.9.0-p2
+comsol/56                            lammps/29Sep2021_u2-mpi              rocm/4.2
+comsol-jornet/55                     lammps/3Mar2020-gpu-mpi              rocm/5.4.0
+comsol-jornet/56                     last/1047                            root/6.14
+comsol-west/55                       lean/3.4.2                           root/6.22.02-mpi
+comsol-west/56                       leptonica/1.78.0                     rosetta/2020.08.61146
+cp2k/7.1.0-gpu                       libra/2019-07-07                     rsem/1.3.1
+cp2k/7.1.0-new                       librs/3.1.0                          rstudio/1.2.5001
+cp2k/9.1-zen2                        libtool/2.4.6                        ruby/2.5.3
+cp2k/cp2k-6.1.0                      libxc/4.2.3                          sage/8.4
+cp2k/cp2k-6.1.0-gpu                  libxc/4.2.3-gcc-11.1                 sage/8.6
+cplex/12.10                          lmp_rbc/2019-03-29                   salmon/0.12.0
+cplex/12.8.0                         lotterhos/2019-11-15                 salmon/1.0.0
+cplex/20.1                           lotterhos/2020-03-18                 salmon/1.1.0
+cuda/10.0                            lotterhos/2020-07-21                 salmon/1.6.0
+cuda/10.1                            lotterhos/2020-08-24                 samos/2023-05-17
+cuda/10.2                            lumerical/v221                       samos/2023-07-03
+cuda/11.0(default)                   lunzip/1.9                           samtools/1.10
+cuda/11.1                            M2/2-1.11                            samtools/1.18
+cuda/11.2                            make/4.2.1                           samtools/1.9
+cuda/11.3                            mathematica/12.0                     sapt/2016.1
+cuda/11.4                            matlab/R2014a                        sapt/2016.1a
+cuda/11.7                            matlab/R2018a                        sapt/2016.1-mt
+cuda/11.8                            matlab/R2019a                        sas/9.4
+cuda/12.1                            matlab/R2019b                        scalapack/2.1.0-amd
+cuda/9.0                             matlab/R2020a                        scalapack/2.1.0-openmpi4.0.5-gcc10.1
+cuda/9.1                             matlab/R2020b                        scalapack/2.1.0-skylake
+cuda/9.2                             matlab/R2021a(default)               scalapack/2.2.0-gcc11.1-openmpi4.1.2
+delft3d/65936-intel2021-mpich3.4.2   matlab/R2022a                        schrodinger/2018-2
+delft3dfm/67088-intel2021            matlab/R2022b                        schrodinger/2018-2b
+dftb+/18.2                           matlab/R2023a                        schrodinger/2019-1
+discovery/2018-01-01                 mawk/1.3.4-20190203                  schrodinger/2019-3
+discovery/2018-07-27                 mcalibration/6.7.1                   schrodinger/2019-4
+discovery/2019-02-21                 mcce/2024-01                         schrodinger/2020-1
+discovery/2021-10-06                 mcr/v91                              schrodinger/2020-2
+dmtcp/2.5.2                          meep/1.23.0                          schrodinger/2020-3
+dmtcp/2.6.0                          meep/1.23.0-python3.8                schrodinger/2020-4
+dot/1.0                              megahit/1.2.8                        schrodinger/2021-1
+dotnet/2.1.23                        mercury/2022.3.0                     schrodinger/2022-2
+dotnet/3.1.10                        Meshroom/2019.2.0                    schrodinger/2022-3
+dramms/1.5.1                         miniconda2/2.7                       schrodinger/2022-4
+drive/0.3.9.1                        miniconda3/2020-04                   schrodinger/2023-1
+DualSPHysics/4.4                     miniconda3/2020-09                   schrodinger/2023-2
+EEMB1105/01-24-2020                  miniconda3/2020-11-skylake           schrodinger/2023-3
+EEMB1105/02-02-2021                  miniconda3/2021-02                   scirun/4.7
+eigen/3.3.5                          miniconda3/23.11.0                   seqtk/1.3
+emacs/24.3                           miniconda3/23.5.2                    sharc_cobramm/05-2021
+eman2/2.91                           miniconda3/3.7                       sickle/1.33
+emboss/6.6.0                         miniconda3/4.7.12                    simVascular/1.0
+EXAMPLE/5.0                          miniconda3/pyrosetta-072020          simVascular/2018.07.04
+EXAMPLE/6.0                          minimap2/2.17                        singularity/2.5.2
+EXAMPLE/null(default)                minimap2/2.26                        singularity/2.6.0
+fastqc/0.11.8                        molcas/18.09                         singularity/3.10.3
+fastqc/0.11.9                        molcas/18.09-2                       singularity/3.4.2
+FastTree/2.1.11                      mongo/4.0.2                          singularity/3.5.3(default)
+ffmpeg/20190305                      mongo/4.2.8                          sketchmap/0.2
+fftw/3.3.8(default)                  mono/5.18.0.240                      slim/3.2
+fftw/3.3.8-amd                       mopac/2016                           slim/3.2.1
+fftw/3.3.8-double                    morphographx/1.0.1280                slim/3.3
+fftw/3.3.8-skylake                   mpb/1.11.1                           slim/3.3.1
+fiesta/30Sep2018                     mpb/1.11.1-python3.8                 slim/3.3.2
+freebayes/1.3.1                      mpc/1.1.0                            spark/2.3.2-hadoop2.7
+freebayes/1.3.4                      mpfr/4.0.1                           spark/2.4.5-hadoop2.7
+freesurfer/1.0                       mpfr/4.0.2                           sparsehash/2.0.3
+freesurfer/6.0.0                     mpich/3.3.2(default)                 SPatt/2.1
+freesurfer/7.2.0                     mpich/3.3.2-intel                    spm/12
+freesurfer/7.3.2                     mpich/3.3.2-skylake-gcc7.3           spss/26
+fsl/2019-01-11                       mpich/3.4.2-intel2021                sratoolkit/2.10.8
+fsl/6.0.0                            mpich/4.0.1-intel2022                sratoolkit/2.9.2
+fsl/6.0.3-cuda9.1                    mvapich2/2.3.4-gcc7.3(default)       sratoolkit/3.0.2
+fsl/6.0.6.2                          mvapich2/2.3.4-intel2020             stacks/2.41
+ga/5.7                               mvapich2/2.3.5-gcc4.8.5              star/2.7.11a
+gamess/2017R1                        mvapich2/2.3.6-gcc11.1               star/2.7.3a
+gamess/2018R1                        mvapich2/2.3.6-intel2021             starccm+/13.06.012
+gamess/2020.1                        mvapich2/2.3.7-intel2022             starccm+/15.02.007
+gamess/2020R1-AMD                    mysql-connector-c++/1.1.9            starccm+/15.02.009
+gamess/2020R1-Intel                  mysql-connector-c++/8.0.30           starccm+/17.06.007
+gamess/2023R1                        namd/2.12_vmd                        starccm+/18.02.008
+gamess/2023R1-sockets                namd/2.13b2-cuda                     starccm+/18.04.009
+gatk/4.1.4.0                         namd/2.14                            starccm+/2020.1.1
+gaussian/g16(default)                namd/2.14-mpi                        starccm+/2021.3.1
+gaussian/g16-avx2-gpu                namd/3.0a9-cuda                      stata/14
+gaussian-B01/g16                     nbo/6.0                              stata/15
+gcc/10.1.0                           ncbi-blast+/2.13.0                   stata/15-mp
+gcc/11.1.0                           ncbi-blast+/2.9.0(default)           stata/17
+gcc/4.8.5                            nccl/2.8.3-1-cuda10.2-gcc7.3         stata/17-mp
+gcc/5.5.0                            nccl/2.8.3-1-cuda9.0                 stringtie/2.1.1
+gcc/6.4.0                            ncdu/1.17                            swan/4131
+gcc/7.2.0                            netcdf/4.7.4-intel2020               swan/4131-intel
+gcc/7.3.0                            netcdf/4.7.4-skylake-gcc7.3          terachem/1.94b
+gcc/8.1.0                            netcdf/4.8.1-intel2022               tesseract/4.0.0
+gcc/9.2.0                            netlogo/6.2.2                        tiff/4.0.9
+gcta/1.92.4beta                      neuron/develop                       tmate/2.4.0
+gcta/1.93.0beta                      nextflow/23.10.0                     trf/4.09
+gdal/3.0.1                           nextflow/23.10.1                     trimal/1.2
+gdc-client/1.5.0                     nodejs/14.15.4                       trimgalore/0.6.4
+geomview/1.9.5                       ns/3.30.1                            trimgalore/0.6.5
+geos/3.8.1                           nsight/2021.3.1                      trimmomatic/0.39
+gffcompare/0.11.5                    nwchem/6.8                           Trinity/2.8.4
+git/2.19.0                           nwchem/7.0.0                         ucx/1.10.1
+glew/2.0.0                           nwchem/7.0.2                         ucx/1.10.1-gcc10.1.0
+glew/2.1.0                           openbabel/2.4.1                      ucx/1.10.1-gcc11.1.0
+glibc/2.27                           openblas/0.2.20                      ucx/1.10.1-intel2021
+gmp/6.1.2                            openblas/0.3.10-amd                  ucx/1.12.0-gcc11.1-cascadelake
+gnu-parallel/20210922                openblas/0.3.10-skylake-gcc7.3       ucx/1.13.0-gcc10.1-cuda11.4
+gnuplot/5.2.4                        openblas/0.3.13-gcc10.1              ucx/1.13.0-gcc11.1-cuda11.4
+gnuplot/5.2.7                        openblas/0.3.20-gcc11.1              ucx/1.6.1
+go/1.13.3                            openblas/0.3.5                       ucx/1.8.0
+go/1.14                              openblas/0.3.6                       ucx/1.8.1
+go/1.15.2                            opencv/3.1.0                         vcflib/1.0.1
+go/1.15.6                            opencv/3.4.3                         vcftools/954e607
+go/1.15.7                            opencv/3.4.3-contrib                 vi/7.4
+go/1.15.8                            OpenFOAM/10                          vim/8.2.1999
+go/1.16                              OpenFOAM/11                          vitis/2021.1
+go/1.17.4                            OpenFOAM/6                           vmd/1.9.3
+go/1.18.6                            OpenJDK/18.0.2.1                     vmd/1.9.4
+go/1.19                              OpenJDK/19.0.1                       vscode-server/3.9.3
+go/1.19.1                            openmpi/1.6.5-32bit                  vscode-server/4.16.1
+go/1.21.0                            openmpi/2.0.4                        VTK/8.1.2
+gperf/3.1                            openmpi/2.1.3                        VTK/9.2.6
+grace/5.1.25                         openmpi/2.1.3-intel2019              weka/weka-3-8-4
+graph-tool/2.27                      openmpi/3.0.2                        weka/weka-3-8-6
+graph-tool/2.28                      openmpi/3.1.1                        wps/4.1
+gromacs/2018.4-cpu                   openmpi/3.1.2(default)               wrf/4.1.4
+gromacs/2018.4-gpu                   openmpi/3.1.2-intel                  xbeach/5920
+gromacs/2019.1                       openmpi/4.0.2
+[hudson.ka@c0281 unzipped_fastq]$ module load fastqc/0.11.9
+fastqc/0.11.9(6):ERROR:151: Module 'fastqc/0.11.9' depends on one of the module(s) 'OpenJDK/19.0.1'
+fastqc/0.11.9(6):ERROR:102: Tcl command execution failed: prereq OpenJDK/19.0.1
+
+[hudson.ka@c0281 unzipped_fastq]$ module load OpenJDK/19.0.1
+[hudson.ka@c0281 unzipped_fastq]$ module load fastqc/0.11.9
+[hudson.ka@c0281 unzipped_fastq]$ module avail
+
+---------------------------------------------------------- /shared/centos7/modulefiles ----------------------------------------------------------
+abaqus/2021                          gromacs/2020                         openmpi/4.0.3-cuda
+abyss/1.0                            gromacs/2020.3-gpu-mpi               openmpi/4.0.3-skylake-gcc7.3
+abyss/2.1.5                          gromacs/2022.3-mpi(default)          openmpi/4.0.4-amd-intel2020u2
+abyss/2.1.5-maxk192                  gromacs/4.5.5-ls-5.0                 openmpi/4.0.5
+admin/2018-10-10                     gromacs/5.1.4                        openmpi/4.0.5-gcc10.1.0
+afni/18.3.16                         gsl/1.16                             openmpi/4.0.5-skylake-gcc10.1
+afni/18.3.16a                        gsl/2.5                              openmpi/4.0.5-skylake-gcc7.3
+afni/21.3.06                         gsnap/2021-12-17                     openmpi/4.1.0-amd-intel2021
+amber/16-cpu                         guppy/3.3.0                          openmpi/4.1.0-gcc10.1-cuda11.2
+amber/16-gpu                         guppy/6.1.7                          openmpi/4.1.0-zen2-gcc10.1
+amber/18                             gurobi/10.0.1                        openmpi/4.1.1-gcc11.1
+amber/18-cpu                         gurobi/7.5.2                         openmpi/4.1.1-gcc6.4-cuda11.1
+amber/18-gpu                         gurobi/8.1.0                         openmpi/4.1.2-gcc10.1
+amber/18-mpi(default)                gurobi/9.0.2                         openmpi/4.1.2-gcc11.1
+amber/20-gpu                         gurobi/9.1.1                         openmpi/4.1.4-gcc10.1-cuda11.4
+amber/20-gpu-mpi                     gurobi/9.5.0                         opensees/3.0.0-mp
+amber/20-mpi                         gurobi/off-11.0.0                    opensees/3.0.2
+amber/20-python-mpi                  hdf5/1.10.1                          opensees/3.2.0
+amber/22-gpu-mpi                     hdf5/1.12.0-gcc10.1-openmpi4.0.5     opensees/3.4.0-mp
+AMDuProf/3.4.475                     hdf5/1.12.0-intel2020                oracle_java/jdk1.8.0_181
+anaconda2/2018.12                    hdf5/1.12.0-intel2021.2              orca/4.0.1
+anaconda2/2.7                        hdf5/1.12.0-skylake-gcc7.3           ovito/2.9.0
+anaconda3/2018.12                    hdf5/1.12.1-intel2022                ovito/3.0.0-dev234
+anaconda3/2019.10                    hisat2/2.1.0                         p7zip/16.02
+anaconda3/2019.10-HPCtraining        hisat2/2.2.0                         parallel/20200722
+anaconda3/2020.02                    hpc_sdk/2022-229                     pdb2pqr/2.1.1
+anaconda3/2021.05(default)           hpl/2.3                              percolator/3.06
+anaconda3/2021.07-TF                 htop/2.0.2                           perl/5.30.1
+anaconda3/2021.11                    idl/8.8                              perl/5.30.2
+anaconda3/2022.01                    igv/2.8.13                           petsc/3.13.0-gcc7.3.0-skylake
+anaconda3/2022.05                    intel/2019-4                         petsc/3.13.0-intel2020
+anaconda3/3.6                        intel/2020                           pgi/2019-1910
+anaconda3/3.7                        intel/2020.0.166                     plink/1.07
+anaconda3/3.7-cps                    intel/2020.1.217                     plink2/2023-04-19
+anaconda3/L2020-03                   intel/2020.1.217-noMPI               plink2/null(default)
+ansys/211                            intel/2020.2.108                     plumed/2.6.1-skylake
+ansys/221                            intel/2020.2.254                     primesieve/5.7.3
+ants/2018-12-12                      intel/compiler-rt-2022.0.1           primesieve/7.3
+aocl/3.1                             intel/compilers-2020u2(default)      proj/6.0.0
+apbs/1.5                             intel/compilers-2021.1               proj/6.2.0
+atlas/3.10.3                         intel/compilers-2021.2.0             protobuf/3.6.1
+automake/1.15                        intel/compilers-2021.3.0             pwd/1.0
+avogadro/1.2.0                       intel/compilers-2022.0.1             pycharm/2022.3.2
+bamtools/2.5.1                       intel/mkl-2020u2                     pymol/2.2.0
+bart/0.4.04                          intel/mkl-2021.1                     pyrosetta/110
+bart/0.5.00                          intel/mkl-2021.2.0                   python/2.7.15
+bbmap/38.33                          intel/mkl-2021.3.0                   python/3.4.10
+bbmap/39.06                          intel/mkl-2022.0.1                   python/3.6.12
+bcl2fastq/1.0                        intel/mpi-2020u2                     python/3.6.6
+bcl2fastq/2.20                       intel/mpi-2021.1.1                   python/3.7.0
+bedtools/2.29.0                      intel/mpi-2021.2.0                   python/3.7.1
+berkeleygw/2.0.0                     intel/mpi-2021.3.0                   python/3.7.3-base
+berkeleygw/2.0.0.orig                intel/mpi-2021.5.0                   python/3.7-intel2020
+BINF6308/01-14-2022                  intel/oclfpga-2022.0.1               python/3.8.1
+binf6309/01-14-2022                  intel/python-2020u2                  python/3.8.1-cps
+bismark/0.22.2                       intel/python-daal4py-2020u2          pyxaid2/2019-07-07
+boost/1.63.0                         intel/python-daal4py-2021.1          q-e/6.2.0-gcc4
+boost/1.80.0                         intel/python-daal4py-2021.2.0        q-e/6.2.0-gcc7
+boost/1.80.0-iostream                intel/python-daal4py-2021.3.0        q-e/6.3.0-gcc4
+bowtie/1.3.0                         intel/python-daal4py-2022.1.0        qhull/2015.2
+bowtie/2.3.5.1                       intel/tbb-2021.1.1                   R/3.5.1
+bowtie/2.5.2                         intel/tbb-2021.2.0                   R/3.5.3
+bwa/0.7.17                           intel/tbb-2021.3.0                   R/3.6.1
+bzip2/1.0.8                          intel/tbb-2021.5.0                   R/3.6.2
+canu/2.0                             intel/vtune-2021.2.0                 R/3.6.3
+carma/1.7                            intel_mpi/2018u5                     R/4.0.2
+cassandra/1.2                        intel-oneapi/2021.1_u9               R/4.0.3
+cassandra/1.2.2                      iperf/3.7                            R/4.2.0
+cassandra/1.2.5                      isl/0.21                             rainbow/2.0.4
+catdcd/4.0                           jellyfish/1.1.12                     rc/2020
+cd-hit/4.8.1-2019-0228               jellyfish/2.2.10                     rc/2023
+cgal/5.5.2                           jq/1.6                               rc2/2021
+charm/6.10.1-intel2020u2             json-c/0.15                          rclone/1.43.1
+chkrootkit/0.52                      julia/1.1.1                          rclone/1.52.2
+clang/10.0.1                         julia/1.5.3                          rclone/1.53
+clustalw/2.1                         julia/1.6.0                          relion/3.1.2
+cmake/3.10.0                         julia/1.7.3                          relion/3.1.3
+cmake/3.13.1                         julia/1.8.5                          relion/4.0
+cmake/3.18.1                         knime/knime_4.2.0                    relion/4.0.1
+cmake/3.23.2                         knime/knime_4.5.2                    relion/4.0.1-k80
+cmake/3.27.9                         k-SLAM/2018-11-15                    repeatmasker/4.1.0
+cmdstan/2.18.0                       k-SLAM/2018-11-18                    restic/0.12.1
+comsol/54                            lammps/17Nov2016                     rmblast/2.10.0-p2
+comsol/55                            lammps/29Sep2021_u2-gpu-mpi          rmblast/2.9.0-p2
+comsol/56                            lammps/29Sep2021_u2-mpi              rocm/4.2
+comsol-jornet/55                     lammps/3Mar2020-gpu-mpi              rocm/5.4.0
+comsol-jornet/56                     last/1047                            root/6.14
+comsol-west/55                       lean/3.4.2                           root/6.22.02-mpi
+comsol-west/56                       leptonica/1.78.0                     rosetta/2020.08.61146
+cp2k/7.1.0-gpu                       libra/2019-07-07                     rsem/1.3.1
+cp2k/7.1.0-new                       librs/3.1.0                          rstudio/1.2.5001
+cp2k/9.1-zen2                        libtool/2.4.6                        ruby/2.5.3
+cp2k/cp2k-6.1.0                      libxc/4.2.3                          sage/8.4
+cp2k/cp2k-6.1.0-gpu                  libxc/4.2.3-gcc-11.1                 sage/8.6
+cplex/12.10                          lmp_rbc/2019-03-29                   salmon/0.12.0
+cplex/12.8.0                         lotterhos/2019-11-15                 salmon/1.0.0
+cplex/20.1                           lotterhos/2020-03-18                 salmon/1.1.0
+cuda/10.0                            lotterhos/2020-07-21                 salmon/1.6.0
+cuda/10.1                            lotterhos/2020-08-24                 samos/2023-05-17
+cuda/10.2                            lumerical/v221                       samos/2023-07-03
+cuda/11.0(default)                   lunzip/1.9                           samtools/1.10
+cuda/11.1                            M2/2-1.11                            samtools/1.18
+cuda/11.2                            make/4.2.1                           samtools/1.9
+cuda/11.3                            mathematica/12.0                     sapt/2016.1
+cuda/11.4                            matlab/R2014a                        sapt/2016.1a
+cuda/11.7                            matlab/R2018a                        sapt/2016.1-mt
+cuda/11.8                            matlab/R2019a                        sas/9.4
+cuda/12.1                            matlab/R2019b                        scalapack/2.1.0-amd
+cuda/9.0                             matlab/R2020a                        scalapack/2.1.0-openmpi4.0.5-gcc10.1
+cuda/9.1                             matlab/R2020b                        scalapack/2.1.0-skylake
+cuda/9.2                             matlab/R2021a(default)               scalapack/2.2.0-gcc11.1-openmpi4.1.2
+delft3d/65936-intel2021-mpich3.4.2   matlab/R2022a                        schrodinger/2018-2
+delft3dfm/67088-intel2021            matlab/R2022b                        schrodinger/2018-2b
+dftb+/18.2                           matlab/R2023a                        schrodinger/2019-1
+discovery/2018-01-01                 mawk/1.3.4-20190203                  schrodinger/2019-3
+discovery/2018-07-27                 mcalibration/6.7.1                   schrodinger/2019-4
+discovery/2019-02-21                 mcce/2024-01                         schrodinger/2020-1
+discovery/2021-10-06                 mcr/v91                              schrodinger/2020-2
+dmtcp/2.5.2                          meep/1.23.0                          schrodinger/2020-3
+dmtcp/2.6.0                          meep/1.23.0-python3.8                schrodinger/2020-4
+dot/1.0                              megahit/1.2.8                        schrodinger/2021-1
+dotnet/2.1.23                        mercury/2022.3.0                     schrodinger/2022-2
+dotnet/3.1.10                        Meshroom/2019.2.0                    schrodinger/2022-3
+dramms/1.5.1                         miniconda2/2.7                       schrodinger/2022-4
+drive/0.3.9.1                        miniconda3/2020-04                   schrodinger/2023-1
+DualSPHysics/4.4                     miniconda3/2020-09                   schrodinger/2023-2
+EEMB1105/01-24-2020                  miniconda3/2020-11-skylake           schrodinger/2023-3
+EEMB1105/02-02-2021                  miniconda3/2021-02                   scirun/4.7
+eigen/3.3.5                          miniconda3/23.11.0                   seqtk/1.3
+emacs/24.3                           miniconda3/23.5.2                    sharc_cobramm/05-2021
+eman2/2.91                           miniconda3/3.7                       sickle/1.33
+emboss/6.6.0                         miniconda3/4.7.12                    simVascular/1.0
+EXAMPLE/5.0                          miniconda3/pyrosetta-072020          simVascular/2018.07.04
+EXAMPLE/6.0                          minimap2/2.17                        singularity/2.5.2
+EXAMPLE/null(default)                minimap2/2.26                        singularity/2.6.0
+fastqc/0.11.8                        molcas/18.09                         singularity/3.10.3
+fastqc/0.11.9                        molcas/18.09-2                       singularity/3.4.2
+FastTree/2.1.11                      mongo/4.0.2                          singularity/3.5.3(default)
+ffmpeg/20190305                      mongo/4.2.8                          sketchmap/0.2
+fftw/3.3.8(default)                  mono/5.18.0.240                      slim/3.2
+fftw/3.3.8-amd                       mopac/2016                           slim/3.2.1
+fftw/3.3.8-double                    morphographx/1.0.1280                slim/3.3
+fftw/3.3.8-skylake                   mpb/1.11.1                           slim/3.3.1
+fiesta/30Sep2018                     mpb/1.11.1-python3.8                 slim/3.3.2
+freebayes/1.3.1                      mpc/1.1.0                            spark/2.3.2-hadoop2.7
+freebayes/1.3.4                      mpfr/4.0.1                           spark/2.4.5-hadoop2.7
+freesurfer/1.0                       mpfr/4.0.2                           sparsehash/2.0.3
+freesurfer/6.0.0                     mpich/3.3.2(default)                 SPatt/2.1
+freesurfer/7.2.0                     mpich/3.3.2-intel                    spm/12
+freesurfer/7.3.2                     mpich/3.3.2-skylake-gcc7.3           spss/26
+fsl/2019-01-11                       mpich/3.4.2-intel2021                sratoolkit/2.10.8
+fsl/6.0.0                            mpich/4.0.1-intel2022                sratoolkit/2.9.2
+fsl/6.0.3-cuda9.1                    mvapich2/2.3.4-gcc7.3(default)       sratoolkit/3.0.2
+fsl/6.0.6.2                          mvapich2/2.3.4-intel2020             stacks/2.41
+ga/5.7                               mvapich2/2.3.5-gcc4.8.5              star/2.7.11a
+gamess/2017R1                        mvapich2/2.3.6-gcc11.1               star/2.7.3a
+gamess/2018R1                        mvapich2/2.3.6-intel2021             starccm+/13.06.012
+gamess/2020.1                        mvapich2/2.3.7-intel2022             starccm+/15.02.007
+gamess/2020R1-AMD                    mysql-connector-c++/1.1.9            starccm+/15.02.009
+gamess/2020R1-Intel                  mysql-connector-c++/8.0.30           starccm+/17.06.007
+gamess/2023R1                        namd/2.12_vmd                        starccm+/18.02.008
+gamess/2023R1-sockets                namd/2.13b2-cuda                     starccm+/18.04.009
+gatk/4.1.4.0                         namd/2.14                            starccm+/2020.1.1
+gaussian/g16(default)                namd/2.14-mpi                        starccm+/2021.3.1
+gaussian/g16-avx2-gpu                namd/3.0a9-cuda                      stata/14
+gaussian-B01/g16                     nbo/6.0                              stata/15
+gcc/10.1.0                           ncbi-blast+/2.13.0                   stata/15-mp
+gcc/11.1.0                           ncbi-blast+/2.9.0(default)           stata/17
+gcc/4.8.5                            nccl/2.8.3-1-cuda10.2-gcc7.3         stata/17-mp
+gcc/5.5.0                            nccl/2.8.3-1-cuda9.0                 stringtie/2.1.1
+gcc/6.4.0                            ncdu/1.17                            swan/4131
+gcc/7.2.0                            netcdf/4.7.4-intel2020               swan/4131-intel
+gcc/7.3.0                            netcdf/4.7.4-skylake-gcc7.3          terachem/1.94b
+gcc/8.1.0                            netcdf/4.8.1-intel2022               tesseract/4.0.0
+gcc/9.2.0                            netlogo/6.2.2                        tiff/4.0.9
+gcta/1.92.4beta                      neuron/develop                       tmate/2.4.0
+gcta/1.93.0beta                      nextflow/23.10.0                     trf/4.09
+gdal/3.0.1                           nextflow/23.10.1                     trimal/1.2
+gdc-client/1.5.0                     nodejs/14.15.4                       trimgalore/0.6.4
+geomview/1.9.5                       ns/3.30.1                            trimgalore/0.6.5
+geos/3.8.1                           nsight/2021.3.1                      trimmomatic/0.39
+gffcompare/0.11.5                    nwchem/6.8                           Trinity/2.8.4
+git/2.19.0                           nwchem/7.0.0                         ucx/1.10.1
+glew/2.0.0                           nwchem/7.0.2                         ucx/1.10.1-gcc10.1.0
+glew/2.1.0                           openbabel/2.4.1                      ucx/1.10.1-gcc11.1.0
+glibc/2.27                           openblas/0.2.20                      ucx/1.10.1-intel2021
+gmp/6.1.2                            openblas/0.3.10-amd                  ucx/1.12.0-gcc11.1-cascadelake
+gnu-parallel/20210922                openblas/0.3.10-skylake-gcc7.3       ucx/1.13.0-gcc10.1-cuda11.4
+gnuplot/5.2.4                        openblas/0.3.13-gcc10.1              ucx/1.13.0-gcc11.1-cuda11.4
+gnuplot/5.2.7                        openblas/0.3.20-gcc11.1              ucx/1.6.1
+go/1.13.3                            openblas/0.3.5                       ucx/1.8.0
+go/1.14                              openblas/0.3.6                       ucx/1.8.1
+go/1.15.2                            opencv/3.1.0                         vcflib/1.0.1
+go/1.15.6                            opencv/3.4.3                         vcftools/954e607
+go/1.15.7                            opencv/3.4.3-contrib                 vi/7.4
+go/1.15.8                            OpenFOAM/10                          vim/8.2.1999
+go/1.16                              OpenFOAM/11                          vitis/2021.1
+go/1.17.4                            OpenFOAM/6                           vmd/1.9.3
+go/1.18.6                            OpenJDK/18.0.2.1                     vmd/1.9.4
+go/1.19                              OpenJDK/19.0.1                       vscode-server/3.9.3
+go/1.19.1                            openmpi/1.6.5-32bit                  vscode-server/4.16.1
+go/1.21.0                            openmpi/2.0.4                        VTK/8.1.2
+gperf/3.1                            openmpi/2.1.3                        VTK/9.2.6
+grace/5.1.25                         openmpi/2.1.3-intel2019              weka/weka-3-8-4
+graph-tool/2.27                      openmpi/3.0.2                        weka/weka-3-8-6
+graph-tool/2.28                      openmpi/3.1.1                        wps/4.1
+gromacs/2018.4-cpu                   openmpi/3.1.2(default)               wrf/4.1.4
+gromacs/2018.4-gpu                   openmpi/3.1.2-intel                  xbeach/5920
+gromacs/2019.1                       openmpi/4.0.2
+[hudson.ka@c0281 unzipped_fastq]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06   2) OpenJDK/19.0.1         3) fastqc/0.11.9
+[hudson.ka@c0281 unzipped_fastq]$ cd ..
+[hudson.ka@c0281 Day_data]$ ls
+10_S1_L001_R1_001.fastq.gz  13_S1_L001_R2_001.fastq.gz  2_S1_L001_R1_001.fastq.gz  4_S1_L001_R2_001.fastq.gz  8_S1_L001_R1_001.fastq.gz
+10_S1_L001_R2_001.fastq.gz  14_S1_L001_R1_001.fastq.gz  2_S1_L001_R2_001.fastq.gz  5_S1_L001_R1_001.fastq.gz  8_S1_L001_R2_001.fastq.gz
+11_S1_L001_R1_001.fastq.gz  14_S1_L001_R2_001.fastq.gz  3_S1_L001_R1_001.fastq.gz  5_S1_L001_R2_001.fastq.gz  9_S1_L001_R1_001.fastq.gz
+11_S1_L001_R2_001.fastq.gz  15_S1_L001_R1_001.fastq.gz  3_S1_L001_R2_001.fastq.gz  6_S1_L001_R1_001.fastq.gz  9_S1_L001_R2_001.fastq.gz
+12_S1_L001_R1_001.fastq.gz  15_S1_L001_R2_001.fastq.gz  41054315.error             6_S1_L001_R2_001.fastq.gz  unzip_into_new_dir.bash
+12_S1_L001_R2_001.fastq.gz  1_S1_L001_R1_001.fastq.gz   41054315.output            7_S1_L001_R1_001.fastq.gz  unzipped_fastq
+13_S1_L001_R1_001.fastq.gz  1_S1_L001_R2_001.fastq.gz   4_S1_L001_R1_001.fastq.gz  7_S1_L001_R2_001.fastq.gz
+[hudson.ka@c0281 Day_data]$ fastqc 7_S1_L001_R1_001.fastq.gz
+Started analysis of 7_S1_L001_R1_001.fastq.gz
+Approx 5% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 10% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 15% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 20% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 25% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 30% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 35% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 40% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 45% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 50% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 55% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 60% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 65% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 70% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 75% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 80% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 85% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 90% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 95% complete for 7_S1_L001_R1_001.fastq.gz
+Analysis complete for 7_S1_L001_R1_001.fastq.gz
+[hudson.ka@c0281 Day_data]$ ls
+10_S1_L001_R1_001.fastq.gz  14_S1_L001_R1_001.fastq.gz  3_S1_L001_R1_001.fastq.gz  6_S1_L001_R1_001.fastq.gz     9_S1_L001_R1_001.fastq.gz
+10_S1_L001_R2_001.fastq.gz  14_S1_L001_R2_001.fastq.gz  3_S1_L001_R2_001.fastq.gz  6_S1_L001_R2_001.fastq.gz     9_S1_L001_R2_001.fastq.gz
+11_S1_L001_R1_001.fastq.gz  15_S1_L001_R1_001.fastq.gz  41054315.error             7_S1_L001_R1_001_fastqc.html  unzip_into_new_dir.bash
+11_S1_L001_R2_001.fastq.gz  15_S1_L001_R2_001.fastq.gz  41054315.output            7_S1_L001_R1_001_fastqc.zip   unzipped_fastq
+12_S1_L001_R1_001.fastq.gz  1_S1_L001_R1_001.fastq.gz   4_S1_L001_R1_001.fastq.gz  7_S1_L001_R1_001.fastq.gz
+12_S1_L001_R2_001.fastq.gz  1_S1_L001_R2_001.fastq.gz   4_S1_L001_R2_001.fastq.gz  7_S1_L001_R2_001.fastq.gz
+13_S1_L001_R1_001.fastq.gz  2_S1_L001_R1_001.fastq.gz   5_S1_L001_R1_001.fastq.gz  8_S1_L001_R1_001.fastq.gz
+13_S1_L001_R2_001.fastq.gz  2_S1_L001_R2_001.fastq.gz   5_S1_L001_R2_001.fastq.gz  8_S1_L001_R2_001.fastq.gz
+[hudson.ka@c0281 Day_data]$ pwd
+/courses/BIOL3411.202430/students/hudson.ka/unit2/Day_data
+[hudson.ka@c0281 Day_data]$ cd unzipped_fastq/
+[hudson.ka@c0281 unzipped_fastq]$ ls
+10_S1_L001_R1_001.fastq.gz.fastq  14_S1_L001_R1_001.fastq.gz.fastq  3_S1_L001_R1_001.fastq.gz.fastq  7_S1_L001_R1_001.fastq.gz.fastq
+10_S1_L001_R2_001.fastq.gz.fastq  14_S1_L001_R2_001.fastq.gz.fastq  3_S1_L001_R2_001.fastq.gz.fastq  7_S1_L001_R2_001.fastq.gz.fastq
+11_S1_L001_R1_001.fastq.gz.fastq  15_S1_L001_R1_001.fastq.gz.fastq  4_S1_L001_R1_001.fastq.gz.fastq  8_S1_L001_R1_001.fastq.gz.fastq
+11_S1_L001_R2_001.fastq.gz.fastq  15_S1_L001_R2_001.fastq.gz.fastq  4_S1_L001_R2_001.fastq.gz.fastq  8_S1_L001_R2_001.fastq.gz.fastq
+12_S1_L001_R1_001.fastq.gz.fastq  1_S1_L001_R1_001.fastq.gz.fastq   5_S1_L001_R1_001.fastq.gz.fastq  9_S1_L001_R1_001.fastq.gz.fastq
+12_S1_L001_R2_001.fastq.gz.fastq  1_S1_L001_R2_001.fastq.gz.fastq   5_S1_L001_R2_001.fastq.gz.fastq  9_S1_L001_R2_001.fastq.gz.fastq
+13_S1_L001_R1_001.fastq.gz.fastq  2_S1_L001_R1_001.fastq.gz.fastq   6_S1_L001_R1_001.fastq.gz.fastq  seq_count_files_7.txt
+13_S1_L001_R2_001.fastq.gz.fastq  2_S1_L001_R2_001.fastq.gz.fastq   6_S1_L001_R2_001.fastq.gz.fastq
+[hudson.ka@c0281 unzipped_fastq]$ grep -i -c "^@" 9_S1_L001_R* > seq_count_files_9.txt
+[hudson.ka@c0281 unzipped_fastq]$ cat seq_count_files_9.txt
+9_S1_L001_R1_001.fastq.gz.fastq:29794050
+9_S1_L001_R2_001.fastq.gz.fastq:29794050
+[hudson.ka@c0281 unzipped_fastq]$

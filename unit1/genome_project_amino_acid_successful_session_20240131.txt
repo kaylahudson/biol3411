@@ -1,0 +1,117 @@
+     +--------------------------------------------------------------------+
+     ¦                • MobaXterm Personal Edition v23.6 •                ¦
+     ¦              (X server, SSH client and network tools)              ¦
+     ¦                                                                    ¦
+     ¦ ? Your computer drives are accessible through the /drives path     ¦
+     ¦ ? Your DISPLAY is set to 10.0.0.93:0.0                             ¦
+     ¦ ? When using SSH, your remote DISPLAY is automatically forwarded   ¦
+     ¦ ? Your HOME folder is not persistent: it will be erased on restart ¦
+     ¦ ? Each command status is specified by a special symbol (? or ?)    ¦
+     ¦                                                                    ¦
+     ¦ • Important:                                                       ¦
+     ¦ This is MobaXterm Personal Edition. The Professional edition       ¦
+     ¦ allows you to customize MobaXterm for your company: you can add    ¦
+     ¦ your own logo, your parameters, your welcome message and generate  ¦
+     ¦ either an MSI installation package or a portable executable.       ¦
+     ¦ We can also modify MobaXterm or develop the plugins you need.      ¦
+     ¦ For more information: https://mobaxterm.mobatek.net/download.html  ¦
+     +--------------------------------------------------------------------+
+
+ ? 29/01/2024 ? ? 16:22.30 ? ? /home/mobaxterm ? ssh hudson.ka@login.discover
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Mon Jan 29 14:21:06 2024 from c-71-235-255-87.hsd1.ma.comcast.net
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+[hudson.ka@login-00 ~]$ cd /scratch/hudson.ka/
+[hudson.ka@login-00 hudson.ka]$ ls
+borrelia_genome  dataformat  datasets  MarineGenomics  ncbi_dataset  ncbi_datase
+[hudson.ka@login-00 hudson.ka]$ cd ncbi_dataset/
+[hudson.ka@login-00 ncbi_dataset]$ ls
+data
+[hudson.ka@login-00 ncbi_dataset]$ cd data/
+[hudson.ka@login-00 data]$ ls
+assembly_data_report.jsonl  dataset_catalog.json  GCA_000008685.2
+[hudson.ka@login-00 data]$ cd GCA_000008685.2/
+[hudson.ka@login-00 GCA_000008685.2]$ ls
+AE001583.1.protein  AE001583.1.rev  AE001583.1.txt  GCA_000008685.2_ASM868v2_gen
+[hudson.ka@login-00 GCA_000008685.2]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06
+[hudson.ka@login-00 GCA_000008685.2]$ module load emboss/6.6.0
+[hudson.ka@login-00 GCA_000008685.2]$ transeq AE001583.1 AE001583.1.rev > AE001583.1.protein
+Translate nucleic acid sequences
+Error: Failed to open filename 'AE001583.1'
+Error: Unable to read sequence 'AE001583.1'
+Died: transeq terminated: Bad value for '-sequence' and no prompt
+[hudson.ka@login-00 GCA_000008685.2]$ transeq AE001583.1.rev AE001583.1 > AE001583.1.protein
+Translate nucleic acid sequences
+[hudson.ka@login-00 GCA_000008685.2]$ ls
+AE001583.1          AE001583.1.txt                        list.txt
+AE001583.1.protein  GCA_000008685.2_ASM868v2_genomic.fna
+AE001583.1.rev      GCA_000008685.2.txt
+[hudson.ka@login-00 GCA_000008685.2]$ nano AE001583.1.protein
+[hudson.ka@login-00 GCA_000008685.2]$ nano AE001583.1.rev
+[hudson.ka@login-00 GCA_000008685.2]$ cp AE001583.1.rev /courses/BIOL3411.202430/students/hudson.ka/
+[hudson.ka@login-00 GCA_000008685.2]$ ls  /courses/BIOL3411.202430/students/hudson.ka/
+AE001583.1.rev  datasets.exe                           NR; print -bash}
+assignments     dna_name_intro
+class_examples  GCA_000008685.2_ASM868v2_genomic.fna
+[hudson.ka@login-00 GCA_000008685.2]$ ls  /courses/BIOL3411.202430/students/hudsop: send disconnect: Connection reset by peer
+
+
+ ? 29/01/2024 ? ? 17:28.39 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.edu
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Mon Jan 29 16:22:46 2024 from 10.110.102.69
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+[hudson.ka@login-00 ~]$ cd /scratch/hudson.ka/
+[hudson.ka@login-00 hudson.ka]$ ls
+borrelia_genome  datasets        ncbi_dataset      README.md
+dataformat       MarineGenomics  ncbi_dataset.zip  week1.tar.gz
+[hudson.ka@login-00 hudson.ka]$ cd ncbi_dataset/
+[hudson.ka@login-00 ncbi_dataset]$ ls
+data
+[hudson.ka@login-00 ncbi_dataset]$ ls data
+assembly_data_report.jsonl  dataset_catalog.json  GCA_000008685.2
+[hudson.ka@login-00 ncbi_dataset]$ cd data/GCA_000008685.2/
+[hudson.ka@login-00 GCA_000008685.2]$ ls
+AE001583.1          AE001583.1.save                       GCA_000008685.2.txt
+AE001583.1.protein  AE001583.1.txt                        list.txt
+AE001583.1.rev      GCA_000008685.2_ASM868v2_genomic.fna
+[hudson.ka@login-00 GCA_000008685.2]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06
+[hudson.ka@login-00 GCA_000008685.2]$ module load emboss/6.6.0
+[hudson.ka@login-00 GCA_000008685.2]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06   2) emboss/6.6.0
+[hudson.ka@login-00 GCA_000008685.2]$ emboss transeq AE001583.1.rev AE001583.1.pep
+-bash: emboss: command not found
+[hudson.ka@login-00 GCA_000008685.2]$ transeq AE001583.1.rev AE001583.1.pep     Translate nucleic acid sequences
+[hudson.ka@login-00 GCA_000008685.2]$ ls
+AE001583.1          AE001583.1.rev   GCA_000008685.2_ASM868v2_genomic.fna
+AE001583.1.pep      AE001583.1.save  GCA_000008685.2.txt
+AE001583.1.protein  AE001583.1.txt   list.txt
+[hudson.ka@login-00 GCA_000008685.2]$ nano AE001583.1.pep
+[hudson.ka@login-00 GCA_000008685.2]$ nano AE001583.1.pep
+[hudson.ka@login-00 GCA_000008685.2]$
+[hudson.ka@login-00 GCA_000008685.2]$ client_loop: send disconnect: Connection r
+
+
+ ? 31/01/2024 ? ? 14:53.14 ? ? /home/mobaxterm ?
