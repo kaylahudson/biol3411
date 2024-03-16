@@ -1,0 +1,23 @@
+from 14feb_class_example_work_Daydata_20240221.txt
+---------------------------------------------------------------------------------------------------------------------------
+[hudson.ka@c2000 unzipped_fastq]$ nano SRR6805880.tiny.fastq.gz.fastq
+[hudson.ka@c2000 unzipped_fastq]$ nano SRR6805880.tiny.fastq.gz.fastq
+[hudson.ka@c2000 unzipped_fastq]$ nano SRR6805881.tiny.fastq.gz.fastq
+[hudson.ka@c2000 unzipped_fastq]$ cd ..
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ gunzip -c SRR6805880.tiny.fastq.gz > SRR6805880.tiny.fastq
+
+gzip: SRR6805880.tiny.fastq.gz: unexpected end of file
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error   41047655.output        SRR6805880.tiny.fastq.gz  unzip_2.bash
+41047242.output  41047877.error         SRR6805881.tiny.fastq.gz  unzip_3.bash
+41047457.error   41047877.output        SRR6805882.tiny.fastq.gz  unzip_5_newdir.bash
+41047457.output  bash_output            SRR6805883.tiny.fastq.gz  unzip.bash
+41047499.error   scontrol_41047103.txt  SRR6805884.tiny.fastq.gz  unzipped_fastq
+41047499.output  scontrol_41047242.txt  SRR6805885.tiny.fastq.gz
+41047655.error   SRR6805880.tiny.fastq  test_unzipped
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano SRR6805880.tiny.fastq
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ gunzip -c SRR6805880.tiny.fastq.gz > test_unzip.tiny.fastq
+
+gzip: SRR6805880.tiny.fastq.gz: unexpected end of file
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano SRR6805880.tiny.fastq.gz

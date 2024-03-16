@@ -1,0 +1,148 @@
+     +--------------------------------------------------------------------+
+     ¦                • MobaXterm Personal Edition v23.6 •                ¦
+     ¦              (X server, SSH client and network tools)              ¦
+     ¦                                                                    ¦
+     ¦ ? Your computer drives are accessible through the /drives path     ¦
+     ¦ ? Your DISPLAY is set to 10.0.0.92:0.0                             ¦
+     ¦ ? When using SSH, your remote DISPLAY is automatically forwarded   ¦
+     ¦ ? Your HOME folder is not persistent: it will be erased on restart ¦
+     ¦ ? Each command status is specified by a special symbol (? or ?)    ¦
+     ¦                                                                    ¦
+     ¦ • Important:                                                       ¦
+     ¦ This is MobaXterm Personal Edition. The Professional edition       ¦
+     ¦ allows you to customize MobaXterm for your company: you can add    ¦
+     ¦ your own logo, your parameters, your welcome message and generate  ¦
+     ¦ either an MSI installation package or a portable executable.       ¦
+     ¦ We can also modify MobaXterm or develop the plugins you need.      ¦
+     ¦ For more information: https://mobaxterm.mobatek.net/download.html  ¦
+     +--------------------------------------------------------------------+
+s
+ ? 26/02/2024 ? ? 15:04.03 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.edu
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Mon Feb 26 15:01:56 2024 from 10.110.173.127
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+[hudson.ka@login-00 ~]$ srun --pty /bin/bash
+srun: job 41141086 queued and waiting for resources
+srun: job 41141086 has been allocated resources
+[hudson.ka@c0281 ~]$ cd /courses/BIOL3411.202430/students/hudson.ka/unit2/Day_data/
+[hudson.ka@c0281 Day_data]$ ls
+10_S1_L001_R1_001.fastq.gz  13_S1_L001_R1_001.fastq.gz  1_S1_L001_R1_001.fastq.gz  41054315.error             6_S1_L001_R1_001.fastq.gz  9_S1_L00
+10_S1_L001_R2_001.fastq.gz  13_S1_L001_R2_001.fastq.gz  1_S1_L001_R2_001.fastq.gz  41054315.output            6_S1_L001_R2_001.fastq.gz  9_S1_L00
+11_S1_L001_R1_001.fastq.gz  14_S1_L001_R1_001.fastq.gz  2_S1_L001_R1_001.fastq.gz  4_S1_L001_R1_001.fastq.gz  7_S1_L001_R1_001.fastq.gz  unzip_in
+11_S1_L001_R2_001.fastq.gz  14_S1_L001_R2_001.fastq.gz  2_S1_L001_R2_001.fastq.gz  4_S1_L001_R2_001.fastq.gz  7_S1_L001_R2_001.fastq.gz  unzipped
+12_S1_L001_R1_001.fastq.gz  15_S1_L001_R1_001.fastq.gz  3_S1_L001_R1_001.fastq.gz  5_S1_L001_R1_001.fastq.gz  8_S1_L001_R1_001.fastq.gz
+12_S1_L001_R2_001.fastq.gz  15_S1_L001_R2_001.fastq.gz  3_S1_L001_R2_001.fastq.gz  5_S1_L001_R2_001.fastq.gz  8_S1_L001_R2_001.fastq.gz
+[hudson.ka@c0281 Day_data]$ head unzipped_fastq/10_S1_L001_R1_001.fastq.gz.fastq
+@lh00172:133:223LN7LT4:5:1101:4787:1084 1:N:0:AATCCAGC+AACCAGGT
+CNGGAAACTGCCTCGTCATGCGACTGTTCCCCGGGGTCAGGGCCGCTGGTATTTGCTGTAAAGAGGGGCGTTGAGTCCGTCCGACTTCACTGCCCCCTTTCAGCCTTTTGGGTCCTGTATCCCAATTCTCAGAGGTCCCGCCGAG
++
+I#IIIIIIIII99III9IIII9-IIIIII9III9I-IIIIIII-II9IIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIII-IIIIIIII9IIII
+@lh00172:133:223LN7LT4:5:1101:7862:1084 1:N:0:AATCCAGC+AACCAGGT
+CNGGAGACGACGTGCAGAAATGGCACCTCGAAAGGGGAAGGAAAAGAAGGAAGAACAGGTCATCAGCCTCGGACCTCAGGTGGCTGAAGGAGAGAATGTATTTGGTGTCTGCAATATCTTTGCATCCTTCAATGACACTTTTGTC
++
+I#III-IIIIIIIIIIIIIIIII-IIIIIIIIIIIII9IIIIII9I9III--III-IIIIIIIIIIIIIII9IIIIIIIIIIIIIII9IIIIIIIIIIIIII9IIIIIII9I-99III9IIIIIIIIIIII9IIIII-III9III
+@lh00172:133:223LN7LT4:5:1101:7878:1084 1:N:0:AATCCAGC+AACCAGGT
+CNGGAGACGACGTGCAGAAATGGCAACTCGAAAGGGGAAGGAAAAGAAGGAAGAACAGGTCATCAGCCTCGGACCTCAGGTGGCTGAAGACGAGAATGTATTTGGTGTCTGCCCTATCTTTGCATCCTTCAATGACACTTTTGTC
+[hudson.ka@c0281 Day_data]$ cd unzipped_fastq/
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c0281 unzipped_fastq]$ grep -i -c "^@" 7_S1_L001_R* > seq_count_files_7.txt
+[hudson.ka@c0281 unzipped_fastq]$ ls
+10_S1_L001_R1_001.fastq.gz.fastq  13_S1_L001_R2_001.fastq.gz.fastq  2_S1_L001_R1_001.fastq.gz.fastq  5_S1_L001_R2_001.fastq.gz.fastq  9_S1_L001_R
+10_S1_L001_R2_001.fastq.gz.fastq  14_S1_L001_R1_001.fastq.gz.fastq  2_S1_L001_R2_001.fastq.gz.fastq  6_S1_L001_R1_001.fastq.gz.fastq  9_S1_L001_R
+11_S1_L001_R1_001.fastq.gz.fastq  14_S1_L001_R2_001.fastq.gz.fastq  3_S1_L001_R1_001.fastq.gz.fastq  6_S1_L001_R2_001.fastq.gz.fastq  seq_count_f
+11_S1_L001_R2_001.fastq.gz.fastq  15_S1_L001_R1_001.fastq.gz.fastq  3_S1_L001_R2_001.fastq.gz.fastq  7_S1_L001_R1_001.fastq.gz.fastq
+12_S1_L001_R1_001.fastq.gz.fastq  15_S1_L001_R2_001.fastq.gz.fastq  4_S1_L001_R1_001.fastq.gz.fastq  7_S1_L001_R2_001.fastq.gz.fastq
+12_S1_L001_R2_001.fastq.gz.fastq  1_S1_L001_R1_001.fastq.gz.fastq   4_S1_L001_R2_001.fastq.gz.fastq  8_S1_L001_R1_001.fastq.gz.fastq
+13_S1_L001_R1_001.fastq.gz.fastq  1_S1_L001_R2_001.fastq.gz.fastq   5_S1_L001_R1_001.fastq.gz.fastq  8_S1_L001_R2_001.fastq.gz.fastq
+[hudson.ka@c0281 unzipped_fastq]$ nano seq_count_files_7.txt
+[hudson.ka@c0281 unzipped_fastq]$ cat seq_count_files_7.txt
+7_S1_L001_R1_001.fastq.gz.fastq:35536673
+7_S1_L001_R2_001.fastq.gz.fastq:35536673
+[hudson.ka@c0281 unzipped_fastq]$ head -n 16 7_S1_L001_R1_001.fastq.gz.fastq
+@lh00172:133:223LN7LT4:5:1101:10970:1084 1:N:0:GCAGAAGA+TCCGTAGT
+GNCCAGGCGAGCAGATGGTCTCCGTCACTGCCAACCTAAATCAATGCCTGGAGAGGGCGAATGCTGCCAATTAGCAGGATATCCAGAGCTCTTTCTCCCAGCCCCGTGGCCCCACCTGGGAGCCAGGCAGCATGCTTTGCCTCCT
++
+I#IIIIIIIIIIIIIIIIIIIIIIIII-I9IIIIIIIIIIIIIIII9IIIIII9IIIII-IIIIIIIIII-IIIIIIIIIIIIIIIIIIIIIIIII-IIIIII--IIIII-I9III-9IIIII9IIIIIIIIIIIIIIIIIIIII
+@lh00172:133:223LN7LT4:5:1101:4569:1098 1:N:0:GCAGAAGA+TCCGTAGT
+CNTAGGTGGAGACACTTTGGCATCATCAACCTTGATCTCCCCAGGAGGCATCTTGTTTAGACACTGTGCGATAATTCTCAGGGACTGGCGCATCTCCTCCACCCGGCACAGGTACCTATCATAGCAGTCCCCTCGAGAACCAACA
++
+I#IIIIIIIIIII9-9IIIII9IIIIII99IIIIIIII9-9-IIIIIIIIIIIIIIII-IIIIIIIIIIIIIIIIIIIIIIIIIIIII-IIII9I--IIIIIIIIIIIIIIIIIIII9IIIII9IIIIII9-I9IIIIIIIIIII
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c0281 unzipped_fastq]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06
+[hudson.ka@c0281 unzipped_fastq]$ module avail
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c0281 unzipped_fastq]$ module load fastqc/0.11.9
+fastqc/0.11.9(6):ERROR:151: Module 'fastqc/0.11.9' depends on one of the module(s) 'OpenJDK/19.0.1'
+fastqc/0.11.9(6):ERROR:102: Tcl command execution failed: prereq OpenJDK/19.0.1
+
+[hudson.ka@c0281 unzipped_fastq]$ module load OpenJDK/19.0.1
+[hudson.ka@c0281 unzipped_fastq]$ module load fastqc/0.11.9
+[hudson.ka@c0281 unzipped_fastq]$ module avail
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c0281 unzipped_fastq]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06   2) OpenJDK/19.0.1         3) fastqc/0.11.9
+[hudson.ka@c0281 unzipped_fastq]$ cd ..
+[hudson.ka@c0281 Day_data]$ ls
+10_S1_L001_R1_001.fastq.gz  13_S1_L001_R2_001.fastq.gz  2_S1_L001_R1_001.fastq.gz  4_S1_L001_R2_001.fastq.gz  8_S1_L001_R1_001.fastq.gz
+10_S1_L001_R2_001.fastq.gz  14_S1_L001_R1_001.fastq.gz  2_S1_L001_R2_001.fastq.gz  5_S1_L001_R1_001.fastq.gz  8_S1_L001_R2_001.fastq.gz
+11_S1_L001_R1_001.fastq.gz  14_S1_L001_R2_001.fastq.gz  3_S1_L001_R1_001.fastq.gz  5_S1_L001_R2_001.fastq.gz  9_S1_L001_R1_001.fastq.gz
+11_S1_L001_R2_001.fastq.gz  15_S1_L001_R1_001.fastq.gz  3_S1_L001_R2_001.fastq.gz  6_S1_L001_R1_001.fastq.gz  9_S1_L001_R2_001.fastq.gz
+12_S1_L001_R1_001.fastq.gz  15_S1_L001_R2_001.fastq.gz  41054315.error             6_S1_L001_R2_001.fastq.gz  unzip_into_new_dir.bash
+12_S1_L001_R2_001.fastq.gz  1_S1_L001_R1_001.fastq.gz   41054315.output            7_S1_L001_R1_001.fastq.gz  unzipped_fastq
+13_S1_L001_R1_001.fastq.gz  1_S1_L001_R2_001.fastq.gz   4_S1_L001_R1_001.fastq.gz  7_S1_L001_R2_001.fastq.gz
+[hudson.ka@c0281 Day_data]$ fastqc 7_S1_L001_R1_001.fastq.gz
+Started analysis of 7_S1_L001_R1_001.fastq.gz
+Approx 5% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 10% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 15% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 20% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 25% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 30% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 35% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 40% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 45% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 50% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 55% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 60% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 65% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 70% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 75% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 80% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 85% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 90% complete for 7_S1_L001_R1_001.fastq.gz
+Approx 95% complete for 7_S1_L001_R1_001.fastq.gz
+Analysis complete for 7_S1_L001_R1_001.fastq.gz
+[hudson.ka@c0281 Day_data]$ ls
+10_S1_L001_R1_001.fastq.gz  14_S1_L001_R1_001.fastq.gz  3_S1_L001_R1_001.fastq.gz  6_S1_L001_R1_001.fastq.gz     9_S1_L001_R1_001.fastq.gz
+10_S1_L001_R2_001.fastq.gz  14_S1_L001_R2_001.fastq.gz  3_S1_L001_R2_001.fastq.gz  6_S1_L001_R2_001.fastq.gz     9_S1_L001_R2_001.fastq.gz
+11_S1_L001_R1_001.fastq.gz  15_S1_L001_R1_001.fastq.gz  41054315.error             7_S1_L001_R1_001_fastqc.html  unzip_into_new_dir.bash
+11_S1_L001_R2_001.fastq.gz  15_S1_L001_R2_001.fastq.gz  41054315.output            7_S1_L001_R1_001_fastqc.zip   unzipped_fastq
+12_S1_L001_R1_001.fastq.gz  1_S1_L001_R1_001.fastq.gz   4_S1_L001_R1_001.fastq.gz  7_S1_L001_R1_001.fastq.gz
+12_S1_L001_R2_001.fastq.gz  1_S1_L001_R2_001.fastq.gz   4_S1_L001_R2_001.fastq.gz  7_S1_L001_R2_001.fastq.gz
+13_S1_L001_R1_001.fastq.gz  2_S1_L001_R1_001.fastq.gz   5_S1_L001_R1_001.fastq.gz  8_S1_L001_R1_001.fastq.gz
+13_S1_L001_R2_001.fastq.gz  2_S1_L001_R2_001.fastq.gz   5_S1_L001_R2_001.fastq.gz  8_S1_L001_R2_001.fastq.gz
+[hudson.ka@c0281 Day_data]$ pwd
+/courses/BIOL3411.202430/students/hudson.ka/unit2/Day_data
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...

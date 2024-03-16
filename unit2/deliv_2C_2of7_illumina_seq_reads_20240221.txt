@@ -1,0 +1,365 @@
+     +--------------------------------------------------------------------+
+     ¦                • MobaXterm Personal Edition v23.6 •                ¦
+     ¦              (X server, SSH client and network tools)              ¦
+     ¦                                                                    ¦
+     ¦ ? Your computer drives are accessible through the /drives path     ¦
+     ¦ ? Your DISPLAY is set to 10.0.0.93:0.0                             ¦
+     ¦ ? When using SSH, your remote DISPLAY is automatically forwarded   ¦
+     ¦ ? Your HOME folder is not persistent: it will be erased on restart ¦
+     ¦ ? Each command status is specified by a special symbol (? or ?)    ¦
+     ¦                                                                    ¦
+     ¦ • Important:                                                       ¦
+     ¦ This is MobaXterm Personal Edition. The Professional edition       ¦
+     ¦ allows you to customize MobaXterm for your company: you can add    ¦
+     ¦ your own logo, your parameters, your welcome message and generate  ¦
+     ¦ either an MSI installation package or a portable executable.       ¦
+     ¦ We can also modify MobaXterm or develop the plugins you need.      ¦
+     ¦ For more information: https://mobaxterm.mobatek.net/download.html  ¦
+     +--------------------------------------------------------------------+
+
+ ? 21/02/2024 ? ? 05:50.45 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.edu
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Wed Feb 21 05:50:40 2024 from c-71-235-255-87.hsd1.ma.comcast.net
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+[hudson.ka@login-00 ~]$ srun --pty /bin/bash
+srun: job 41047103 queued and waiting for resources
+srun: job 41047103 has been allocated resources
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 ~]$ cd /courses/BIOL3411.202430/students/hudson.ka/
+[hudson.ka@c2000 hudson.ka]$ ls
+assignments  class_examples  trash  unit1_deliverable_paths.txt
+[hudson.ka@c2000 hudson.ka]$ cd class_examples/
+[hudson.ka@c2000 class_examples]$ ls
+computing_node_intro_wk4  dna_name_intro_wk1  fastq_work_wk6_20240214  unit2_intro_exercise
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 class_examples]$ cd fastq_work_wk6_20240214/
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+40874762.error   40876370.output                 SRR6805883.tiny.fastq.gz
+40874762.output  new_unzip.bash                  SRR6805883.tiny.fastq.gz.fastq
+40875349.error   SRR6805880.tiny.fastq           SRR6805884.tiny.fastq.gz
+40875349.output  SRR6805880.tiny.fastq.gz        SRR6805884.tiny.fastq.gz.fastq
+40875403.error   SRR6805880.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz
+40875403.output  SRR6805881.tiny.fastq.gz        SRR6805885.tiny.fastq.gz.fastq
+40875465.error   SRR6805881.tiny.fastq.gz.fastq  test_unzipped
+40875465.output  SRR6805882.tiny.fastq.gz        unzip_3.bash
+40876370.error   SRR6805882.tiny.fastq.gz.fastq  unzip.bash
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ cd test_unzipped/
+[hudson.ka@c2000 test_unzipped]$ ls
+SRR6805880.tiny.fastq.gz.fastq  SRR6805882.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq
+SRR6805881.tiny.fastq.gz.fastq  SRR6805883.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+[hudson.ka@c2000 test_unzipped]$ cd ..
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mv *.fastq.gz.fastq test_unzipped/
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+40874762.error   40875403.output  new_unzip.bash            SRR6805884.tiny.fastq.gz
+40874762.output  40875465.error   SRR6805880.tiny.fastq.gz  SRR6805885.tiny.fastq.gz
+40875349.error   40875465.output  SRR6805881.tiny.fastq.gz  test_unzipped
+40875349.output  40876370.error   SRR6805882.tiny.fastq.gz  unzip_3.bash
+40875403.error   40876370.output  SRR6805883.tiny.fastq.gz  unzip.bash
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mkdir bash_output
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mv *.error bash_output/
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mv *.output bash_output/
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_3.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_3.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ sbatch unzip_3.bash
+Submitted batch job 41047242
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue -u hudson.ka
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047242     short unzippin hudson.k PD       0:00      1 (Priority)
+          41047103     short     bash hudson.k  R      21:14      1 c2000
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ scontrol show job 41047103 > scontrol_41047103.txt
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano scontrol_41047103.txt
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue -u hudson.ka
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047242     short unzippin hudson.k PD       0:00      1 (Priority)
+          41047103     short     bash hudson.k  R      41:18      1 c2000
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ scontrol show job 41047242 > scontrol_41047242.txt
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano scontrol_41047242.txt
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue -u hudson.ka
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047103     short     bash hudson.k  R      43:49      1 c2000
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano 41047242.output
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano 41047242.error
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ cp unzip_3.bash unzip_4.bash
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_4.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ sbatch unzip_4.bash
+Submitted batch job 41047457
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue -u hudson.ka
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047457     short unzippin hudson.k PD       0:00      1 (Priority)
+          41047103     short     bash hudson.k  R      54:31      1 c2000
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mv *.gz.fastq test_unzipped/
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error   scontrol_41047103.txt     SRR6805883.tiny.fastq.gz  unzip_3.bash
+41047242.output  scontrol_41047242.txt     SRR6805884.tiny.fastq.gz  unzip_4.bash
+41047457.error   SRR6805880.tiny.fastq.gz  SRR6805885.tiny.fastq.gz  unzip.bash
+41047457.output  SRR6805881.tiny.fastq.gz  test_unzipped
+bash_output      SRR6805882.tiny.fastq.gz  unzip_2.bash
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_4.bash
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ sbatch unzip_4.bash
+Submitted batch job 41047655
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ squeue --me
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41047655     short unzippin hudson.k PD       0:00      1 (Priority)
+          41047103     short     bash hudson.k  R    1:18:13      1 c2000
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error         scontrol_41047242.txt           SRR6805884.tiny.fastq.gz.fastq
+41047242.output        SRR6805880.tiny.fastq.gz        SRR6805885.tiny.fastq.gz
+41047457.error         SRR6805880.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+41047457.output        SRR6805881.tiny.fastq.gz        test_unzipped
+41047499.error         SRR6805881.tiny.fastq.gz.fastq  unzip_2.bash
+41047499.output        SRR6805882.tiny.fastq.gz        unzip_3.bash
+41047655.error         SRR6805882.tiny.fastq.gz.fastq  unzip_4.bash
+41047655.output        SRR6805883.tiny.fastq.gz        unzip.bash
+bash_output            SRR6805883.tiny.fastq.gz.fastq
+scontrol_41047103.txt  SRR6805884.tiny.fastq.gz
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_4.bash
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mkdir unzipped_fastq
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error   bash_output                     SRR6805882.tiny.fastq.gz.fastq  unzip_2.bash
+41047242.output  scontrol_41047103.txt           SRR6805883.tiny.fastq.gz        unzip_3.bash
+41047457.error   scontrol_41047242.txt           SRR6805883.tiny.fastq.gz.fastq  unzip_4.bash
+41047457.output  SRR6805880.tiny.fastq.gz        SRR6805884.tiny.fastq.gz        unzip.bash
+41047499.error   SRR6805880.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq  unzipped_fastq
+41047499.output  SRR6805881.tiny.fastq.gz        SRR6805885.tiny.fastq.gz
+41047655.error   SRR6805881.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+41047655.output  SRR6805882.tiny.fastq.gz        test_unzipped
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mv *.fastq unzipped_fastq/
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error   41047655.error            SRR6805881.tiny.fastq.gz  unzip_2.bash
+41047242.output  41047655.output           SRR6805882.tiny.fastq.gz  unzip_3.bash
+41047457.error   bash_output               SRR6805883.tiny.fastq.gz  unzip_4.bash
+41047457.output  scontrol_41047103.txt     SRR6805884.tiny.fastq.gz  unzip.bash
+41047499.error   scontrol_41047242.txt     SRR6805885.tiny.fastq.gz  unzipped_fastq
+41047499.output  SRR6805880.tiny.fastq.gz  test_unzipped
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls unzipped_fastq/
+SRR6805880.tiny.fastq.gz.fastq  SRR6805882.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq
+SRR6805881.tiny.fastq.gz.fastq  SRR6805883.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ rm -ir unzipped_fastq/
+rm: descend into directory ‘unzipped_fastq/’? Y
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+rm: remove regular empty file ‘unzipped_fastq/SRR6805885.tiny.fastq.gz.fastq’? Y
+rm: remove directory ‘unzipped_fastq/’? Y
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ mv unzip_4.bash unzip_5_newdir.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_5_newdir.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ nano unzip_5_newdir.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ sbatch unzip_5_newdir.bash
+Submitted batch job 41047877
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls
+41047242.error   41047655.output           SRR6805881.tiny.fastq.gz  unzip_3.bash
+41047242.output  41047877.error            SRR6805882.tiny.fastq.gz  unzip_5_newdir.bash
+41047457.error   41047877.output           SRR6805883.tiny.fastq.gz  unzip.bash
+41047457.output  bash_output               SRR6805884.tiny.fastq.gz  unzipped_fastq
+41047499.error   scontrol_41047103.txt     SRR6805885.tiny.fastq.gz
+41047499.output  scontrol_41047242.txt     test_unzipped
+41047655.error   SRR6805880.tiny.fastq.gz  unzip_2.bash
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ ls unzipped_fastq/
+SRR6805880.tiny.fastq.gz.fastq  SRR6805882.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq
+SRR6805881.tiny.fastq.gz.fastq  SRR6805883.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240214]$ cd ../fastq_work_wk6_20240221
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ ls
+41047987.error         SRR6805880.tiny.fastq.gz  SRR6805885.tiny.fastq.gz  unzip.bash
+41047987.output        SRR6805881.tiny.fastq.gz  test_unzipped             unzipped_fastq
+bash_output            SRR6805882.tiny.fastq.gz  unzip_2.bash
+scontrol_41047103.txt  SRR6805883.tiny.fastq.gz  unzip_3.bash
+scontrol_41047242.txt  SRR6805884.tiny.fastq.gz  unzip_5_newdir.bash
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ module load OpenJDK/19.0.1
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ module load fastqc/0.11.9
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06   2) OpenJDK/19.0.1         3) fastqc/0.11.9
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ ls
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ nano SRR6805880.tiny.fastq.gz
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ fastqc SRR6805880.tiny.fastq.gz
+Started analysis of SRR6805880.tiny.fastq.gz
+Approx 100% complete for SRR6805880.tiny.fastq.gz
+Analysis complete for SRR6805880.tiny.fastq.gz
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ ls
+41047987.error               SRR6805880.tiny.fastq.gz  unzip_2.bash
+41047987.output              SRR6805881.tiny.fastq.gz  unzip_3.bash
+bash_output                  SRR6805882.tiny.fastq.gz  unzip_5_newdir.bash
+scontrol_41047103.txt        SRR6805883.tiny.fastq.gz  unzip.bash
+scontrol_41047242.txt        SRR6805884.tiny.fastq.gz  unzipped_fastq
+SRR6805880.tiny_fastqc.html  SRR6805885.tiny.fastq.gz
+SRR6805880.tiny_fastqc.zip   test_unzipped
+[hudson.ka@c2000 fastq_work_wk6_20240221]$ pwd
+/courses/BIOL3411.202430/students/hudson.ka/class_examples/fastq_work_wk6_20240221
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@login-01 ~]$ cd /courses/BIOL3411.202430/students/hudson.ka/class_examples/fastq_work_wk6_20240221
+[hudson.ka@login-01 fastq_work_wk6_20240221]$ ls
+41047987.error               SRR6805880.tiny.fastq.gz  unzip_2.bash
+41047987.output              SRR6805881.tiny.fastq.gz  unzip_3.bash
+bash_output                  SRR6805882.tiny.fastq.gz  unzip_5_newdir.bash
+scontrol_41047103.txt        SRR6805883.tiny.fastq.gz  unzip.bash
+scontrol_41047242.txt        SRR6805884.tiny.fastq.gz  unzipped_fastq
+SRR6805880.tiny_fastqc.html  SRR6805885.tiny.fastq.gz
+SRR6805880.tiny_fastqc.zip   test_unzipped
+[hudson.ka@login-01 fastq_work_wk6_20240221]$ srun --pty /bin/bash
+srun: job 41053943 queued and waiting for resources
+srun: job 41053943 has been allocated resources
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ cp unzip_5_newdir.bash generate_qc_reports.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano generate_qc_reports.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ pwd
+/courses/BIOL3411.202430/students/hudson.ka/class_examples/fastq_work_wk6_20240221
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano generate_qc_reports.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano generate_qc_reports.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano generate_qc_reports.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano generate_qc_reports.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano SRR6805880.tiny.fastq.gz
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano SRR6805881.tiny.fastq.gz
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano unzip_5_newdir.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano generate_qc_reports.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano generate_qc_reports.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ sbatch generate_qc_reports.bash
+Submitted batch job 41054030
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls
+41047987.error            SRR6805880.tiny_fastqc.zip  SRR6805884.tiny.fastq.gz
+41047987.output           SRR6805880.tiny.fastq.gz    SRR6805885.tiny_fastqc.zip
+41054030.error            SRR6805881.tiny_fastqc.zip  SRR6805885.tiny.fastq.gz
+41054030.output           SRR6805881.tiny.fastq.gz    test_unzipped
+bash_output               SRR6805882.tiny_fastqc.zip  unzip_2.bash
+generate_qc_reports.bash  SRR6805882.tiny.fastq.gz    unzip_3.bash
+html_qc_reports           SRR6805883.tiny_fastqc.zip  unzip_5_newdir.bash
+scontrol_41047103.txt     SRR6805883.tiny.fastq.gz    unzip.bash
+scontrol_41047242.txt     SRR6805884.tiny_fastqc.zip  unzipped_fastq
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls html_qc_reports/
+SRR6805880.tiny_fastqc.html  SRR6805882.tiny_fastqc.html  SRR6805884.tiny_fastqc.html
+SRR6805881.tiny_fastqc.html  SRR6805883.tiny_fastqc.html  SRR6805885.tiny_fastqc.html
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ mkdir fastqc_zips
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ mv *fastqc.zip fastqc_zips/
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls
+41047987.error   generate_qc_reports.bash  SRR6805882.tiny.fastq.gz  unzip_3.bash
+41047987.output  html_qc_reports           SRR6805883.tiny.fastq.gz  unzip_5_newdir.bash
+41054030.error   scontrol_41047103.txt     SRR6805884.tiny.fastq.gz  unzip.bash
+41054030.output  scontrol_41047242.txt     SRR6805885.tiny.fastq.gz  unzipped_fastq
+bash_output      SRR6805880.tiny.fastq.gz  test_unzipped
+fastqc_zips      SRR6805881.tiny.fastq.gz  unzip_2.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ mv html_qc_reports/ fastqc_html_reports
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls fastqc_html_reports/
+SRR6805880.tiny_fastqc.html  SRR6805882.tiny_fastqc.html  SRR6805884.tiny_fastqc.html
+SRR6805881.tiny_fastqc.html  SRR6805883.tiny_fastqc.html  SRR6805885.tiny_fastqc.html
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ mv unzip_5_newdir.bash unzip_into_new_dir.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ ls
+41047987.error       fastqc_zips               SRR6805882.tiny.fastq.gz  unzip_3.bash
+41047987.output      generate_qc_reports.bash  SRR6805883.tiny.fastq.gz  unzip.bash
+41054030.error       scontrol_41047103.txt     SRR6805884.tiny.fastq.gz  unzip_into_new_dir.bash
+41054030.output      scontrol_41047242.txt     SRR6805885.tiny.fastq.gz  unzipped_fastq
+bash_output          SRR6805880.tiny.fastq.gz  test_unzipped
+fastqc_html_reports  SRR6805881.tiny.fastq.gz  unzip_2.bash
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ nano unzip_into_new_dir.bash
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...

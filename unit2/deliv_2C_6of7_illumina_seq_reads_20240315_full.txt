@@ -1,0 +1,185 @@
+    +----------------------------------------------------------------------+
+    ¦                 • MobaXterm Personal Edition v23.6 •                 ¦
+    ¦               (SSH client, X server and network tools)               ¦
+    ¦                                                                      ¦
+    ¦ ? Linux distribution: ?Default                                      ¦
+    ¦ ? Windows drives are mounted into /mnt path (by default)             ¦
+    ¦ ? Your DISPLAY is set to 10.0.0.97:0.0                               ¦
+    ¦ ? For more info, ctrl+click on help or visit our website.            ¦
+    +----------------------------------------------------------------------+
+
+kunix@DESKTOP-3LNCP2A:~$ ssh hudson.ka@login.discovery.neu.edu
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Fri Mar 15 08:59:03 2024 from c-71-235-255-87.hsd1.ma.comcast.net
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+we believe connectivity to the datacenter to be nominal, as of
+tuesday, 11 march 2024 at 1500ET.
+
+thank you for your patience
+&& happy computing !
+
+[hudson.ka@login-01 ~]$ srun --pty /bin/bash
+srun: job 41413097 queued and waiting for resources
+srun: job 41413097 has been allocated resources
+[hudson.ka@c0170 ~]$ cd /courses/BIOL3411.202430/students/hudson.ka/unit2
+[hudson.ka@c0170 unit2]$ ls
+Day_data                               fastq_work_wk6_20240221
+MarineGenomics_week4_tut               unit2_intro_exercise_20240207
+bowtie_lambda_phage_tutorial_20240221  unit2_table_of_contents.txt
+fastq_work_wk6_20240214
+[hudson.ka@c0170 unit2]$ cd fastq_work_wk6_20240221
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ ls
+41047987.error            SRR6805884.tiny.fastq.gz  test_unzipped
+41047987.output           SRR6805885.tiny.fastq.gz  unzip.bash
+41054030.error            bash_output               unzip_2.bash
+41054030.output           fastqc_html_reports       unzip_3.bash
+SRR6805880.tiny.fastq.gz  fastqc_zips               unzip_into_new_dir.bash
+SRR6805881.tiny.fastq.gz  generate_qc_reports.bash  unzipped_fastq
+SRR6805882.tiny.fastq.gz  scontrol_41047103.txt
+SRR6805883.tiny.fastq.gz  scontrol_41047242.txt
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ nano generate_qc_reports.sh
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ nano generate_qc_reports.
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ nano generate_qc_reports.sh
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ nano generate_qc_reports.sh
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ ls -l generate_qc_reports.sh
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 135 Mar 15 13:22 generate_qc_repors.sh
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ ls -l generate_qc_reports.sh
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 135 Mar 15 13:22 generate_qc_repors.sh
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ nano generate_qc_reports.sh
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ ls
+41047987.error            SRR6805884.tiny.fastq.gz  scontrol_41047242.txt
+41047987.output           SRR6805885.tiny.fastq.gz  test_unzipped
+41054030.error            bash_output               unzip.bash
+41054030.output           fastqc_html_reports       unzip_2.bash
+SRR6805880.tiny.fastq.gz  fastqc_zips               unzip_3.bash
+SRR6805881.tiny.fastq.gz  generate_qc_reports.bash  unzip_into_new_dir.bash
+SRR6805882.tiny.fastq.gz  generate_qc_reports.sh    unzipped_fastq
+SRR6805883.tiny.fastq.gz  scontrol_41047103.txt
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ bash generate_qc_reports.sh
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+        LANGUAGE = (unset),
+        LC_ALL = (unset),
+        LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+Started analysis of SRR6805880.tiny.fastq.gz
+Approx 100% complete for SRR6805880.tiny.fastq.gz
+Analysis complete for SRR6805880.tiny.fastq.gz
+Started analysis of SRR6805881.tiny.fastq.gz
+Approx 100% complete for SRR6805881.tiny.fastq.gz
+Analysis complete for SRR6805881.tiny.fastq.gz
+Started analysis of SRR6805882.tiny.fastq.gz
+Approx 100% complete for SRR6805882.tiny.fastq.gz
+Analysis complete for SRR6805882.tiny.fastq.gz
+Started analysis of SRR6805883.tiny.fastq.gz
+Approx 100% complete for SRR6805883.tiny.fastq.gz
+Analysis complete for SRR6805883.tiny.fastq.gz
+Started analysis of SRR6805884.tiny.fastq.gz
+Approx 100% complete for SRR6805884.tiny.fastq.gz
+Analysis complete for SRR6805884.tiny.fastq.gz
+Started analysis of SRR6805885.tiny.fastq.gz
+Approx 100% complete for SRR6805885.tiny.fastq.gz
+Analysis complete for SRR6805885.tiny.fastq.gz
+Script finished. All qc reports generated!
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ ls
+41047987.error              SRR6805885.tiny_fastqc.zip
+41047987.output             bash_output
+41054030.error              fastqc_html_reports
+41054030.output             fastqc_zips
+SRR6805880.tiny.fastq.gz    generate_qc_reports.bash
+SRR6805880.tiny_fastqc.zip  generate_qc_reports.sh
+SRR6805881.tiny.fastq.gz    html_qc_reports_sh_output
+SRR6805881.tiny_fastqc.zip  scontrol_41047103.txt
+SRR6805882.tiny.fastq.gz    scontrol_41047242.txt
+SRR6805882.tiny_fastqc.zip  test_unzipped
+SRR6805883.tiny.fastq.gz    unzip.bash
+SRR6805883.tiny_fastqc.zip  unzip_2.bash
+SRR6805884.tiny.fastq.gz    unzip_3.bash
+SRR6805884.tiny_fastqc.zip  unzip_into_new_dir.bash
+SRR6805885.tiny.fastq.gz    unzipped_fastq
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ mv *.tiny_fastqc.zip fastqc_zips_sh_otput
+mv: target 'fastqc_zips_sh_output' is not a directory
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ mkdir fastqc_zips_sh_output
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ mv *.tiny_fastqc.zip fastqc_zips_sh_otput
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ ls
+41047987.error            SRR6805885.tiny.fastq.gz   scontrol_41047242.txt
+41047987.output           bash_output                test_unzipped
+41054030.error            fastqc_html_reports        unzip.bash
+41054030.output           fastqc_zips                unzip_2.bash
+SRR6805880.tiny.fastq.gz  fastqc_zips_sh_output      unzip_3.bash
+SRR6805881.tiny.fastq.gz  generate_qc_reports.bash   unzip_into_new_dir.bash
+SRR6805882.tiny.fastq.gz  generate_qc_reports.sh     unzipped_fastq
+SRR6805883.tiny.fastq.gz  html_qc_reports_sh_output
+SRR6805884.tiny.fastq.gz  scontrol_41047103.txt
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ ls fastqc_html_reports/
+SRR6805880.tiny_fastqc.html  SRR6805883.tiny_fastqc.html
+SRR6805881.tiny_fastqc.html  SRR6805884.tiny_fastqc.html
+SRR6805882.tiny_fastqc.html  SRR6805885.tiny_fastqc.html
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ ls -l fastqc_html_reports/
+total 3649
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 621624 Feb 21 12:38 SRR6805880.tin_fastqc.html
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 624309 Feb 21 12:38 SRR6805881.tin_fastqc.html
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 623681 Feb 21 12:38 SRR6805882.tin_fastqc.html
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 615928 Feb 21 12:38 SRR6805883.tin_fastqc.html
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 627872 Feb 21 12:39 SRR6805884.tin_fastqc.html
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 620876 Feb 21 12:39 SRR6805885.tin_fastqc.html
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ mv html_qc_reports_sh_output/ fastqc_tml_reports_sh_output
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ ls
+41047987.error            SRR6805885.tiny.fastq.gz       scontrol_41047242.txt
+41047987.output           bash_output                    test_unzipped
+41054030.error            fastqc_html_reports            unzip.bash
+41054030.output           fastqc_html_reports_sh_output  unzip_2.bash
+SRR6805880.tiny.fastq.gz  fastqc_zips                    unzip_3.bash
+SRR6805881.tiny.fastq.gz  fastqc_zips_sh_output          unzip_into_new_dir.bash
+SRR6805882.tiny.fastq.gz  generate_qc_reports.bash       unzipped_fastq
+SRR6805883.tiny.fastq.gz  generate_qc_reports.sh
+SRR6805884.tiny.fastq.gz  scontrol_41047103.txt
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ ls -l
+total 520
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff   217 Feb 21 08:03 41047987.error
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff     0 Feb 21 08:03 41047987.output
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff   722 Feb 21 12:39 41054030.error
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff   282 Feb 21 12:39 41054030.output
+-rwxr-x---+ 1 hudson.ka BIOL3411.202430-staff 87525 Feb 21 07:59 SRR6805880.tinyfastq.gz
+-rwxr-x---+ 1 hudson.ka BIOL3411.202430-staff 86162 Feb 21 07:59 SRR6805881.tinyfastq.gz
+-rwxr-x---+ 1 hudson.ka BIOL3411.202430-staff 86792 Feb 21 07:59 SRR6805882.tinyfastq.gz
+-rwxr-x---+ 1 hudson.ka BIOL3411.202430-staff 87807 Feb 21 07:59 SRR6805883.tinyfastq.gz
+-rwxr-x---+ 1 hudson.ka BIOL3411.202430-staff 86910 Feb 21 07:59 SRR6805884.tinyfastq.gz
+-rwxr-x---+ 1 hudson.ka BIOL3411.202430-staff 87152 Feb 21 07:59 SRR6805885.tinyfastq.gz
+drwxr-s---+ 2 hudson.ka BIOL3411.202430-staff  4096 Feb 21 07:55 bash_output
+drwxrws---+ 2 hudson.ka BIOL3411.202430-staff  4096 Feb 21 12:39 fastqc_html_reprts
+drwxrws---+ 2 hudson.ka BIOL3411.202430-staff  4096 Mar 15 13:24 fastqc_html_reprts_sh_output
+drwxrws---+ 2 hudson.ka BIOL3411.202430-staff  4096 Feb 21 12:47 fastqc_zips
+drwxrws---+ 2 hudson.ka BIOL3411.202430-staff  4096 Mar 15 13:25 fastqc_zips_sh_utput
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff   529 Feb 21 12:37 generate_qc_reprts.bash
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff   185 Mar 15 13:24 generate_qc_reprts.sh
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff  1185 Feb 21 07:55 scontrol_4104713.txt
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff  1518 Feb 21 07:55 scontrol_4104722.txt
+drwxr-s---+ 2 hudson.ka BIOL3411.202430-staff  4096 Feb 21 07:58 test_unzipped
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff   377 Feb 21 07:55 unzip.bash
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff   452 Feb 21 07:55 unzip_2.bash
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff   378 Feb 21 07:55 unzip_3.bash
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff   500 Feb 21 08:01 unzip_into_new_ir.bash
+drwxr-s---+ 2 hudson.ka BIOL3411.202430-staff  4096 Feb 21 08:10 unzipped_fastq
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ ls
+41047987.error            SRR6805885.tiny.fastq.gz       scontrol_41047242.txt
+41047987.output           bash_output                    test_unzipped
+41054030.error            fastqc_html_reports            unzip.bash
+41054030.output           fastqc_html_reports_sh_output  unzip_2.bash
+SRR6805880.tiny.fastq.gz  fastqc_zips                    unzip_3.bash
+SRR6805881.tiny.fastq.gz  fastqc_zips_sh_output          unzip_into_new_dir.bash
+SRR6805882.tiny.fastq.gz  generate_qc_reports.bash       unzipped_fastq
+SRR6805883.tiny.fastq.gz  generate_qc_reports.sh
+SRR6805884.tiny.fastq.gz  scontrol_41047103.txt
+[hudson.ka@c0170 fastq_work_wk6_20240221]$ nano generate_qc_reports.sh
+[hudson.ka@c0170 fastq_work_wk6_20240221]$

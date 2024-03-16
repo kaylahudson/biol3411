@@ -1,0 +1,195 @@
+     +--------------------------------------------------------------------+
+     ¦                • MobaXterm Personal Edition v23.6 •                ¦
+     ¦              (X server, SSH client and network tools)              ¦
+     ¦                                                                    ¦
+     ¦ ? Your computer drives are accessible through the /drives path     ¦
+     ¦ ? Your DISPLAY is set to 10.0.0.93:0.0                             ¦
+     ¦ ? When using SSH, your remote DISPLAY is automatically forwarded   ¦
+     ¦ ? Your HOME folder is not persistent: it will be erased on restart ¦
+     ¦ ? Each command status is specified by a special symbol (? or ?)    ¦
+     ¦                                                                    ¦
+     ¦ • Important:                                                       ¦
+     ¦ This is MobaXterm Personal Edition. The Professional edition       ¦
+     ¦ allows you to customize MobaXterm for your company: you can add    ¦
+     ¦ your own logo, your parameters, your welcome message and generate  ¦
+     ¦ either an MSI installation package or a portable executable.       ¦
+     ¦ We can also modify MobaXterm or develop the plugins you need.      ¦
+     ¦ For more information: https://mobaxterm.mobatek.net/download.html  ¦
+     +--------------------------------------------------------------------+
+
+ ? 21/02/2024 ? ? 05:49.39 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.edu
+Warning: Permanently added 'login.discovery.neu.edu' (ED25519) to the list of known hosts.
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Wed Feb 14 15:23:16 2024 from 10.110.13.89
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+[hudson.ka@login-00 ~]$ cd /courses/BIOL3411.202430/students/
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@login-00 students]$ cd hudson.ka/class_examples/fastq_work_wk6_20240214/
+[hudson.ka@login-00 fastq_work_wk6_20240214]$ ls
+41047242.error   41047499.output           SRR6805881.tiny.fastq.gz  test_unzipped
+41047242.output  bash_output               SRR6805882.tiny.fastq.gz  unzip_2.bash
+41047457.error   scontrol_41047103.txt     SRR6805883.tiny.fastq.gz  unzip_3.bash
+41047457.output  scontrol_41047242.txt     SRR6805884.tiny.fastq.gz  unzip_4.bash
+41047499.error   SRR6805880.tiny.fastq.gz  SRR6805885.tiny.fastq.gz  unzip.bash
+[hudson.ka@login-00 fastq_work_wk6_20240214]$ cd test_unzipped/
+[hudson.ka@login-00 test_unzipped]$ ls
+SRR6805880.tiny.fastq            SRR6805883.tiny.fastq.gz.fastq
+SRR6805880.tiny.fastq.gz.fastq   SRR6805883.tiny.fastq.gz%.fastq
+SRR6805880.tiny.fastq.gz%.fastq  SRR6805884.tiny.fastq.gz.fastq
+SRR6805881.tiny.fastq.gz.fastq   SRR6805884.tiny.fastq.gz%.fastq
+SRR6805881.tiny.fastq.gz%.fastq  SRR6805885.tiny.fastq.gz.fastq
+SRR6805882.tiny.fastq.gz.fastq   SRR6805885.tiny.fastq.gz%.fastq
+SRR6805882.tiny.fastq.gz%.fastq
+[hudson.ka@login-00 test_unzipped]$ nano SRR6805880.tiny.fastq
+[hudson.ka@login-00 test_unzipped]$ nano SRR6805880.tiny.fastq.gz
+[hudson.ka@login-00 test_unzipped]$ cat SRR6805880.tiny.fastq.gz
+cat: SRR6805880.tiny.fastq.gz: No such file or directory
+[hudson.ka@login-00 test_unzipped]$ ls -l
+total 1240
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 1269379 Feb 14 15:52 SRR6805880.tiny.fastq
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff       0 Feb 21 06:48 SRR6805880.tiny.fastq.gz.fastq
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff       0 Feb 21 06:35 SRR6805880.tiny.fastq.gz%.fastq
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff       0 Feb 21 06:48 SRR6805881.tiny.fastq.gz.fastq
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff       0 Feb 21 06:35 SRR6805881.tiny.fastq.gz%.fastq
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff       0 Feb 21 06:48 SRR6805882.tiny.fastq.gz.fastq
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff       0 Feb 21 06:35 SRR6805882.tiny.fastq.gz%.fastq
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff       0 Feb 21 06:48 SRR6805883.tiny.fastq.gz.fastq
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff       0 Feb 21 06:35 SRR6805883.tiny.fastq.gz%.fastq
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff       0 Feb 21 06:48 SRR6805884.tiny.fastq.gz.fastq
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff       0 Feb 21 06:35 SRR6805884.tiny.fastq.gz%.fastq
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff       0 Feb 21 06:48 SRR6805885.tiny.fastq.gz.fastq
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff       0 Feb 21 06:35 SRR6805885.tiny.fastq.gz%.fastq
+[hudson.ka@login-00 test_unzipped]$ cd ..
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@login-00 fastq_work_wk6_20240214]$ cd ..
+[hudson.ka@login-00 class_examples]$ cd ../..
+[hudson.ka@login-00 students]$ cd ..
+[hudson.ka@login-00 BIOL3411.202430]$ ls
+data  NCBIdata  shared  staff  students
+[hudson.ka@login-00 BIOL3411.202430]$ cd shared
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@login-00 shared]$ ls -l
+total 46286
+drwxrws---+ 2 jhenzy BIOL3411.202430-staff     4096 Feb 12 12:33 angsd_env
+-rw-r-----+ 1 jhenzy BIOL3411.202430-staff 17493880 Feb  7 16:06 C_ele_chr_III.fasta
+drwxrws---+ 2 jhenzy BIOL3411.202430-staff     4096 Feb 10 20:58 cutadapt_env
+-rwxr-xr-x  1 jhenzy users                 11128309 Jan 24 11:08 dataformat
+-rwxr-xr-x  1 jhenzy users                 18562147 Jan 24 11:08 datasets
+drwxrws---+ 2 jhenzy BIOL3411.202430-staff     4096 Feb 14 13:46 Day_data
+drwxrws---+ 2 jhenzy BIOL3411.202430-staff     4096 Feb 14 14:10 Marine_data
+-rwxr-x---+ 1 jhenzy BIOL3411.202430-staff   211676 Feb 12 15:38 SRR6805880.tiny.fastq
+[hudson.ka@login-00 shared]$ cd Marine_data/
+[hudson.ka@login-00 Marine_data]$ ls
+04_week
+[hudson.ka@login-00 Marine_data]$ cd 04_week/
+[hudson.ka@login-00 04_week]$ ls
+Ppar_tinygenome.fna.gz    SRR6805882.tiny.fastq     SRR6805884.tiny.fastq.gz
+SRR6805880.tiny.fastq.gz  SRR6805882.tiny.fastq.gz  SRR6805885.tiny.fastq.gz
+SRR6805881.tiny.fastq.gz  SRR6805883.tiny.fastq.gz
+[hudson.ka@login-00 04_week]$ cp *.fastq.gz /courses/BIOL3411.202430/students/hudson.ka/class_exa                                                                          mples/fastq_work_wk6_20240221
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+
+ ? 21/02/2024 ? ? 10:30.56 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.edu
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Wed Feb 21 12:26:27 2024 from 10.110.210.130
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+[hudson.ka@login-01 ~]$ cd /courses/BIOL3411.202430/shared/
+[hudson.ka@login-01 shared]$ ls
+angsd_env     C_ele_chr_III.fasta  dataformat  Day_data     SRR6805880.tiny.fastq
+bcftools_env  cutadapt_env         datasets    Marine_data
+[hudson.ka@login-01 shared]$ cd Day_data/
+[hudson.ka@login-01 Day_data]$ ls
+10_S1_L001_R1_001.fastq.gz  15_S1_L001_R1_001.fastq.gz  5_S1_L001_R1_001.fastq.gz
+10_S1_L001_R2_001.fastq.gz  15_S1_L001_R2_001.fastq.gz  5_S1_L001_R2_001.fastq.gz
+11_S1_L001_R1_001.fastq.gz  1_S1_L001_R1_001.fastq.gz   6_S1_L001_R1_001.fastq.gz
+11_S1_L001_R2_001.fastq.gz  1_S1_L001_R2_001.fastq.gz   6_S1_L001_R2_001.fastq.gz
+12_S1_L001_R1_001.fastq.gz  2_S1_L001_R1_001.fastq.gz   7_S1_L001_R1_001.fastq.gz
+12_S1_L001_R2_001.fastq.gz  2_S1_L001_R2_001.fastq.gz   7_S1_L001_R2_001.fastq.gz
+13_S1_L001_R1_001.fastq.gz  3_S1_L001_R1_001.fastq.gz   8_S1_L001_R1_001.fastq.gz
+13_S1_L001_R2_001.fastq.gz  3_S1_L001_R2_001.fastq.gz   8_S1_L001_R2_001.fastq.gz
+14_S1_L001_R1_001.fastq.gz  4_S1_L001_R1_001.fastq.gz   9_S1_L001_R1_001.fastq.gz
+14_S1_L001_R2_001.fastq.gz  4_S1_L001_R2_001.fastq.gz   9_S1_L001_R2_001.fastq.gz
+[hudson.ka@login-01 Day_data]$ cd ..
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@login-01 shared]$ cp -r Day_data/ /courses/BIOL3411.202430/students/hudson.ka/class_examples/
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@login-01 shared]$ cd /courses/BIOL3411.202430/students/hudson.ka/class_examples/
+[hudson.ka@login-01 class_examples]$ ls
+computing_node_intro_wk4  dna_name_intro_wk1       fastq_work_wk6_20240221
+Day_data                  fastq_work_wk6_20240214  unit2_intro_exercise
+[hudson.ka@login-01 class_examples]$ ls Day_data/
+10_S1_L001_R1_001.fastq.gz  11_S1_L001_R1_001.fastq.gz  12_S1_L001_R1_001.fastq.gz
+10_S1_L001_R2_001.fastq.gz  11_S1_L001_R2_001.fastq.gz
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@login-01 class_examples]$ ls Day_data/
+10_S1_L001_R1_001.fastq.gz  12_S1_L001_R1_001.fastq.gz  14_S1_L001_R1_001.fastq.gz
+10_S1_L001_R2_001.fastq.gz  12_S1_L001_R2_001.fastq.gz  14_S1_L001_R2_001.fastq.gz
+11_S1_L001_R1_001.fastq.gz  13_S1_L001_R1_001.fastq.gz  15_S1_L001_R1_001.fastq.gz
+11_S1_L001_R2_001.fastq.gz  13_S1_L001_R2_001.fastq.gz  15_S1_L001_R2_001.fastq.gz
+[hudson.ka@login-01 class_examples]$ ls Day_data/
+10_S1_L001_R1_001.fastq.gz  12_S1_L001_R2_001.fastq.gz  15_S1_L001_R1_001.fastq.gz
+10_S1_L001_R2_001.fastq.gz  13_S1_L001_R1_001.fastq.gz  15_S1_L001_R2_001.fastq.gz
+11_S1_L001_R1_001.fastq.gz  13_S1_L001_R2_001.fastq.gz  1_S1_L001_R1_001.fastq.gz
+11_S1_L001_R2_001.fastq.gz  14_S1_L001_R1_001.fastq.gz  1_S1_L001_R2_001.fastq.gz
+12_S1_L001_R1_001.fastq.gz  14_S1_L001_R2_001.fastq.gz  2_S1_L001_R1_001.fastq.gz
+[hudson.ka@login-01 class_examples]$ ls Day_data/
+10_S1_L001_R1_001.fastq.gz  13_S1_L001_R1_001.fastq.gz  1_S1_L001_R1_001.fastq.gz
+10_S1_L001_R2_001.fastq.gz  13_S1_L001_R2_001.fastq.gz  1_S1_L001_R2_001.fastq.gz
+11_S1_L001_R1_001.fastq.gz  14_S1_L001_R1_001.fastq.gz  2_S1_L001_R1_001.fastq.gz
+11_S1_L001_R2_001.fastq.gz  14_S1_L001_R2_001.fastq.gz  2_S1_L001_R2_001.fastq.gz
+12_S1_L001_R1_001.fastq.gz  15_S1_L001_R1_001.fastq.gz  3_S1_L001_R1_001.fastq.gz
+12_S1_L001_R2_001.fastq.gz  15_S1_L001_R2_001.fastq.gz  3_S1_L001_R2_001.fastq.gz
+[hudson.ka@login-01 class_examples]$ ls Day_data/
+10_S1_L001_R1_001.fastq.gz  14_S1_L001_R2_001.fastq.gz  4_S1_L001_R1_001.fastq.gz
+10_S1_L001_R2_001.fastq.gz  15_S1_L001_R1_001.fastq.gz  4_S1_L001_R2_001.fastq.gz
+11_S1_L001_R1_001.fastq.gz  15_S1_L001_R2_001.fastq.gz  5_S1_L001_R1_001.fastq.gz
+11_S1_L001_R2_001.fastq.gz  1_S1_L001_R1_001.fastq.gz   5_S1_L001_R2_001.fastq.gz
+12_S1_L001_R1_001.fastq.gz  1_S1_L001_R2_001.fastq.gz   6_S1_L001_R1_001.fastq.gz
+12_S1_L001_R2_001.fastq.gz  2_S1_L001_R1_001.fastq.gz   6_S1_L001_R2_001.fastq.gz
+13_S1_L001_R1_001.fastq.gz  2_S1_L001_R2_001.fastq.gz   7_S1_L001_R1_001.fastq.gz
+13_S1_L001_R2_001.fastq.gz  3_S1_L001_R1_001.fastq.gz
+14_S1_L001_R1_001.fastq.gz  3_S1_L001_R2_001.fastq.gz
+[hudson.ka@login-01 class_examples]$ ls Day_data/
+10_S1_L001_R1_001.fastq.gz  15_S1_L001_R1_001.fastq.gz  5_S1_L001_R1_001.fastq.gz
+10_S1_L001_R2_001.fastq.gz  15_S1_L001_R2_001.fastq.gz  5_S1_L001_R2_001.fastq.gz
+11_S1_L001_R1_001.fastq.gz  1_S1_L001_R1_001.fastq.gz   6_S1_L001_R1_001.fastq.gz
+11_S1_L001_R2_001.fastq.gz  1_S1_L001_R2_001.fastq.gz   6_S1_L001_R2_001.fastq.gz
+12_S1_L001_R1_001.fastq.gz  2_S1_L001_R1_001.fastq.gz   7_S1_L001_R1_001.fastq.gz
+12_S1_L001_R2_001.fastq.gz  2_S1_L001_R2_001.fastq.gz   7_S1_L001_R2_001.fastq.gz
+13_S1_L001_R1_001.fastq.gz  3_S1_L001_R1_001.fastq.gz   8_S1_L001_R1_001.fastq.gz
+13_S1_L001_R2_001.fastq.gz  3_S1_L001_R2_001.fastq.gz   8_S1_L001_R2_001.fastq.gz
+14_S1_L001_R1_001.fastq.gz  4_S1_L001_R1_001.fastq.gz   9_S1_L001_R1_001.fastq.gz
+14_S1_L001_R2_001.fastq.gz  4_S1_L001_R2_001.fastq.gz   9_S1_L001_R2_001.fastq.gz
+[hudson.ka@login-01 class_examples]$ client_loop: send disconnect: Connection reset by peer

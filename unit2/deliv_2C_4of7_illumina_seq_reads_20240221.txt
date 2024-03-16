@@ -1,0 +1,162 @@
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+
+ ? 21/02/2024 ? ? 10:31.04 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.edu
+hudson.ka@login.discovery.neu.edu's password:
+hudson.ka@login.discovery.neu.edu's password:
+Last failed login: Wed Feb 21 12:26:18 EST 2024 from 10.110.210.130 on ssh:notty
+There was 1 failed login attempt since the last successful login.
+Last login: Wed Feb  7 16:09:35 2024 from 10.110.26.70
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+[hudson.ka@login-01 ~]$ cd /courses/BIOL3411.202430/students/hudson.ka/class_examples/fastq_work_wk6_20240221
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ cd /courses/BIOL3411.202430/shared/
+[hudson.ka@c0279 shared]$ ls
+angsd_env     C_ele_chr_III.fasta  dataformat  Day_data     SRR6805880.tiny.fastq
+bcftools_env  cutadapt_env         datasets    Marine_data
+[hudson.ka@c0279 shared]$ cp -r Day_data/ /courses/BIOL3411.202430/students/hudson.ka/class_examples/
+[hudson.ka@c0279 shared]$ cd -
+/courses/BIOL3411.202430/students/hudson.ka/class_examples/fastq_work_wk6_20240221
+[hudson.ka@c0279 fastq_work_wk6_20240221]$ cd ..
+[hudson.ka@c0279 class_examples]$ ls
+computing_node_intro_wk4  dna_name_intro_wk1       fastq_work_wk6_20240221
+Day_data                  fastq_work_wk6_20240214  unit2_intro_exercise
+[hudson.ka@c0279 class_examples]$ cd Day_data/
+[hudson.ka@c0279 Day_data]$ ls
+10_S1_L001_R1_001.fastq.gz  15_S1_L001_R1_001.fastq.gz  5_S1_L001_R1_001.fastq.gz
+10_S1_L001_R2_001.fastq.gz  15_S1_L001_R2_001.fastq.gz  5_S1_L001_R2_001.fastq.gz
+11_S1_L001_R1_001.fastq.gz  1_S1_L001_R1_001.fastq.gz   6_S1_L001_R1_001.fastq.gz
+11_S1_L001_R2_001.fastq.gz  1_S1_L001_R2_001.fastq.gz   6_S1_L001_R2_001.fastq.gz
+12_S1_L001_R1_001.fastq.gz  2_S1_L001_R1_001.fastq.gz   7_S1_L001_R1_001.fastq.gz
+12_S1_L001_R2_001.fastq.gz  2_S1_L001_R2_001.fastq.gz   7_S1_L001_R2_001.fastq.gz
+13_S1_L001_R1_001.fastq.gz  3_S1_L001_R1_001.fastq.gz   8_S1_L001_R1_001.fastq.gz
+13_S1_L001_R2_001.fastq.gz  3_S1_L001_R2_001.fastq.gz   8_S1_L001_R2_001.fastq.gz
+14_S1_L001_R1_001.fastq.gz  4_S1_L001_R1_001.fastq.gz   9_S1_L001_R1_001.fastq.gz
+14_S1_L001_R2_001.fastq.gz  4_S1_L001_R2_001.fastq.gz   9_S1_L001_R2_001.fastq.gz
+[hudson.ka@c0279 Day_data]$  cp ../fastq_work_wk6_20240221/unzip_into_new_dir.bash unzip_into_new_dir.bash
+[hudson.ka@c0279 Day_data]$ ls
+10_S1_L001_R1_001.fastq.gz  15_S1_L001_R2_001.fastq.gz  6_S1_L001_R1_001.fastq.gz
+10_S1_L001_R2_001.fastq.gz  1_S1_L001_R1_001.fastq.gz   6_S1_L001_R2_001.fastq.gz
+11_S1_L001_R1_001.fastq.gz  1_S1_L001_R2_001.fastq.gz   7_S1_L001_R1_001.fastq.gz
+11_S1_L001_R2_001.fastq.gz  2_S1_L001_R1_001.fastq.gz   7_S1_L001_R2_001.fastq.gz
+12_S1_L001_R1_001.fastq.gz  2_S1_L001_R2_001.fastq.gz   8_S1_L001_R1_001.fastq.gz
+12_S1_L001_R2_001.fastq.gz  3_S1_L001_R1_001.fastq.gz   8_S1_L001_R2_001.fastq.gz
+13_S1_L001_R1_001.fastq.gz  3_S1_L001_R2_001.fastq.gz   9_S1_L001_R1_001.fastq.gz
+13_S1_L001_R2_001.fastq.gz  4_S1_L001_R1_001.fastq.gz   9_S1_L001_R2_001.fastq.gz
+14_S1_L001_R1_001.fastq.gz  4_S1_L001_R2_001.fastq.gz   unzip_into_new_dir.bash
+14_S1_L001_R2_001.fastq.gz  5_S1_L001_R1_001.fastq.gz
+15_S1_L001_R1_001.fastq.gz  5_S1_L001_R2_001.fastq.gz
+[hudson.ka@c0279 Day_data]$ pwd
+/courses/BIOL3411.202430/students/hudson.ka/class_examples/Day_data
+[hudson.ka@c0279 Day_data]$ nano unzip_into_new_dir.bash
+[hudson.ka@c0279 Day_data]$ nano unzip_into_new_dir.bash
+[hudson.ka@c0279 Day_data]$ nano 10_S1_L001_R1_001.fastq.gz
+[hudson.ka@c0279 Day_data]$ head 10_S1_L001_R1_001.fastq.gz
+¦,¦¦¦¦a¦Q#?¦¦¦_¦¦¦¦')¦:¦¦¦O¦¦I2I¦r¦¦?¦¦¦¦?¦¦o?/¦/¦¦¦¦?¦¦¦u8<¦:¦]¦¦:<_N¦¦¦?¦¦¦¦¦¦x¦¦¦¦¦w¦¦¦¦¦¦¦¦~¦                                                                          ~||¦_K¦?¦]?>>¦¦M¦¦¦¦k¦¦¦¦¦¦7¦¦¦O\¦_[?¦¦¦g¦¦7&gs9¦¦¦/¦¦N¦¦¦¦¦¦¦¦¦[kl,=U¦¦Ua¦¦:¦3k?¦Z/¦¦}¦¦¦x¦]¦¦¦}¦                                                                          ¦¦+B¦¦¦¦'¦)¦r-F¦¦!¦¦¦/¦?
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@c0279 Day_data]$ nano unzip_into_new_dir.bash
+[hudson.ka@c0279 Day_data]$ sbatch unzip_into_new_dir.bash
+Submitted batch job 41054315
+[hudson.ka@c0279 Day_data]$ squeue --me
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41054315     short biol3411 hudson.k PD       0:00      1 (Priority)
+          41053943     short     bash hudson.k  R      36:14      1 c0279
+[hudson.ka@c0279 Day_data]$ squeue --me
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41054315     short biol3411 hudson.k  R       2:37      1 c2001
+          41053943     short     bash hudson.k  R      39:26      1 c0279
+[hudson.ka@c0279 Day_data]$ squeue --me
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41054315     short biol3411 hudson.k  R       7:28      1 c2001
+          41053943     short     bash hudson.k  R      44:17      1 c0279
+[hudson.ka@c0279 Day_data]$ squeue --me
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          41054315     short biol3411 hudson.k  R      10:49      1 c2001
+          41053943     short     bash hudson.k  R      47:38      1 c0279
+[hudson.ka@c0279 Day_data]$ client_loop: send disconnect: Connection reset by peer
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+ ? 21/02/2024 ? ? 14:49.55 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.edu
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Wed Feb 21 13:03:00 2024 from 10.110.210.130
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+[hudson.ka@login-01 ~]$ srun --pty /bin/bash
+srun: job 41056782 queued and waiting for resources
+srun: job 41056782 has been allocated resources
+[hudson.ka@c0279 ~]$ cd /courses/BIOL3411.202430/students/hudson.ka/
+[hudson.ka@c0279 hudson.ka]$ cd class_examples/
+[hudson.ka@c0279 class_examples]$ ls
+computing_node_intro_wk4  dna_name_intro_wk1       fastq_work_wk6_20240221
+Day_data                  fastq_work_wk6_20240214  unit2_intro_exercise
+[hudson.ka@c0279 class_examples]$ cd Day_data/
+[hudson.ka@c0279 Day_data]$ ls
+10_S1_L001_R1_001.fastq.gz  1_S1_L001_R1_001.fastq.gz  6_S1_L001_R1_001.fastq.gz
+10_S1_L001_R2_001.fastq.gz  1_S1_L001_R2_001.fastq.gz  6_S1_L001_R2_001.fastq.gz
+11_S1_L001_R1_001.fastq.gz  2_S1_L001_R1_001.fastq.gz  7_S1_L001_R1_001.fastq.gz
+11_S1_L001_R2_001.fastq.gz  2_S1_L001_R2_001.fastq.gz  7_S1_L001_R2_001.fastq.gz
+12_S1_L001_R1_001.fastq.gz  3_S1_L001_R1_001.fastq.gz  8_S1_L001_R1_001.fastq.gz
+12_S1_L001_R2_001.fastq.gz  3_S1_L001_R2_001.fastq.gz  8_S1_L001_R2_001.fastq.gz
+13_S1_L001_R1_001.fastq.gz  41054315.error             9_S1_L001_R1_001.fastq.gz
+13_S1_L001_R2_001.fastq.gz  41054315.output            9_S1_L001_R2_001.fastq.gz
+14_S1_L001_R1_001.fastq.gz  4_S1_L001_R1_001.fastq.gz  unzip_into_new_dir.bash
+14_S1_L001_R2_001.fastq.gz  4_S1_L001_R2_001.fastq.gz  unzipped_fastq
+15_S1_L001_R1_001.fastq.gz  5_S1_L001_R1_001.fastq.gz
+15_S1_L001_R2_001.fastq.gz  5_S1_L001_R2_001.fastq.gz
+[hudson.ka@c0279 Day_data]$ cd unzipped_fastq/
+[hudson.ka@c0279 unzipped_fastq]$ ls
+10_S1_L001_R1_001.fastq.gz.fastq  2_S1_L001_R2_001.fastq.gz.fastq
+10_S1_L001_R2_001.fastq.gz.fastq  3_S1_L001_R1_001.fastq.gz.fastq
+11_S1_L001_R1_001.fastq.gz.fastq  3_S1_L001_R2_001.fastq.gz.fastq
+11_S1_L001_R2_001.fastq.gz.fastq  4_S1_L001_R1_001.fastq.gz.fastq
+12_S1_L001_R1_001.fastq.gz.fastq  4_S1_L001_R2_001.fastq.gz.fastq
+12_S1_L001_R2_001.fastq.gz.fastq  5_S1_L001_R1_001.fastq.gz.fastq
+13_S1_L001_R1_001.fastq.gz.fastq  5_S1_L001_R2_001.fastq.gz.fastq
+13_S1_L001_R2_001.fastq.gz.fastq  6_S1_L001_R1_001.fastq.gz.fastq
+14_S1_L001_R1_001.fastq.gz.fastq  6_S1_L001_R2_001.fastq.gz.fastq
+14_S1_L001_R2_001.fastq.gz.fastq  7_S1_L001_R1_001.fastq.gz.fastq
+15_S1_L001_R1_001.fastq.gz.fastq  7_S1_L001_R2_001.fastq.gz.fastq
+15_S1_L001_R2_001.fastq.gz.fastq  8_S1_L001_R1_001.fastq.gz.fastq
+1_S1_L001_R1_001.fastq.gz.fastq   8_S1_L001_R2_001.fastq.gz.fastq
+1_S1_L001_R2_001.fastq.gz.fastq   9_S1_L001_R1_001.fastq.gz.fastq
+2_S1_L001_R1_001.fastq.gz.fastq   9_S1_L001_R2_001.fastq.gz.fastq
+[hudson.ka@c0279 unzipped_fastq]$ head -n 6 10_S1_L001_R1_001.fastq.gz.fastq
+@lh00172:133:223LN7LT4:5:1101:4787:1084 1:N:0:AATCCAGC+AACCAGGT
+CNGGAAACTGCCTCGTCATGCGACTGTTCCCCGGGGTCAGGGCCGCTGGTATTTGCTGTAAAGAGGGGCGTTGAGTCCGTCCGACTTCACTGCCCCC                                                                          TTTCAGCCTTTTGGGTCCTGTATCCCAATTCTCAGAGGTCCCGCCGAGATCGG
++
+I#IIIIIIIII99III9IIII9-IIIIII9III9I-IIIIIII-II9IIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9                                                                          IIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIII-IIIIIIII9IIIIIIIII
+@lh00172:133:223LN7LT4:5:1101:7862:1084 1:N:0:AATCCAGC+AACCAGGT
+CNGGAGACGACGTGCAGAAATGGCACCTCGAAAGGGGAAGGAAAAGAAGGAAGAACAGGTCATCAGCCTCGGACCTCAGGTGGCTGAAGGAGAGAAT                                                                          GTATTTGGTGTCTGCAATATCTTTGCATCCTTCAATGACACTTTTGTCCATGT
+[hudson.ka@c0279 unzipped_fastq]$ head -n 6 9_S1_L001_R2_001.fastq.gz.fastq
+@lh00172:133:223LN7LT4:5:1101:15477:1098 2:N:0:AATCCAGC+AACCTCTC
+NTTGTCTGAGGGGTAGAGTTCAACAGTCAACACGTCCAGCGCATTCCAGGATGCAATGCTGACCCCGCCAAAAAGGCAGAGCAGAGCGATCATGGCC                                                                          GACTCACTGTTCCCAAAAGACAGGAAGAAGCAGGAGACACAGGACATCACGCT
++
+#9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIII                                                                          IIIIIIIIIIIIIIIIIIIIIIIIIIII-IIIIIII-IIIIIIII9IIIIIII
+@lh00172:133:223LN7LT4:5:1101:24217:1098 2:N:0:AATCCAGC+AACCTCTC
+NGTGGACTTCGTACTGCTAGGAAGCTCCGTAGTCACCGACGAGACCAGAAGTGGCATGATAAACAGTATAAGAAAGCTCATTTGGGCACAGCCCTAA                                                                          AGGCCAACCCTTTTGGAGGTGCTTCTCATGCAAAAGAAATCGTGCTGGAAAAA
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...

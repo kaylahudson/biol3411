@@ -1,0 +1,133 @@
+    ┌──────────────────────────────────────────────────────────────────────┐
+    │                 • MobaXterm Personal Edition v23.6 •                 │
+    │               (SSH client, X server and network tools)               │
+    │                                                                      │
+    │ ⮞ Linux distribution: Default                                      │
+    │ ⮞ Windows drives are mounted into /mnt path (by default)             │
+    │ ⮞ Your DISPLAY is set to 10.0.0.97:0.0                               │
+    │ ⮞ For more info, ctrl+click on help or visit our website.            │
+    └──────────────────────────────────────────────────────────────────────┘
+
+Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.146.1-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+
+This message is shown once a day. To disable it please create the
+/home/kunix/.hushlogin file.
+kunix@DESKTOP-3LNCP2A:~$ ssh hudson.ka@login.discovery.neu.edu
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Fri Mar 15 13:16:43 2024 from c-71-235-255-87.hsd1.ma.comcast.net
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+we believe connectivity to the datacenter to be nominal, as of
+tuesday, 11 march 2024 at 1500ET.
+
+thank you for your patience
+&& happy computing !
+
+[hudson.ka@login-01 ~]$ srun --pty /bin/bash
+srun: job 41423527 queued and waiting for resources
+srun: job 41423527 has been allocated resources
+[hudson.ka@c2002 ~]$ cd /courses/BIOL3411.202430/students/hudson.ka/unit2/Day_data
+[hudson.ka@c2002 Day_data]$ ls
+10_S1_L001_R1_001.fastq.gz    14_S1_L001_R1_001_fastqc.zip  3_S1_L001_R2_001.fastq.gz    6_S1_L001_R2_001_f
+10_S1_L001_R1_001_fastqc.zip  14_S1_L001_R2_001.fastq.gz    3_S1_L001_R2_001_fastqc.zip  7_S1_L001_R1_001.f
+10_S1_L001_R2_001.fastq.gz    14_S1_L001_R2_001_fastqc.zip  41054315.error               7_S1_L001_R1_001_f
+10_S1_L001_R2_001_fastqc.zip  15_S1_L001_R1_001.fastq.gz    41054315.output              7_S1_L001_R2_001.f
+11_S1_L001_R1_001.fastq.gz    15_S1_L001_R1_001_fastqc.zip  41189447.error               7_S1_L001_R2_001_f
+11_S1_L001_R1_001_fastqc.zip  15_S1_L001_R2_001.fastq.gz    41189447.output              8_S1_L001_R1_001.f
+11_S1_L001_R2_001.fastq.gz    15_S1_L001_R2_001_fastqc.zip  4_S1_L001_R1_001.fastq.gz    8_S1_L001_R1_001_f
+11_S1_L001_R2_001_fastqc.zip  1_S1_L001_R1_001.fastq.gz     4_S1_L001_R1_001_fastqc.zip  8_S1_L001_R2_001.f
+12_S1_L001_R1_001.fastq.gz    1_S1_L001_R1_001_fastqc.zip   4_S1_L001_R2_001.fastq.gz    8_S1_L001_R2_001_f
+12_S1_L001_R1_001_fastqc.zip  1_S1_L001_R2_001.fastq.gz     4_S1_L001_R2_001_fastqc.zip  9_S1_L001_R1_001.f
+12_S1_L001_R2_001.fastq.gz    1_S1_L001_R2_001_fastqc.zip   5_S1_L001_R1_001.fastq.gz    9_S1_L001_R1_001_f
+12_S1_L001_R2_001_fastqc.zip  2_S1_L001_R1_001.fastq.gz     5_S1_L001_R1_001_fastqc.zip  9_S1_L001_R2_001.f
+13_S1_L001_R1_001.fastq.gz    2_S1_L001_R1_001_fastqc.zip   5_S1_L001_R2_001.fastq.gz    9_S1_L001_R2_001_f
+13_S1_L001_R1_001_fastqc.zip  2_S1_L001_R2_001.fastq.gz     5_S1_L001_R2_001_fastqc.zip  generate_qc_report
+13_S1_L001_R2_001.fastq.gz    2_S1_L001_R2_001_fastqc.zip   6_S1_L001_R1_001.fastq.gz    html_qc_reports
+13_S1_L001_R2_001_fastqc.zip  3_S1_L001_R1_001.fastq.gz     6_S1_L001_R1_001_fastqc.zip  unzip_into_new_dir
+14_S1_L001_R1_001.fastq.gz    3_S1_L001_R1_001_fastqc.zip   6_S1_L001_R2_001.fastq.gz    unzipped_fastq
+[hudson.ka@c2002 Day_data]$ cd unzipped_fastq/
+[hudson.ka@c2002 unzipped_fastq]$ ls
+10_S1_L001_R1_001.fastq.gz.fastq  15_S1_L001_R2_001.fastq.gz.fastq  6_S1_L001_R1_001.fastq.gz.fastq
+10_S1_L001_R2_001.fastq.gz.fastq  1_S1_L001_R1_001.fastq.gz.fastq   6_S1_L001_R2_001.fastq.gz.fastq
+11_S1_L001_R1_001.fastq.gz.fastq  1_S1_L001_R2_001.fastq.gz.fastq   7_S1_L001_R1_001.fastq.gz.fastq
+11_S1_L001_R2_001.fastq.gz.fastq  2_S1_L001_R1_001.fastq.gz.fastq   7_S1_L001_R2_001.fastq.gz.fastq
+12_S1_L001_R1_001.fastq.gz.fastq  2_S1_L001_R2_001.fastq.gz.fastq   8_S1_L001_R1_001.fastq.gz.fastq
+12_S1_L001_R2_001.fastq.gz.fastq  3_S1_L001_R1_001.fastq.gz.fastq   8_S1_L001_R2_001.fastq.gz.fastq
+13_S1_L001_R1_001.fastq.gz.fastq  3_S1_L001_R2_001.fastq.gz.fastq   9_S1_L001_R1_001.fastq.gz.fastq
+13_S1_L001_R2_001.fastq.gz.fastq  4_S1_L001_R1_001.fastq.gz.fastq   9_S1_L001_R2_001.fastq.gz.fastq
+14_S1_L001_R1_001.fastq.gz.fastq  4_S1_L001_R2_001.fastq.gz.fastq   seq_count_files_7.txt
+14_S1_L001_R2_001.fastq.gz.fastq  5_S1_L001_R1_001.fastq.gz.fastq   seq_count_files_9.txt
+15_S1_L001_R1_001.fastq.gz.fastq  5_S1_L001_R2_001.fastq.gz.fastq
+[hudson.ka@c2002 unzipped_fastq]$ grep -i -c "^@" 10_S1_L001_R1_001.fastq.gz.fastq
+28893152
+[hudson.ka@c2002 unzipped_fastq]$ grep -i -c "^@" *.fastq > reads_count_all_seq_files.txt
+[hudson.ka@c2002 unzipped_fastq]$ cat^C
+[hudson.ka@c2002 unzipped_fastq]$ ls -l reads_count_all_seq_files.txt
+-rw-rw----+ 1 hudson.ka BIOL3411.202430-staff 1242 Mar 16 14:24 reads_count_all_seq_files.txt
+[hudson.ka@c2002 unzipped_fastq]$ cat reads_count_all_seq_files.txt
+10_S1_L001_R1_001.fastq.gz.fastq:28893152
+10_S1_L001_R2_001.fastq.gz.fastq:28893152
+11_S1_L001_R1_001.fastq.gz.fastq:29291552
+11_S1_L001_R2_001.fastq.gz.fastq:29291552
+12_S1_L001_R1_001.fastq.gz.fastq:29043844
+12_S1_L001_R2_001.fastq.gz.fastq:29043844
+13_S1_L001_R1_001.fastq.gz.fastq:29023016
+13_S1_L001_R2_001.fastq.gz.fastq:29023016
+14_S1_L001_R1_001.fastq.gz.fastq:24730770
+14_S1_L001_R2_001.fastq.gz.fastq:24730770
+15_S1_L001_R1_001.fastq.gz.fastq:28387419
+15_S1_L001_R2_001.fastq.gz.fastq:28387419
+1_S1_L001_R1_001.fastq.gz.fastq:32833451
+1_S1_L001_R2_001.fastq.gz.fastq:32833451
+2_S1_L001_R1_001.fastq.gz.fastq:33738336
+2_S1_L001_R2_001.fastq.gz.fastq:33738336
+3_S1_L001_R1_001.fastq.gz.fastq:35731214
+3_S1_L001_R2_001.fastq.gz.fastq:35731214
+4_S1_L001_R1_001.fastq.gz.fastq:36678316
+4_S1_L001_R2_001.fastq.gz.fastq:36678316
+5_S1_L001_R1_001.fastq.gz.fastq:36972680
+5_S1_L001_R2_001.fastq.gz.fastq:36972680
+6_S1_L001_R1_001.fastq.gz.fastq:31401357
+6_S1_L001_R2_001.fastq.gz.fastq:31401357
+7_S1_L001_R1_001.fastq.gz.fastq:35536673
+7_S1_L001_R2_001.fastq.gz.fastq:35536673
+8_S1_L001_R1_001.fastq.gz.fastq:24498096
+8_S1_L001_R2_001.fastq.gz.fastq:24498096
+9_S1_L001_R1_001.fastq.gz.fastq:29794050
+9_S1_L001_R2_001.fastq.gz.fastq:29794050
+[hudson.ka@c2002 unzipped_fastq]$ head 10_S1_L001_R1_001.fastq.gz.fastq
+@lh00172:133:223LN7LT4:5:1101:4787:1084 1:N:0:AATCCAGC+AACCAGGT
+CNGGAAACTGCCTCGTCATGCGACTGTTCCCCGGGGTCAGGGCCGCTGGTATTTGCTGTAAAGAGGGGCGTTGAGTCCGTCCGACTTCACTGCCCCCTTTCAGCCTTTTGGGTCCTGTATCCCAATTCTCAGAGGTCCCGCCGAGATCGG
++
+I#IIIIIIIII99III9IIII9-IIIIII9III9I-IIIIIII-II9IIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIII-IIIIIIII9IIIIIIIII
+@lh00172:133:223LN7LT4:5:1101:7862:1084 1:N:0:AATCCAGC+AACCAGGT
+CNGGAGACGACGTGCAGAAATGGCACCTCGAAAGGGGAAGGAAAAGAAGGAAGAACAGGTCATCAGCCTCGGACCTCAGGTGGCTGAAGGAGAGAATGTATTTGGTGTCTGCAATATCTTTGCATCCTTCAATGACACTTTTGTCCATGT
++
+I#III-IIIIIIIIIIIIIIIII-IIIIIIIIIIIII9IIIIII9I9III--III-IIIIIIIIIIIIIII9IIIIIIIIIIIIIII9IIIIIIIIIIIIII9IIIIIII9I-99III9IIIIIIIIIIII9IIIII-III9IIIIIII9
+@lh00172:133:223LN7LT4:5:1101:7878:1084 1:N:0:AATCCAGC+AACCAGGT
+CNGGAGACGACGTGCAGAAATGGCAACTCGAAAGGGGAAGGAAAAGAAGGAAGAACAGGTCATCAGCCTCGGACCTCAGGTGGCTGAAGACGAGAATGTATTTGGTGTCTGCCCTATCTTTGCATCCTTCAATGACACTTTTGTCCATGT
+[hudson.ka@c2002 unzipped_fastq]$ head 11_S1_L001_R1_001.fastq.gz.fastq
+@lh00172:133:223LN7LT4:5:1101:2521:1084 1:N:0:AATCCAGC+TTCCGCTT
+GNAGACGACGTGCAGAAATGGCACCTCGAAAGGGGAAGGAAAAGAAGGAAGAACAGGTCATCAGCCTCGGACCTCAGGTGGCTGAAGGAGAGAATGTATTTGGTGTCTGCCATATCTTTGCATCCTTCAATGACACTTTTGTCCATGTCA
++
+I#IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIII
+@lh00172:133:223LN7LT4:5:1101:5014:1084 1:N:0:AATCCAGC+TTCCGCTT
+CNTAAATATTATACTAGCATTTACCATCTCACTTCTAGGAATACTAGTATATCGCTCACACCTCATATCCTCCCTACTATGCCTAGAAGGAATAATACTATCGCTGTTCATTATAGCTAATCTCATAACCCTCAACACCCACTCCCTCTT
++
+I#IIIII9IIII9IIIIIIIIIIIIIIII9IIII-I-IIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIII-IIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIII9IIIIIII9IIII9II--9IIIIIIIIIIIIIIIIIIII
+@lh00172:133:223LN7LT4:5:1101:9238:1084 1:N:0:AATCCAGC+TTCCGCTT
+CNGGAGATGAACTCGGACCTCCAGGCCATGTTCAGTTCGAGCGCCAAGATCGTGAAGCCCAATGGCGAGAAGCCGGACGAGTTCGAGTCCGGCATCTCCCAGGCTCTTCTAGAGCTGGAGATGAACTCGGACCTCAAGGCTCAGCTCAGG
+[hudson.ka@c2002 unzipped_fastq]$ nano 10_S1_L001_R1_001.fastq.gz.fastq

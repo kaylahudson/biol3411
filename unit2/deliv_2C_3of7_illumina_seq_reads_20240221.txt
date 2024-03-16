@@ -1,0 +1,176 @@
+     +--------------------------------------------------------------------+
+     ¦                • MobaXterm Personal Edition v23.6 •                ¦
+     ¦              (X server, SSH client and network tools)              ¦
+     ¦                                                                    ¦
+     ¦ ? Your computer drives are accessible through the /drives path     ¦
+     ¦ ? Your DISPLAY is set to 10.0.0.93:0.0                             ¦
+     ¦ ? When using SSH, your remote DISPLAY is automatically forwarded   ¦
+     ¦ ? Your HOME folder is not persistent: it will be erased on restart ¦
+     ¦ ? Each command status is specified by a special symbol (? or ?)    ¦
+     ¦                                                                    ¦
+     ¦ • Important:                                                       ¦
+     ¦ This is MobaXterm Personal Edition. The Professional edition       ¦
+     ¦ allows you to customize MobaXterm for your company: you can add    ¦
+     ¦ your own logo, your parameters, your welcome message and generate  ¦
+     ¦ either an MSI installation package or a portable executable.       ¦
+     ¦ We can also modify MobaXterm or develop the plugins you need.      ¦
+     ¦ For more information: https://mobaxterm.mobatek.net/download.html  ¦
+     +--------------------------------------------------------------------+
+
+ ? 21/02/2024 ? ? 07:53.54 ? ? /home/mobaxterm ? ssh hudson.ka@login.discovery.neu.edu
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Wed Feb 21 05:51:04 2024 from c-71-235-255-87.hsd1.ma.comcast.net
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+[hudson.ka@login-00 ~]$ cd /courses/BIOL3411.202430/students/hudson.ka/class_examples/fastq_work_wk6_20240214/
+[hudson.ka@login-00 fastq_work_wk6_20240214]$ ls
+41047242.error   41047655.output        SRR6805880.tiny.fastq.gz  test_unzip.tiny.fastq
+41047242.output  41047877.error         SRR6805881.tiny.fastq.gz  unzip_2.bash
+41047457.error   41047877.output        SRR6805882.tiny.fastq.gz  unzip_3.bash
+41047457.output  bash_output            SRR6805883.tiny.fastq.gz  unzip_5_newdir.bash
+41047499.error   scontrol_41047103.txt  SRR6805884.tiny.fastq.gz  unzip.bash
+41047499.output  scontrol_41047242.txt  SRR6805885.tiny.fastq.gz  unzipped_fastq
+41047655.error   SRR6805880.tiny.fastq  test_unzipped
+[hudson.ka@login-00 fastq_work_wk6_20240214]$ cd ..
+[hudson.ka@login-00 class_examples]$ cp fastq_work_wk6_20240214/ fastq_work_wk6_20240221
+cp: omitting directory ‘fastq_work_wk6_20240214/’
+[hudson.ka@login-00 class_examples]$ ls
+computing_node_intro_wk4  dna_name_intro_wk1  fastq_work_wk6_20240214  unit2_intro_exercise
+[hudson.ka@login-00 class_examples]$ cp -r fastq_work_wk6_20240214/ fastq_work_wk6_20240221
+[hudson.ka@login-00 class_examples]$ ls
+computing_node_intro_wk4  fastq_work_wk6_20240214  unit2_intro_exercise
+dna_name_intro_wk1        fastq_work_wk6_20240221
+[hudson.ka@login-00 class_examples]$ cd fastq_work_wk6_20240221
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ pwd
+/courses/BIOL3411.202430/students/hudson.ka/class_examples/fastq_work_wk6_20240221
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ ls
+bash_output               SRR6805883.tiny.fastq.gz  unzip_3.bash
+scontrol_41047103.txt     SRR6805884.tiny.fastq.gz  unzip_5_newdir.bash
+scontrol_41047242.txt     SRR6805885.tiny.fastq.gz  unzip.bash
+SRR6805880.tiny.fastq.gz  test_unzipped             unzipped_fastq
+SRR6805881.tiny.fastq.gz  test_unzip.tiny.fastq
+SRR6805882.tiny.fastq.gz  unzip_2.bash
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ nano SRR6805880.tiny.fastq.gz
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ ls
+bash_output               SRR6805883.tiny.fastq.gz  unzip_3.bash
+scontrol_41047103.txt     SRR6805884.tiny.fastq.gz  unzip_5_newdir.bash
+scontrol_41047242.txt     SRR6805885.tiny.fastq.gz  unzip.bash
+SRR6805880.tiny.fastq.gz  test_unzipped             unzipped_fastq
+SRR6805881.tiny.fastq.gz  test_unzip.tiny.fastq
+SRR6805882.tiny.fastq.gz  unzip_2.bash
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ nano test_unzip.tiny.fastq
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ nano unzip_5_newdir.bash
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ pwd
+/courses/BIOL3411.202430/students/hudson.ka/class_examples/fastq_work_wk6_20240221
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ nano unzip_5_newdir.bash
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ pwd
+/courses/BIOL3411.202430/students/hudson.ka/class_examples/fastq_work_wk6_20240221
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ nano unzip_5_newdir.bash
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ nano unzip_5_newdir.bash
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ sbatch unzip_5_newdir.bash
+Submitted batch job 41047987
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ nano SRR6805881.tiny.fastq.gz
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ ls
+41047987.error         SRR6805880.tiny.fastq.gz  SRR6805885.tiny.fastq.gz  unzip.bash
+41047987.output        SRR6805881.tiny.fastq.gz  test_unzipped             unzipped_fastq
+bash_output            SRR6805882.tiny.fastq.gz  unzip_2.bash
+scontrol_41047103.txt  SRR6805883.tiny.fastq.gz  unzip_3.bash
+scontrol_41047242.txt  SRR6805884.tiny.fastq.gz  unzip_5_newdir.bash
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ cd unzipped_fastq/
+[hudson.ka@login-00 unzipped_fastq]$ ls
+SRR6805880.tiny.fastq.gz.fastq  SRR6805883.tiny.fastq.gz.fastq  test_unzip.tiny.fastq
+SRR6805881.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq
+SRR6805882.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+[hudson.ka@login-00 unzipped_fastq]$ nano SRR6805880.tiny.fastq.gz.fastq
+[hudson.ka@login-00 unzipped_fastq]$ nano SRR6805881.tiny.fastq.gz.fastq
+[hudson.ka@login-00 unzipped_fastq]$ grep -i -c "^@" SRR6805880.tiny.fastq.gz.fastq
+1000
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@login-00 unzipped_fastq]$ grep -i -c "^@" SRR6805880.tiny.fastq.gz.fastq
+1000
+[hudson.ka@login-00 unzipped_fastq]$ grep -i -c "^@" *.fastq
+SRR6805880.tiny.fastq.gz.fastq:1000
+SRR6805881.tiny.fastq.gz.fastq:1000
+SRR6805882.tiny.fastq.gz.fastq:1000
+SRR6805883.tiny.fastq.gz.fastq:1000
+SRR6805884.tiny.fastq.gz.fastq:1000
+SRR6805885.tiny.fastq.gz.fastq:1000
+test_unzip.tiny.fastq:0
+[hudson.ka@login-00 unzipped_fastq]$ cd ..
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ nano unzip_5_newdir.bash
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ cd unzipped_fastq/
+[hudson.ka@login-00 unzipped_fastq]$ ls
+SRR6805880.tiny.fastq.gz.fastq  SRR6805883.tiny.fastq.gz.fastq  test_unzip.tiny.fastq
+SRR6805881.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq
+SRR6805882.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+[hudson.ka@login-00 unzipped_fastq]$ grep -i -c "^@" *.fastq > read_counts_all_seqs.txt
+[hudson.ka@login-00 unzipped_fastq]$ ls
+read_counts_all_seqs.txt        SRR6805882.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+SRR6805880.tiny.fastq.gz.fastq  SRR6805883.tiny.fastq.gz.fastq  test_unzip.tiny.fastq
+SRR6805881.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq
+[hudson.ka@login-00 unzipped_fastq]$ nano read_counts_all_seqs.txt
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
+[hudson.ka@login-00 unzipped_fastq]$ ls
+read_counts_all_seqs.txt        SRR6805882.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+SRR6805880.tiny.fastq.gz.fastq  SRR6805883.tiny.fastq.gz.fastq  test_unzip.tiny.fastq
+SRR6805881.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq
+[hudson.ka@login-00 unzipped_fastq]$ nano read_counts_all_seqs.txt
+[hudson.ka@login-00 unzipped_fastq]$ head SRR6805880.tiny.fastq.gz.fastq
+@SRR6805880.2151832 OCD6D:00225:02960 length=80
+TGCAGAAGGCATGACCTTACCTACTGAATAAAAGATGAGACACCTTCTCATTGGCCAAGAAGAAACAACACTCTATTACA
++
+47:7775<59999995:6;;5:7664621111*/52245554404/33533/3/30436724461./,.:79999:4:9:
+@SRR6805880.576388 9F8KO:05533:11649 length=80
+TGCAGTCGTAATCTAGGAACACACCTACGGGATTATTTACTATTTTACAATCCATAGTCGGAGTCTACAAACAGTTACCA
++
+135445878868?;:7474889//+/665628958::2788:>;;09:9556-315447817999::;::28///27:18
+@SRR6805880.501486 9F8KO:05578:13178 length=80
+TGCAGCAAGACCGTAGATCTGTCAAACGCAAAGCTTTAGCGAGCTCTCTAAGTAGCTTGAGAGGTCTGAAGAGAGCAGTG
+[hudson.ka@login-00 unzipped_fastq]$ nano SRR6805880.tiny.fastq.gz.fastq
+[hudson.ka@login-00 unzipped_fastq]$ nano SRR6805880.tiny.fastq.gz.fastq
+[hudson.ka@login-00 unzipped_fastq]$ cd ..
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ ls
+41047987.error         SRR6805880.tiny.fastq.gz  SRR6805885.tiny.fastq.gz  unzip.bash
+41047987.output        SRR6805881.tiny.fastq.gz  test_unzipped             unzipped_fastq
+bash_output            SRR6805882.tiny.fastq.gz  unzip_2.bash
+scontrol_41047103.txt  SRR6805883.tiny.fastq.gz  unzip_3.bash
+scontrol_41047242.txt  SRR6805884.tiny.fastq.gz  unzip_5_newdir.bash
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ module ls
+cmdTrace.c(713):ERROR:104: 'ls' is an unrecognized subcommand
+cmdModule.c(411):ERROR:104: 'ls' is an unrecognized subcommand
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ module load OpenJDK/19.0.1
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06   2) OpenJDK/19.0.1
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ fastqc man
+-bash: fastqc: command not found
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ fastqc --help
+-bash: fastqc: command not found
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ module load fastqc/0.11.9
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ module list
+Currently Loaded Modulefiles:
+  1) discovery/2021-10-06   2) OpenJDK/19.0.1         3) fastqc/0.11.9
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ man fastqc
+No manual entry for fastqc
+[hudson.ka@login-00 fastq_work_wk6_20240221]$ fastqc --help
+...
+[OUTPUT REMOVED/ABBREVIATED FOR CONCICENESS OF DOCUMENT. SEE ORIGINAL FILE FOR FULL CONTENTS]
+...
