@@ -1,0 +1,257 @@
+    +----------------------------------------------------------------------+
+    ¦                 • MobaXterm Personal Edition v23.6 •                 ¦
+    ¦               (SSH client, X server and network tools)               ¦
+    ¦                                                                      ¦
+    ¦ ? Linux distribution: ?Default                                      ¦
+    ¦ ? Windows drives are mounted into /mnt path (by default)             ¦
+    ¦ ? Your DISPLAY is set to 10.0.0.97:0.0                               ¦
+    ¦ ? For more info, ctrl+click on help or visit our website.            ¦
+    +----------------------------------------------------------------------+
+
+Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.146.1-microsoft-standard-WSL2 x86_
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+This message is shown once a day. To disable it please create the
+/home/kunix/.hushlogin file.
+kunix@DESKTOP-3LNCP2A:~$ ssh hudson.ka@login.discovery.neu.edu
+hudson.ka@login.discovery.neu.edu's password:
+Last login: Thu Mar 14 11:43:28 2024 from c-71-235-255-87.hsd1.ma.comcast.net
++-----------------------------------------------------------+
+| You're now connected to the Discovery cluster. Visit our  |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+we believe connectivity to the datacenter to be nominal, as of
+tuesday, 11 march 2024 at 1500ET.
+
+thank you for your patience
+&& happy computing !
+
+[hudson.ka@login-00 ~]$ srun --pty /bin/bash
+srun: job 41440785 queued and waiting for resources
+srun: job 41440785 has been allocated resources
+[hudson.ka@c0281 ~]$ /courses/BIOL3411.202430/students/hudson.ka/unit2/bowtie_laage_tutorial_20240221
+bash: /courses/BIOL3411.202430/students/hudson.ka/unit2/bowtie_lambda_phage_tuto240221: Is a directory
+[hudson.ka@c0281 ~]$ cd /courses/BIOL3411.202430/students/hudson.ka/unit2/bowtie_phage_tutorial_20240221
+[hudson.ka@c0281 bowtie_lambda_phage_tutorial_20240221]$ lw
+bash: lw: command not found
+[hudson.ka@c0281 bowtie_lambda_phage_tutorial_20240221]$ ls
+NC_001416.1_phage_lambda_sequence.1.bt2      bt2_home        longreads_fastqc.ht
+NC_001416.1_phage_lambda_sequence.2.bt2      eg1.sam         longreads_fastqc.zi
+NC_001416.1_phage_lambda_sequence.3.bt2      eg2.bam         reads_1.fq
+NC_001416.1_phage_lambda_sequence.4.bt2      eg2.raw.bcf     reads_1_fastqc.html
+NC_001416.1_phage_lambda_sequence.fasta      eg2.sam         reads_1_fastqc.zip
+NC_001416.1_phage_lambda_sequence.fasta.fai  eg2.sorted.bam  reads_2.fq
+NC_001416.1_phage_lambda_sequence.rev.1.bt2  eg3.sam         reads_2_fastqc.html
+NC_001416.1_phage_lambda_sequence.rev.2.bt2  longreads.fq    reads_2_fastqc.zip
+[hudson.ka@c0281 bowtie_lambda_phage_tutorial_20240221]$ grep -i -c "^@" *.fq > ount_all_fastq_files.txt
+[hudson.ka@c0281 bowtie_lambda_phage_tutorial_20240221]$ cat reads_count_all_fass.txt
+longreads.fq:6124
+reads_1.fq:10219
+reads_2.fq:10221
+[hudson.ka@c0281 bowtie_lambda_phage_tutorial_20240221]$ grep -i -c "^@r" *.fq > reads_count_all_fastq_files.txt
+[hudson.ka@c0281 bowtie_lambda_phage_tutorial_20240221]$ cat reads_count_all_fastq_files.txt
+longreads.fq:6000
+reads_1.fq:10000
+reads_2.fq:10000
+[hudson.ka@c0281 bowtie_lambda_phage_tutorial_20240221]$ awk "NR % 4 == 2 {print length}" reads_1.fq > reads_1_lengths.txt
+[hudson.ka@c0281 bowtie_lambda_phage_tutorial_20240221]$ awk "NR % 4 == 2 {print length}" reads_2.fq > reads_2_lengths.txt
+[hudson.ka@c0281 bowtie_lambda_phage_tutorial_20240221]$ awk "NR % 4 == 2 {print length}" longreads.fq > longreads_lengths.txt
+[hudson.ka@c0281 bowtie_lambda_phage_tutorial_20240221]$ ls
+NC_001416.1_phage_lambda_sequence.1.bt2      eg3.sam
+NC_001416.1_phage_lambda_sequence.2.bt2      longreads.fq
+NC_001416.1_phage_lambda_sequence.3.bt2      longreads_fastqc.html
+NC_001416.1_phage_lambda_sequence.4.bt2      longreads_fastqc.zip
+NC_001416.1_phage_lambda_sequence.fasta      longreads_lengths.txt
+NC_001416.1_phage_lambda_sequence.fasta.fai  reads_1.fq
+NC_001416.1_phage_lambda_sequence.rev.1.bt2  reads_1_fastqc.html
+NC_001416.1_phage_lambda_sequence.rev.2.bt2  reads_1_fastqc.zip
+bt2_home                                     reads_1_lengths.txt
+eg1.sam                                      reads_2.fq
+eg2.bam                                      reads_2_fastqc.html
+eg2.raw.bcf                                  reads_2_fastqc.zip
+eg2.sam                                      reads_2_lengths.txt
+eg2.sorted.bam                               reads_count_all_fastq_files.txt
+[hudson.ka@c0281 bowtie_lambda_phage_tutorial_20240221]$ head reads_1_lengths.txt
+122
+275
+338
+184
+138
+191
+143
+98
+55
+104
+[hudson.ka@c0281 bowtie_lambda_phage_tutorial_20240221]$ head reads_2_lengths.txt
+198
+188
+67
+48
+61
+43
+132
+41
+168
+66
+[hudson.ka@c0281 bowtie_lambda_phage_tutorial_20240221]$ head longreads_lengths.txt
+194
+313
+801
+64
+436
+140
+382
+162
+379
+256
+[hudson.ka@c0281 bowtie_lambda_phage_tutorial_20240221]$ #############################
+[hudson.ka@c0281 bowtie_lambda_phage_tutorial_20240221]$ cd ../fastq_work_wk6_20240221/unzipped_fastq/
+[hudson.ka@c0281 unzipped_fastq]$ ls
+SRR6805880.tiny.fastq.gz.fastq  SRR6805884.tiny.fastq.gz.fastq
+SRR6805881.tiny.fastq.gz.fastq  SRR6805885.tiny.fastq.gz.fastq
+SRR6805882.tiny.fastq.gz.fastq  read_counts_all_seqs.txt
+SRR6805883.tiny.fastq.gz.fastq  test_unzip.tiny.fastq
+[hudson.ka@c0281 unzipped_fastq]$ cat read_counts_all_seqs.txt
+SRR6805880.tiny.fastq.gz.fastq:1000
+SRR6805881.tiny.fastq.gz.fastq:1000
+SRR6805882.tiny.fastq.gz.fastq:1000
+SRR6805883.tiny.fastq.gz.fastq:1000
+SRR6805884.tiny.fastq.gz.fastq:1000
+SRR6805885.tiny.fastq.gz.fastq:1000
+test_unzip.tiny.fastq:0
+[hudson.ka@c0281 unzipped_fastq]$ head SRR6805883.tiny.fastq.gz.fastq
+@SRR6805883.2151832 J04RJ:06179:05939 length=80
+TGCAGAAACAGCAGCAGGCCGATGGAAAGCTAGGTAACGGTCTAACAATCAAAGGAAATTCCCTTTCTGGAGACGATGTT
++
+144;9::2:989::;56.54998817>2:::683551575779:7884777706246153793==289:5:989::99:4
+@SRR6805883.576388 9F8KO:05753:02290 length=80
+TGCAGTTATAAATATGACAGTGTTCTTTGCAAAATAACATAAATTTCTTTTATCATCTGCTTTGACATTTTTTACTAGTT
++
+15698:5;;<>4=<<<=;;<=<?5<=<4;;>DD0;:6;;888+66+5989.:::;;<999::/9::::::::):<<<<<7
+@SRR6805883.501486 9F8KO:06705:05160 length=80
+TGCAGATCTCTATTGGTTTTAATTTTACCGCTGTGATTTCAACACACTGTGAGAATTTGAGCAAACACGTTCCCACTGTC
+[hudson.ka@c0281 unzipped_fastq]$ cd ../../Day_data/
+[hudson.ka@c0281 Day_data]$ ls
+10_S1_L001_R1_001.fastq.gz    3_S1_L001_R2_001.fastq.gz
+10_S1_L001_R1_001_fastqc.zip  3_S1_L001_R2_001_fastqc.zip
+10_S1_L001_R2_001.fastq.gz    41054315.error
+10_S1_L001_R2_001_fastqc.zip  41054315.output
+11_S1_L001_R1_001.fastq.gz    41189447.error
+11_S1_L001_R1_001_fastqc.zip  41189447.output
+11_S1_L001_R2_001.fastq.gz    4_S1_L001_R1_001.fastq.gz
+11_S1_L001_R2_001_fastqc.zip  4_S1_L001_R1_001_fastqc.zip
+12_S1_L001_R1_001.fastq.gz    4_S1_L001_R2_001.fastq.gz
+12_S1_L001_R1_001_fastqc.zip  4_S1_L001_R2_001_fastqc.zip
+12_S1_L001_R2_001.fastq.gz    5_S1_L001_R1_001.fastq.gz
+12_S1_L001_R2_001_fastqc.zip  5_S1_L001_R1_001_fastqc.zip
+13_S1_L001_R1_001.fastq.gz    5_S1_L001_R2_001.fastq.gz
+13_S1_L001_R1_001_fastqc.zip  5_S1_L001_R2_001_fastqc.zip
+13_S1_L001_R2_001.fastq.gz    6_S1_L001_R1_001.fastq.gz
+13_S1_L001_R2_001_fastqc.zip  6_S1_L001_R1_001_fastqc.zip
+14_S1_L001_R1_001.fastq.gz    6_S1_L001_R2_001.fastq.gz
+14_S1_L001_R1_001_fastqc.zip  6_S1_L001_R2_001_fastqc.zip
+14_S1_L001_R2_001.fastq.gz    7_S1_L001_R1_001.fastq.gz
+14_S1_L001_R2_001_fastqc.zip  7_S1_L001_R1_001_fastqc.zip
+15_S1_L001_R1_001.fastq.gz    7_S1_L001_R2_001.fastq.gz
+15_S1_L001_R1_001_fastqc.zip  7_S1_L001_R2_001_fastqc.zip
+15_S1_L001_R2_001.fastq.gz    8_S1_L001_R1_001.fastq.gz
+15_S1_L001_R2_001_fastqc.zip  8_S1_L001_R1_001_fastqc.zip
+1_S1_L001_R1_001.fastq.gz     8_S1_L001_R2_001.fastq.gz
+1_S1_L001_R1_001_fastqc.zip   8_S1_L001_R2_001_fastqc.zip
+1_S1_L001_R2_001.fastq.gz     9_S1_L001_R1_001.fastq.gz
+1_S1_L001_R2_001_fastqc.zip   9_S1_L001_R1_001_fastqc.zip
+2_S1_L001_R1_001.fastq.gz     9_S1_L001_R2_001.fastq.gz
+2_S1_L001_R1_001_fastqc.zip   9_S1_L001_R2_001_fastqc.zip
+2_S1_L001_R2_001.fastq.gz     generate_qc_reports.bash
+2_S1_L001_R2_001_fastqc.zip   html_qc_reports
+3_S1_L001_R1_001.fastq.gz     unzip_into_new_dir.bash
+3_S1_L001_R1_001_fastqc.zip   unzipped_fastq
+[hudson.ka@c0281 Day_data]$ cd unzipped_fastq/
+[hudson.ka@c0281 unzipped_fastq]$ ls
+10_S1_L001_R1_001.fastq.gz.fastq  3_S1_L001_R2_001.fastq.gz.fastq
+10_S1_L001_R2_001.fastq.gz.fastq  4_S1_L001_R1_001.fastq.gz.fastq
+11_S1_L001_R1_001.fastq.gz.fastq  4_S1_L001_R2_001.fastq.gz.fastq
+11_S1_L001_R2_001.fastq.gz.fastq  5_S1_L001_R1_001.fastq.gz.fastq
+12_S1_L001_R1_001.fastq.gz.fastq  5_S1_L001_R2_001.fastq.gz.fastq
+12_S1_L001_R2_001.fastq.gz.fastq  6_S1_L001_R1_001.fastq.gz.fastq
+13_S1_L001_R1_001.fastq.gz.fastq  6_S1_L001_R2_001.fastq.gz.fastq
+13_S1_L001_R2_001.fastq.gz.fastq  7_S1_L001_R1_001.fastq.gz.fastq
+14_S1_L001_R1_001.fastq.gz.fastq  7_S1_L001_R2_001.fastq.gz.fastq
+14_S1_L001_R2_001.fastq.gz.fastq  8_S1_L001_R1_001.fastq.gz.fastq
+15_S1_L001_R1_001.fastq.gz.fastq  8_S1_L001_R2_001.fastq.gz.fastq
+15_S1_L001_R2_001.fastq.gz.fastq  9_S1_L001_R1_001.fastq.gz.fastq
+1_S1_L001_R1_001.fastq.gz.fastq   9_S1_L001_R2_001.fastq.gz.fastq
+1_S1_L001_R2_001.fastq.gz.fastq   reads_count_all_seq_files.txt
+2_S1_L001_R1_001.fastq.gz.fastq   seq_count_files_7.txt
+2_S1_L001_R2_001.fastq.gz.fastq   seq_count_files_9.txt
+3_S1_L001_R1_001.fastq.gz.fastq
+[hudson.ka@c0281 unzipped_fastq]$ cat reads_count_all_seq_files.txt
+10_S1_L001_R1_001.fastq.gz.fastq:28893152
+10_S1_L001_R2_001.fastq.gz.fastq:28893152
+11_S1_L001_R1_001.fastq.gz.fastq:29291552
+11_S1_L001_R2_001.fastq.gz.fastq:29291552
+12_S1_L001_R1_001.fastq.gz.fastq:29043844
+12_S1_L001_R2_001.fastq.gz.fastq:29043844
+13_S1_L001_R1_001.fastq.gz.fastq:29023016
+13_S1_L001_R2_001.fastq.gz.fastq:29023016
+14_S1_L001_R1_001.fastq.gz.fastq:24730770
+14_S1_L001_R2_001.fastq.gz.fastq:24730770
+15_S1_L001_R1_001.fastq.gz.fastq:28387419
+15_S1_L001_R2_001.fastq.gz.fastq:28387419
+1_S1_L001_R1_001.fastq.gz.fastq:32833451
+1_S1_L001_R2_001.fastq.gz.fastq:32833451
+2_S1_L001_R1_001.fastq.gz.fastq:33738336
+2_S1_L001_R2_001.fastq.gz.fastq:33738336
+3_S1_L001_R1_001.fastq.gz.fastq:35731214
+3_S1_L001_R2_001.fastq.gz.fastq:35731214
+4_S1_L001_R1_001.fastq.gz.fastq:36678316
+4_S1_L001_R2_001.fastq.gz.fastq:36678316
+5_S1_L001_R1_001.fastq.gz.fastq:36972680
+5_S1_L001_R2_001.fastq.gz.fastq:36972680
+6_S1_L001_R1_001.fastq.gz.fastq:31401357
+6_S1_L001_R2_001.fastq.gz.fastq:31401357
+7_S1_L001_R1_001.fastq.gz.fastq:35536673
+7_S1_L001_R2_001.fastq.gz.fastq:35536673
+8_S1_L001_R1_001.fastq.gz.fastq:24498096
+8_S1_L001_R2_001.fastq.gz.fastq:24498096
+9_S1_L001_R1_001.fastq.gz.fastq:29794050
+9_S1_L001_R2_001.fastq.gz.fastq:29794050
+[hudson.ka@c0281 unzipped_fastq]$ awk "NR % 4 == 2 {print length}" 14_S1_L001_R1_001.fastq.gz.fastq > 14_S1_L001_R1_001_reads_lengths.txt
+[hudson.ka@c0281 unzipped_fastq]$ head 14_S1_L001_R1_001_reads_lengths.txt
+150
+150
+150
+150
+150
+150
+150
+150
+150
+150
+[hudson.ka@c0281 unzipped_fastq]$ awk "NR % 4 == 2 {print length}" 8_S1_L001_R1_001.fastq.gz.fastq > 8_S1_L001_R1_001_reads_lengths.txt
+[hudson.ka@c0281 unzipped_fastq]$ head 8_S1_L001_R1_001_reads_lengths.txt
+150
+150
+150
+150
+150
+150
+150
+150
+150
+150
+[hudson.ka@c0281 unzipped_fastq]$
